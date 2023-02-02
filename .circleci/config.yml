@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7
+  cypress: cypress-io/cypress@2
+
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run tests
+          command: npm test
+      - cypress/run
+      - run : 
+          name : Run build
+          command: npm run build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
