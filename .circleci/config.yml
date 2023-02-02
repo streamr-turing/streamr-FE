@@ -8,6 +8,7 @@ workflows:
   build:
     jobs:
       - cypress/run
+        record: true
 
 jobs:
   build_and_test:
