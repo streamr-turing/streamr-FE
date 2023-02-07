@@ -7,9 +7,18 @@ import Header from '../Header/Header'
 
 const MainLayout = () => {
 
+  const [clicked, setClicked] = useState('home')
+
+
+
   return (
     <>
-      <NavBar />
+      <NavBar 
+        username={username}
+        avatarUrl={avatarUrl} 
+        setClicked={setClicked} 
+        clicked={clicked} 
+      />
       <Header />
       <h1>Main Layout</h1>
       <Outlet />
