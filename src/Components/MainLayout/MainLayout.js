@@ -1,4 +1,6 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom'
+
+import './_MainLayout.scss'
 
 import NavBar from '../NavBar/NavBar'
 import Header from '../Header/Header'
