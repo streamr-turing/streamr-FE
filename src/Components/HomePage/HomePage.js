@@ -1,9 +1,4 @@
-//recommendee-icon
-//recommendee-card
-//timeline-point (recommendee-icon + recomendee-card)
-
-import RecommendeeCard from "../RecommendeeCard/RecommendeeCard"
-import RecommendeeIcon from "../RecommendeeIcon/RecommendeeIcon"
+import TimelinePost from "../TimelinePost/TimelinePost"
 import "./_HomePage.scss"
 
 const HomePage = () => {
@@ -11,8 +6,7 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <h1 className="recommend-title">Recommended By Friends</h1>
-      <RecommendeeCard/>
-      <RecommendeeIcon/>
+      <TimelinePost/>
     </div>
   )
 }
