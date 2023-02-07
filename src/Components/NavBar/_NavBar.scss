@@ -26,13 +26,13 @@ $text-color:  #D9D9D9;
     }
     .search-navigation {
         input {
-            border-radius: 18px;
+            border-radius: 25px;
             width: 15vw;
             height: 2em;
-            font-size: 1vw;
+            font-size: 1.25vw;
             color:$nav-background-color;
-            padding: 5px;
-            margin-bottom: 20px;
+            padding: 4px 6px;
+            margin: 20px 0%;
         }
         .home-button {
             color:$text-color;
