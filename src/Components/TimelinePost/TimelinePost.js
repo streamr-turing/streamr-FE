@@ -6,7 +6,11 @@ const TimelinePost = () => {
     return (
         <div className="timeline-post-container">
             <RecommendeeIcon />
+            <div className="timeline-segment">
+            <div className="timeline-tail"></div>
             <div className="timeline-circle"></div>
+            <div className="timeline-tail"></div>
+            </div>
             <RecommendeeCard />
         </div>
     )

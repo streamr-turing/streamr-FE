@@ -3,12 +3,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // position: relative;
+}
+
+.timeline-segment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // position: relative;
+    // margin-top: 10%;
 }
 
 .timeline-circle{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border-width: 3px;
+    border-width: 4px;
     border-style: solid;
+}
+
+.timeline-tail{
+    width: 4px;
+    height: 200px;
+    background-color: #F2CF70;
 }
