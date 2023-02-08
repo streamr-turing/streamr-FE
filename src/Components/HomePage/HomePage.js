@@ -11,9 +11,17 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  // console.log("HERE: ", currentUser.recommendations[0])
-  
+  console.log("HERE: ", currentUser.recommendations[0])
+
   const feedResult = () => {
+    // const allGenres = genres.reduce((genreCategories, currentGenre) => {
+    //     genreCategories += currentGenre
+    //     if (currentGenre !== genres[genres.length - 1]) {
+    //         genreCategories += " - "
+    //     }
+    //     return genreCategories
+    // }, "")
+
     if (currentUser.recommendations.length) {
       const sortedList = currentUser.recommendations.sort((a, b) => {
         a = a.createdAt.slice(0, 10).split('-').join('')
@@ -21,7 +29,11 @@ const HomePage = () => {
         return b - a
       })
       const timelinePost = sortedList.map(recommendation => {
-        return (
+        let segmentStatus = false
+        if (recommendation.show !== sortedList[sortedList.length - 1]) {
+          segmentStatus=true
+        }
+        return (  
           <TimelinePost
             recommenderAvatar={recommendation.recommender.avatarUrl}
             recommenderName={recommendation.recommender.username}
@@ -32,6 +44,7 @@ const HomePage = () => {
             genres={recommendation.show.genres}
             date={recommendation.createdAt}
             key={recommendation.id}
+            drawSegment={segmentStatus}    
           />
         )
       })
