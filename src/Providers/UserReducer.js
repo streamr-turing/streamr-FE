@@ -1,3 +1,5 @@
+import UserTypes from "./UserTypes"
+
 export const USER_INTIAL_STATE = {
     currentUser: {
         "id": 2,
@@ -38,6 +40,26 @@ export const USER_INTIAL_STATE = {
 
 const userReducer = (state, action) => {
     switch(action.type) {
+        case UserTypes.ADD_TO_WATCHLIST:
+            return {
+                currentUser: {
+                    ...state.currentUser,
+                    watchlist: [
+                        ...state.currentUser.watchlist,
+                        action.payload
+                    ]
+                }
+            }
+        case UserTypes.REMOVE_FROM_WATCHLIST:
+            const filteredList = state.currentUser.watchlist.filter(show => {
+                return show.tmbdId !== action.payload
+            })
+            return {
+                currentUser: {
+                    ...state.currentUser,
+                    watchlist: filteredList
+                }
+            }
         default:
             return state
     }
