@@ -17,6 +17,7 @@ const HomePage = () => {
         releaseYear={recommendation.show.releaseYear}
         rating={recommendation.show.rating}
         genres={recommendation.show.genres}
+        date={recommendation.createdAt}
       />
     )
   })
