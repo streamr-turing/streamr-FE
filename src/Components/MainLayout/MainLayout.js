@@ -13,17 +13,18 @@ const MainLayout = () => {
 
 
   return (
-    <>
+    <div className='main-layout'>
       <NavBar 
         // username={username}
         // avatarUrl={avatarUrl} 
         // setClicked={setClicked} 
         // clicked={clicked} 
       />
+      <div className='header-page-section'>
       <Header />
-      <h1>Main Layout</h1>
       <Outlet />
-    </>
+      </div>
+    </div>
   )
 }
 
