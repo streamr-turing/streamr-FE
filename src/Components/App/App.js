@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <button onClick={() => handleClick("add")}>ADD</button>
-      <button onClick={() => handleClick("delete")}>DELETE</button>
+      {/* <button onClick={() => handleClick("add")}>ADD</button>
+      <button onClick={() => handleClick("delete")}>DELETE</button> */}
       <Routes>
         <Route path='/login' element={<LoginPage />} />
         <Route path='/' element={<MainLayout />} >

@@ -1,2 +1,29 @@
 @use "/src/Utilities/mixins";
 @use "/src/Utilities/variables";
+
+$header-background-color: #320B0C;
+$text-color: #D9D9D9;
+
+.header-background {
+    background-color: $header-background-color;
+    width: 80vw;
+    .logo-section {
+        padding: 3vw 0vw;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        img {
+            width: 8vw;
+            height: auto;
+        }
+        h1 {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 0%;
+            padding-right: 2vw;
+            font-size: 4vw;
+            text-align: end;
+            color: $text-color;
+        }
+    }
+}
