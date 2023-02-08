@@ -1,3 +1,16 @@
+.recommender-container{
+    border-style: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recommender-name{
+    color: white;
+    font-size: 100%;
+    margin-bottom: 0;
+}
+
 .recommender-avatar{
     height: 10vh;
 }

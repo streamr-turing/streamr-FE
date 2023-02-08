@@ -38,7 +38,7 @@ const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) =
                 <img src={poster} className='poster-img' />
                 <div className='recommendee-card-info'>
                     <h1>{title} ({releaseYear})</h1>
-                    <h2>{rating}/10</h2>
+                    <h2>Audience Rating: {rating}/10</h2>
                     <h3>{allGenres}</h3>
                 </div>
             </div>
