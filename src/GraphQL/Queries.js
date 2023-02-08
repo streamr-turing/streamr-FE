@@ -6,6 +6,7 @@ query getShow($tmdbId: Int!, $userId: Int!) {
   title
   releaseYear
   streamingService
+  posterUrl
   genres
   rating
   summary

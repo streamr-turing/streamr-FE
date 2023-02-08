@@ -7,7 +7,7 @@ export const USER_INTIAL_STATE = {
         "avatarUrl": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg",
         "watchlist": [
             {
-                "tmbdId": 10,
+                "tmbdId": 11,
                 "title": "Best dang show",
                 "releaseYear": 2022,
                 "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
