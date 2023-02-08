@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom'
+import { useState } from 'react'
 
 import './_MainLayout.scss'
 
@@ -7,13 +8,23 @@ import Header from '../Header/Header'
 
 const MainLayout = () => {
 
+  // const [clicked, setClicked] = useState('home')
+
+
+
   return (
-    <>
-      <NavBar />
+    <div className='main-layout'>
+      <NavBar 
+        // username={username}
+        // avatarUrl={avatarUrl} 
+        // setClicked={setClicked} 
+        // clicked={clicked} 
+      />
+      <div className='header-page-section'>
       <Header />
-      <h1>Main Layout</h1>
       <Outlet />
-    </>
+      </div>
+    </div>
   )
 }
 
