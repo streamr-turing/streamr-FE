@@ -5,9 +5,7 @@ const HomePage = () => {
 
   return (
     <div className="home-container">
-      <h1 className="recommend-title">Recommended By Friends</h1>
-      <TimelinePost/>
-      <TimelinePost/>
+      <h1>Feed</h1>
     </div>
   )
 }
