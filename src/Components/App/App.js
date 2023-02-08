@@ -7,6 +7,7 @@ import MainLayout from '../MainLayout/MainLayout'
 import HomePage from '../HomePage/HomePage'
 import WatchlistPage from '../WatchlistPage/WatchlistPage'
 import DetailsPage from '../DetailsPage/DetailsPage'
+import PageNotFound from '../PageNotFound/PageNotFound'
 
 function App() {
   const { currentUser, addToWatchList, removeFromWatchList } = useContext(UserContext)
@@ -36,6 +37,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/watchlist' element={<WatchlistPage />} />
           <Route path='/show/:id' element={<DetailsPage />} />
+          <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>
     </>
