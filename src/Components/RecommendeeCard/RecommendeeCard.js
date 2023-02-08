@@ -3,7 +3,7 @@ import './_RecommendeeCard.scss'
 const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) => {
     const allGenres = genres.reduce((genreCategories, currentGenre) => {
         genreCategories += currentGenre
-        if (currentGenre != genres[genres.length - 1]) {
+        if (currentGenre !== genres[genres.length - 1]) {
             genreCategories += " - "
         }
         return genreCategories

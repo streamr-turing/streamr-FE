@@ -11,7 +11,7 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  console.log("HERE: ", currentUser.recommendations[0])
+  // console.log("HERE: ", currentUser.recommendations[0])
 
   const sortedList = currentUser.recommendations.sort((a, b) => {
     a = a.createdAt.slice(0, 10).split('-').join('')
