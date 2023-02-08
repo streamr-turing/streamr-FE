@@ -1,0 +1,20 @@
+$login-background-color: #101419;
+$login-area-color: #320B0C;
+$login-button-color: #F2CF70;
+$text-color: #D9D9D9;
+
+.no-recommendations-container {
+    background-color: $login-area-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+}
+
+.shrug-img{
+    height: 10vh;
+    filter: invert(76%) sepia(0%) saturate(778%) hue-rotate(138deg) brightness(98%) contrast(144%);
+}
