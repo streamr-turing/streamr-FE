@@ -5,7 +5,6 @@ import TimelinePost from "../TimelinePost/TimelinePost"
 import "./_HomePage.scss"
 
 //////////// TO DO LIST ////////////
-//1. Bookmark button
 //1. Timeline segment logic
 //1. Reposition timeline circle, line, and recommender avatar lower
 

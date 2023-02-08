@@ -1,3 +1,5 @@
+import bookmarkTrue from "../../images/bookmark-true.png"
+import bookmarkFalse from "../../images/bookmark-false.png"
 import './_RecommendeeCard.scss'
 
 const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) => {
@@ -35,6 +37,7 @@ const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) =
     return (
         <div>
             <div className="recommendee-card-container">
+                <img src={bookmarkFalse} className='home-bookmark'/>
                 <img src={poster} className='poster-img' />
                 <div className='recommendee-card-info'>
                     <h1>{title} ({releaseYear})</h1>

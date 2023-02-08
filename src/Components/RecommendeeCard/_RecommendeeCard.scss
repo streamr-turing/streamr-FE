@@ -1,4 +1,4 @@
-.recommendee-card-container{
+.recommendee-card-container {
     width: 900px;
     height: 300px;
     background-color: #ac894b;
@@ -8,18 +8,26 @@
     align-items: center;
 }
 
-.poster-img{
-    height: 29vh;
-    padding-left: 2%;
-    padding-right: 2%;
+.home-bookmark {
+    height: 25%;
+    position: relative;
+    left: 60px;
+    bottom: 100px;
+    cursor: pointer;
 }
 
-.recommendee-card-info{
+.poster-img {
+    height: 90%;
+    padding-right: 5%;
+    cursor: pointer;
+}
+
+.recommendee-card-info {
     display: flex;
     flex-direction: column;
 }
 
-.post-date{
+.post-date {
     color: white;
     margin-bottom: 0px;
 }
