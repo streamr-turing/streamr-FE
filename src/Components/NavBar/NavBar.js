@@ -34,30 +34,38 @@ const NavBar = () => {
         <img src={rabbit} alt='Picture of your avatar' />
         <p>Courtney</p>
       </section>
-      <section className="search-navigation">
-        <input 
-        type='text'
-        placeholder='Search'
-        name='search'
-        // value={this.state.value}
-        onChange={handleChange}
-        className='search-input'
-        />
-        <NavLink 
-        className="home-button" 
-        id='home-button' 
-        to='/' 
-        >
-          <p>Home</p>
-        </NavLink>
-        <NavLink 
-        className="watchlist-button" 
-        id='watchlist-button' 
-        to='/watchlist'
-        >
-          <p>My Watchlist</p>
-        </NavLink>
-      </section>
+      <nav className="search-navigation">
+        <ul>
+          <li>
+            <input 
+            type='text'
+            placeholder='Search'
+            name='search'
+            // value={this.state.value}
+            onChange={handleChange}
+            className='search-input'
+            />
+          </li>
+          <li>
+            <NavLink 
+            className="home-button" 
+            id='home-button' 
+            to='/' 
+            >
+              <p>Home</p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+            className="watchlist-button" 
+            id='watchlist-button' 
+            to='/watchlist'
+            >
+              <p>My Watchlist</p>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </div>
   )
 }

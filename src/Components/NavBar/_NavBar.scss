@@ -24,7 +24,13 @@ $text-color:  #D9D9D9;
             color: $text-color;
         }
     }
+    ul {
+        padding-inline-start: 0px;
+    }
     .search-navigation {
+        li {
+            list-style-type: none;
+        }
         input {
             border-radius: 25px;
             width: 15vw;
