@@ -6,11 +6,12 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  console.log("HERE: ", currentUser.recommendations[0].show)
+  console.log("HERE: ", currentUser.recommendations[0])
 
   const timelinePost = currentUser.recommendations.map(recommendation => {
     return (
       <TimelinePost
+        recommenderAvatar={recommendation.recommender.avatarUrl}
         poster={recommendation.show.thumbnailUrl}
         title={recommendation.show.title}
         releaseYear={recommendation.show.releaseYear}

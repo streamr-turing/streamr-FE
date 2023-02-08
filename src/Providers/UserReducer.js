@@ -20,7 +20,7 @@ export const USER_INTIAL_STATE = {
                 "recommender": {
                     "id": 5,
                     "username": "Hanke",
-                    "avatarUrl": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg"
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940412.png"
                 },
                 "show": {
                     "tmbdId": 10,
