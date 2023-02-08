@@ -2,16 +2,16 @@ import RecommendeeCard from "../RecommendeeCard/RecommendeeCard"
 import RecommendeeIcon from "../RecommendeeIcon/RecommendeeIcon"
 import './_TimelinePost.scss'
 
-const TimelinePost = () => {
+const TimelinePost = ({ poster, title, releaseYear, rating, genres }) => {
     return (
         <div className="timeline-post-container">
             <RecommendeeIcon />
             <div className="timeline-segment">
-            <div className="timeline-tail"></div>
-            <div className="timeline-circle"></div>
-            <div className="timeline-tail"></div>
+                <div className="timeline-tail"></div>
+                <div className="timeline-circle"></div>
+                <div className="timeline-tail"></div>
             </div>
-            <RecommendeeCard />
+            <RecommendeeCard poster={poster} title={title} releaseYear={releaseYear} rating={rating} genres={genres}/>
         </div>
     )
 }

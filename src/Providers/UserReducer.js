@@ -28,9 +28,11 @@ export const USER_INTIAL_STATE = {
                     "releaseYear": 2022,
                     "rating": 8,
                     "genres": [
-                        "Dramady"
+                        "Dramady",
+                        "Indie",
+                        "Family"
                     ],
-                    "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                    "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
                 },
                 "createdAt": "2023-02-01T22:20:58Z"
             }
