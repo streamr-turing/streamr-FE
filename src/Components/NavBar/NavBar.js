@@ -1,32 +1,20 @@
 
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
+
+import { locationFunction } from "./helper-functions"
 
 import "./_NavBar.scss"
 import rabbit from '../../images/rabbit.png'
 
 const NavBar = () => {
-//username, avatarUrl, setClicked, clicked for props
+//username, avatarUrl for props
+  let location = useLocation()
+  let buttonStyles = locationFunction(location)
+
   const handleChange = (event) => {
     const value = event.target.value
     // This function takes in the text input of the search bar and sets the input value to the local variable value. I am thinking that the search functionality/setting state will be handled from here.
   }
-
-  // const isClicked = (clicked) => {
-  //     let homeButton
-  //     let watchlistButton
-  //   if(clicked === 'home') {
-  //       homeButton = 'hide'
-  //       watchlistButton = 'show-button'
-  //   } else if (clicked === 'watchlist') {
-  //     homeButton = 'show-button'
-  //     watchlistButton = 'hide'
-  //   } else if (clicked === 'details') {
-  //     homeButton = 'show-button'
-  //     watchlistButton = 'show-button'
-  //   }
-  // }
-
-  // Refactor the above function
 
   return (
     <div className="navbar-area">
@@ -48,16 +36,16 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink 
-            className="home-button" 
+            className={buttonStyles.homeButton}
             id='home-button' 
-            to='/' 
+            to='/'
             >
               <p>Home</p>
             </NavLink>
           </li>
           <li>
             <NavLink 
-            className="watchlist-button" 
+            className={buttonStyles.watchlistButton} 
             id='watchlist-button' 
             to='/watchlist'
             >
