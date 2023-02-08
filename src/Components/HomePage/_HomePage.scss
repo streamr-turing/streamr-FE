@@ -1,4 +1,6 @@
 .home-container{
+    border-style: dashed;
+    border-color: blue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +11,6 @@
 
 .recommend-title{
     border-style: dashed;
-    width: 100vw;
-    padding-left: 30%;
+    width: 90%;
+    padding-left: 10%;
 }
