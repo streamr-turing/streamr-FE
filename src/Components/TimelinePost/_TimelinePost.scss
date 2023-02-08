@@ -1,18 +1,13 @@
 .timeline-post-container{
-    border-style: dashed;
     display: flex;
     align-items: center;
     width: fit-content
-    // justify-content: space-around;
-    // position: relative;
 }
 
 .timeline-segment{
     display: flex;
     flex-direction: column;
     align-items: center;
-    // position: relative;
-    // margin-top: 10%;
 }
 
 .timeline-circle{
