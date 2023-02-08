@@ -1,0 +1,70 @@
+$login-background-color: #101419;
+$login-area-color: #320B0C;
+$login-button-color: #F2CF70;
+$text-color: #D9D9D9;
+
+@mixin centerColumn() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-background {
+    background-color: $login-background-color;
+    width: 100vw;
+    height: 100vh;
+    @include centerColumn();
+    
+    .login-area {
+        @include centerColumn();
+        justify-content: space-around;
+        background-color: $login-area-color;
+        width: 60vw;
+        height: 35vw;
+
+        .logo-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 10vw;
+                height: auto;
+
+
+            }
+            h1 {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 0%;
+                font-size: 6vw;
+                text-align: end;
+                color: $text-color;
+            }
+        }
+
+        .username-password {
+            @include centerColumn();
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+            .input {
+                color:$login-background-color;
+                background-color: $text-color;
+                margin-bottom: 2vw;
+                border-radius: 2vw;
+                padding: 1vw 1.5vw;
+                text-align: center;
+                font-size: 1.5vw;
+            }
+            button {
+                color:$login-background-color;
+                background-color: $login-button-color;
+                font-size: 1.5vw;
+                border-radius: 2vw;
+                padding: 1vw 2vw;
+            }
+
+        }
+    }
+}
