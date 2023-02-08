@@ -1,9 +1,10 @@
 import './_RecommendeeIcon.scss'
 
-const RecommendeeIcon = () => {
+const RecommendeeIcon = ({recommenderAvatar, recommenderName}) => {
     return(
-        <div>
-            <h1>RecommendeeIcon</h1>
+        <div className="recommender-container">
+            <img src={recommenderAvatar} className='recommender-avatar'/>
+            <h1 className='recommender-name'>{recommenderName}</h1>
         </div>
     )
 }
