@@ -17,7 +17,7 @@ function App() {
       console.log("Added!")
       addToWatchList({
         tmbdId: 1,
-        name: "Finding Nemo"
+        name: 'Finding Nemo'
       })
     }
     else if (clickType === 'delete'){
