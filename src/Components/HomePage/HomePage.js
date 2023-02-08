@@ -6,9 +6,15 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  console.log("HERE: ", currentUser.recommendations[0])
+  console.log("HERE: ", currentUser.recommendations)
 
-  const timelinePost = currentUser.recommendations.map(recommendation => {
+  const sortedList = currentUser.recommendations.sort((a, b) => {
+    a = a.createdAt.slice(0, 10).split('-').join('')
+    b = b.createdAt.slice(0, 10).split('-').join('')
+    return b - a
+  })
+
+  const timelinePost = sortedList.map(recommendation => {
     return (
       <TimelinePost
         recommenderAvatar={recommendation.recommender.avatarUrl}
@@ -18,6 +24,7 @@ const HomePage = () => {
         rating={recommendation.show.rating}
         genres={recommendation.show.genres}
         date={recommendation.createdAt}
+        key={recommendation.id}
       />
     )
   })

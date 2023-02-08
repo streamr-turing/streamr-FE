@@ -35,6 +35,48 @@ export const USER_INTIAL_STATE = {
                     "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
                 },
                 "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
+                "id": 11,
+                "recommendeeId": 4,
+                "recommender": {
+                    "id": 6,
+                    "username": "Harkey",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940403.png"
+                },
+                "show": {
+                    "tmbdId": 11,
+                    "title": "GhostBusters",
+                    "releaseYear": 1980,
+                    "rating": 9,
+                    "genres": [
+                        "Comedy",
+                        "Sci-fi"
+                    ],
+                    "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+                },
+                "createdAt": "2022-12-10T22:20:58Z"
+            },
+            {
+                "id": 12,
+                "recommendeeId": 5,
+                "recommender": {
+                    "id": 7,
+                    "username": "Hoppy",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940405.png"
+                },
+                "show": {
+                    "tmbdId": 12,
+                    "title": "Jaws",
+                    "releaseYear": 1979,
+                    "rating": 6,
+                    "genres": [
+                        "Horror",
+                        "Suspense"
+                    ],
+                    "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+                },
+                "createdAt": "2023-09-02T22:20:58Z"
             }
         ]
     }

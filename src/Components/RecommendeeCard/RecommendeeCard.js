@@ -4,14 +4,13 @@ const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) =
     const allGenres = genres.reduce((genreCategories, currentGenre) => {
         genreCategories += currentGenre
         if (currentGenre != genres[genres.length - 1]) {
-            genreCategories += "-"
+            genreCategories += " - "
         }
         return genreCategories
     }, "")
 
     const formatDate = () => {
-        date = date.slice(0, 10)
-        date = date.split('-')
+        date = date.slice(0, 10).split('-')
         let day = parseInt(date[2])
         let month = parseInt(date[1])
         let year = date[0]
