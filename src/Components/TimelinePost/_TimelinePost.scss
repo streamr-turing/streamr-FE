@@ -1,7 +1,7 @@
 .timeline-post-container{
     display: flex;
     align-items: center;
-    width: fit-content
+    width: fit-content;
 }
 
 .timeline-segment{
@@ -16,10 +16,15 @@
     border-radius: 50%;
     border-width: 4px;
     border-style: solid;
+    margin-bottom: 10vh;
+    position: relative;
+    top: 38vh;
 }
 
 .timeline-tail{
     width: 4px;
-    height: 200px;
+    height: 30vh;
     background-color: #F2CF70;
+    position: relative;
+    top: 33vh;
 }
