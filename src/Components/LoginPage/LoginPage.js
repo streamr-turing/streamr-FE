@@ -23,10 +23,8 @@ const LoginPage = () => {
   
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('allUsers', allUsers)
-    console.log('signInData', signInData)
     const userFound = allUsers.find(user => user.username === signInData.username)
-    console.log('userFound', userFound)
+
     if(userFound && signInData.password === 'streamr' ) {
       setSignInData((prevState) => ({
         ...prevState,
@@ -51,7 +49,6 @@ const LoginPage = () => {
       password: '',
       validSignIn: false
     })
-    console.log('loggedIn')
   }
 
   return (
@@ -83,7 +80,9 @@ const LoginPage = () => {
         {signInData.loggedIn &&
           <Navigate to='/' />
         }
-        {!signInData.validSignIn && <p>Sorry, the username/password is incorrect. Please try again.</p>}
+        {!signInData.validSignIn && 
+        <p>Sorry, the username/password is incorrect. Please try again.</p>
+        }
       </div>
     </div>
   )
