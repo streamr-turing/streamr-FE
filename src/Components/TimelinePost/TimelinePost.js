@@ -8,7 +8,7 @@ const TimelinePost = ({ recommenderAvatar, recommenderName, poster, title, relea
             <RecommendeeIcon recommenderAvatar={recommenderAvatar} recommenderName={recommenderName}/>
             <div className="timeline-segment">
                 <div className="timeline-circle"></div>
-                {drawSegment && <div className="timeline-tail"></div>}
+                {drawSegment ? <div className="timeline-tail"></div> : <div className="timeline-tail-end"></div>}
             </div>
             <RecommendeeCard
                 poster={poster}

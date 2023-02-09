@@ -5,9 +5,6 @@ import NoRecommendations from '../NoRecommendations/NoRecommendations'
 import TimelinePost from "../TimelinePost/TimelinePost"
 import "./_HomePage.scss"
 
-//////////// TO DO LIST ////////////
-//1. Reposition timeline circle, line, and recommender avatar lower
-
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
   // console.log("HERE: ", currentUser.recommendations[0])
@@ -22,9 +19,12 @@ const HomePage = () => {
       const timelinePost = sortedList.map(recommendation => {
         let segmentStatus = false
         if (recommendation !== sortedList[sortedList.length - 1]) {
-          segmentStatus=true
+          segmentStatus = true
         }
-        return (  
+        else (
+          segmentStatus = false
+        )
+        return (
           <TimelinePost
             recommenderAvatar={recommendation.recommender.avatarUrl}
             recommenderName={recommendation.recommender.username}
@@ -35,11 +35,16 @@ const HomePage = () => {
             genres={recommendation.show.genres}
             date={recommendation.createdAt}
             key={recommendation.id}
-            drawSegment={segmentStatus}    
+            drawSegment={segmentStatus}
           />
         )
       })
-      return timelinePost
+      return (
+        <div className='timeline-container'>
+            {timelinePost}
+            <h4>End of feed</h4>
+          </div>
+        )
     }
     else {
       return <NoRecommendations />
