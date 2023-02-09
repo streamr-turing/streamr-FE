@@ -19,12 +19,52 @@ export const USER_INTIAL_STATE = {
                 "recommendeeId": 3,
                 "recommender": {
                     "id": 5,
-                    "username": "Hanke",
-                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940412.png"
+                    "username": "Hank",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940410.png"
                 },
                 "show": {
                     "tmdbId": 10,
-                    "title": "Best dang show",
+                    "title": "Succession",
+                    "releaseYear": 2022,
+                    "rating": 8,
+                    "genres": [
+                        "Dramady"
+                    ],
+                    "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                },
+                "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
+                "id": 13,
+                "recommendeeId": 3,
+                "recommender": {
+                    "id": 4,
+                    "username": "Stella",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
+                },
+                "show": {
+                    "tmdbId": 10,
+                    "title": "Succession",
+                    "releaseYear": 2022,
+                    "rating": 8,
+                    "genres": [
+                        "Dramady"
+                    ],
+                    "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                },
+                "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
+                "id": 13,
+                "recommendeeId": 3,
+                "recommender": {
+                    "id": 4,
+                    "username": "Stella",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
+                },
+                "show": {
+                    "tmdbId": 10,
+                    "title": "Succession",
                     "releaseYear": 2022,
                     "rating": 8,
                     "genres": [

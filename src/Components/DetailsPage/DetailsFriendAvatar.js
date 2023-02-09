@@ -4,13 +4,13 @@ import "./_DetailsFriendAvatar.scss"
 const DetailsFriendAvatar = ({ username, avatarUrl }) => {
   
   return (
-    <div className="details-avatar">
-      <p>{username}</p>
+    <span className="details-avatar">
       <img
         className="details-avatar__img"
         src={avatarUrl}
       />
-    </div>
+      <p>{username}</p>
+    </span>
   )
 }
 
