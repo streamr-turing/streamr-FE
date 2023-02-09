@@ -20,6 +20,7 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
+  //USEQUERY HOOK WILL BE USED ONCE SERVER IS CONNECTED
   // const { error, loading, data } = useQuery(
   //   GET_SHOW_DETAILS, {
   //   variables: {
@@ -28,6 +29,7 @@ const DetailsPage = () => {
   //   }
   // })
 
+  // HARDCODED MOCK DATA 
   const data = {
     "tmdbId": 10,
     "title": "Succession",
@@ -101,7 +103,6 @@ const DetailsPage = () => {
                   aria-label="toggle saved to watchlist"
                   aria-pressed={isSaved}
                   onClick={toggleSaved}
-                  // onKeyDown={e => handleBookmarkKeyDown(e)}
                   tabIndex={0}
                 />
                 <img
