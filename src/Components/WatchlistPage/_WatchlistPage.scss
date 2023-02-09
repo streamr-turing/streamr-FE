@@ -1,0 +1,21 @@
+.watch-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #320B0C;
+    color: #F2CF70;
+    height: fit-content;
+}
+
+.watch-list-title{
+    width: 90%;
+    padding-left: 10%;
+    font-size: 5vh;
+    margin-top: 0;
+}
+
+.timeline-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
