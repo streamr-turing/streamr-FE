@@ -3,38 +3,55 @@ import './_LoginPage.scss'
 import tv from '../../tv.png'
 import { AllUsersContext } from '../../Providers/AllUsersContext'
 import { useContext, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 const LoginPage = () => {
   const { allUsers } = useContext(AllUsersContext)
-  console.log('LoginInfo', allUsers)
-
   const [signInData, setSignInData] = useState({
     username: '',
     password: '',
-    validSignIn: true
+    validSignIn: true,
+    loggedIn: false,
   })
 
   const handleChange = (event) => {
-    setSignInData({
-      ...signInData,
+    setSignInData((prevState) => ({
+      ...prevState,
       [event.target.name]: event.target.value
-    })
+    }))
   }
   
   const handleSubmit = (event) => {
     event.preventDefault()
+    console.log('allUsers', allUsers)
     console.log('signInData', signInData)
-    const userFound = allUsers.find(signInData.username)
+    const userFound = allUsers.find(user => user.username === signInData.username)
+    console.log('userFound', userFound)
     if(userFound && signInData.password === 'streamr' ) {
-        //we want to fetch current user from database and route to homepage
+      setSignInData((prevState) => ({
+        ...prevState,
+        validSignIn: true,
+        loggedIn: true
+      }))
 
     } else {
-      setSignInData({
-        ...signInData,
-        validSignIn: false
-      })
+      setSignInData((prevState) => ({
+        ...prevState,
+        validSignIn: false,
+        loggedIn: false
+      }))
+      clearLogin()
     }
+  }
 
+  const clearLogin = () => {
+    setSignInData({
+      ...signInData,
+      username: '',
+      password: '',
+      validSignIn: false
+    })
+    console.log('loggedIn')
   }
 
   return (
@@ -63,6 +80,9 @@ const LoginPage = () => {
         />
         <button onClick={event => handleSubmit(event)}>Login</button>
         </form>
+        {signInData.loggedIn &&
+          <Navigate to='/' />
+        }
         {!signInData.validSignIn && <p>Sorry, the username/password is incorrect. Please try again.</p>}
       </div>
     </div>
