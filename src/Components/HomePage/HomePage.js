@@ -42,7 +42,7 @@ const HomePage = () => {
       return (
         <div className='timeline-container'>
             {timelinePost}
-            <h4>End of feed</h4>
+            <h3>End of feed</h3>
           </div>
         )
     }
