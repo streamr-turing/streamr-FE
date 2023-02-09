@@ -7,8 +7,8 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  // console.log("HERE: ", currentUser.recommendations[0])
-
+  console.log("HERE: ", currentUser.recommendations)
+  
   const feedResult = () => {
     if (currentUser.recommendations.length) {
       const sortedList = currentUser.recommendations.sort((a, b) => {
