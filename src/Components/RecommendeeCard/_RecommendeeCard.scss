@@ -1,33 +1,49 @@
 .recommendee-card-container {
-    width: 900px;
-    height: 300px;
+    width: 50vw;
+    height: 35vh;
     background-color: #ac894b;
-    color: white;
+    color: #D9D9D9;
     border-radius: 20px;
     display: flex;
     align-items: center;
+    margin-left: 1vw;
 }
 
 .home-bookmark {
-    height: 25%;
+    height: 6vh;
     position: relative;
-    left: 60px;
-    bottom: 100px;
+    left: 3vw;
+    bottom: 12.75vh;
     cursor: pointer;
 }
 
-.poster-img {
-    height: 90%;
-    padding-right: 5%;
+.poster-img, .clickable-poster {
+    height: 31vh;
     cursor: pointer;
+}
+
+.title{
+    margin: 0;
+}
+
+.audience-rating{
+    margin-top: 40px;
+}
+
+.clickable-title{
+    text-decoration: none;
+    color: #D9D9D9;
+    margin: 0;
 }
 
 .recommendee-card-info {
     display: flex;
     flex-direction: column;
+    padding-left: 5%;
 }
 
 .post-date {
-    color: white;
+    color: #D9D9D9;
     margin-bottom: 0px;
+    margin-left: 1vw;
 }
