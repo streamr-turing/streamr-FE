@@ -1,8 +1,21 @@
-import bookmarkTrue from "../../images/bookmark-true.png"
-import bookmarkFalse from "../../images/bookmark-false.png"
+import { useEffect, useState, useContext } from "react"
+
+import savedTrue from "../../images/bookmark-true.png"
+import savedFalse from "../../images/bookmark-false.png"
 import './_RecommendeeCard.scss'
 
 const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) => {
+    const [isSaved, setIsSaved] = useState(false)
+
+    const toggleSaved = () => {
+        if (!isSaved) {
+          setIsSaved(true)
+        }
+        else {
+          setIsSaved(false)
+        }
+      }
+
     const allGenres = genres.reduce((genreCategories, currentGenre) => {
         genreCategories += currentGenre
         if (currentGenre !== genres[genres.length - 1]) {
@@ -37,7 +50,7 @@ const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) =
     return (
         <div>
             <div className="recommendee-card-container">
-                <img src={bookmarkFalse} className='home-bookmark'/>
+                <img src={isSaved ? savedTrue : savedFalse} className='home-bookmark' onClick={toggleSaved}/>
                 <img src={poster} className='poster-img' />
                 <div className='recommendee-card-info'>
                     <h1>{title} ({releaseYear})</h1>
