@@ -1,0 +1,23 @@
+@use "../../Utilities/variables";
+
+.recc-container__title {
+  color: #E8C56B;
+}
+
+.recc-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recc-lower__avatars-container {
+  display: flex;
+}
+
+.recc-lower__button {
+  width: 60px;
+  height: 60px;
+  background-color: #00000000;
+  border: 3px solid white;
+  border-radius: variables.$global-border-radius;
+}

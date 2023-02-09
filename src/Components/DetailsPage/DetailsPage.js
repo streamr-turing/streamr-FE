@@ -89,9 +89,9 @@ const DetailsPage = () => {
       { data &&
         <section className="details-parent">
           <div className="details">
-            <h1 className="details__title">{`${data.title} (${data.releaseYear})`}</h1>
             <div className="details__lower">
               <div className="details__lower__left">
+                <h1 className="details__title">{`${data.title} (${data.releaseYear})`}</h1>
                 <img 
                   data-cy="bookmark" 
                   className="details__lower__left__bookmark" 

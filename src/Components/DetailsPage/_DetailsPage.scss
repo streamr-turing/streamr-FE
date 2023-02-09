@@ -1,19 +1,27 @@
+@use "../../Utilities/variables";
+
 $details-inner-width: 90%;
 
 .details {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
   width: $details-inner-width;
+  color: white;
 }
 
 .details__title {
-  width: $details-inner-width;
+  position: absolute;
+  top: -80px;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #E8C56B;
 }
 
 .details__lower {
   display: flex;
-  justify-content: space-around
+  justify-content: center;
 }
 
 .details__lower__left {
@@ -36,4 +44,7 @@ $details-inner-width: 90%;
 
 .details__lower__right {
   width: 40%;
+  padding: max(2vw, 28px);
+  border-radius: variables.$global-border-radius;
+  background-color: #A58048;
 }

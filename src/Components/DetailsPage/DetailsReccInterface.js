@@ -1,7 +1,7 @@
 import { useContext } from "react"
 
 import { UserContext } from "../../Providers/UserContext"
-import "./_DetailsPage.scss"
+import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
 
 const DetailsReccInterface = ({ id, showModal }) => {
@@ -27,9 +27,15 @@ const DetailsReccInterface = ({ id, showModal }) => {
 
   return (
     <div className="recc-container">
-      <h2>Reccomended by Friends:</h2>
+      <h2 className="recc-container__title">Recommended by Friends:</h2>
       <div className="recc-lower">
-        {friendAvatars}
+        <div className="recc-lower__avatars-container">
+          {friendAvatars}
+        </div>
+        <button
+          className="recc-lower__button"
+          onClick={showModal}  
+        >send rec</button>
       </div>
     </div>
   )
