@@ -7,7 +7,7 @@ export const USER_INTIAL_STATE = {
         "avatarUrl": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg",
         "watchlist": [
             {
-                "tmbdId": 10,
+                "tmdbId": 11,
                 "title": "Best dang show",
                 "releaseYear": 2022,
                 "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
@@ -19,12 +19,52 @@ export const USER_INTIAL_STATE = {
                 "recommendeeId": 3,
                 "recommender": {
                     "id": 5,
-                    "username": "Hanke",
-                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940412.png"
+                    "username": "Hank",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940410.png"
                 },
                 "show": {
-                    "tmbdId": 10,
-                    "title": "Best dang show",
+                    "tmdbId": 10,
+                    "title": "Succession",
+                    "releaseYear": 2022,
+                    "rating": 8,
+                    "genres": [
+                        "Dramady"
+                    ],
+                    "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                },
+                "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
+                "id": 13,
+                "recommendeeId": 3,
+                "recommender": {
+                    "id": 4,
+                    "username": "Stella",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
+                },
+                "show": {
+                    "tmdbId": 10,
+                    "title": "Succession",
+                    "releaseYear": 2022,
+                    "rating": 8,
+                    "genres": [
+                        "Dramady"
+                    ],
+                    "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                },
+                "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
+                "id": 13,
+                "recommendeeId": 3,
+                "recommender": {
+                    "id": 4,
+                    "username": "Stella",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
+                },
+                "show": {
+                    "tmdbId": 10,
+                    "title": "Succession",
                     "releaseYear": 2022,
                     "rating": 8,
                     "genres": [
@@ -96,7 +136,7 @@ const userReducer = (state, action) => {
             }
         case UserTypes.REMOVE_FROM_WATCHLIST:
             const filteredList = state.currentUser.watchlist.filter(show => {
-                return show.tmbdId !== action.payload
+                return show.tmdbId !== action.payload
             })
             return {
                 currentUser: {

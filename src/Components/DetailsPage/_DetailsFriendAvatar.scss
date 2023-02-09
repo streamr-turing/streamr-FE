@@ -1,0 +1,15 @@
+$details-avatar-width: 60px;
+
+.details-avatar {
+  width: $details-avatar-width;
+  text-align: center;
+  margin: 0px 10px;
+}
+
+.details-avatar__img {
+  max-width: $details-avatar-width;
+}
+
+.details-avatar__name {
+  margin: 0px;
+}

@@ -1,11 +1,9 @@
 @use "/src/Utilities/mixins";
 @use "/src/Utilities/variables";
 
-$header-background-color: #320B0C;
 $text-color: #D9D9D9;
 
 .header-background {
-    background-color: $header-background-color;
     width: 80vw;
     .logo-section {
         padding: 3vw 0vw;
