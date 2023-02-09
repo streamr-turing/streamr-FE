@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
@@ -52,10 +52,10 @@ const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date }) =
         <div>
             <div className="recommendee-card-container">
                 <img src={isSaved ? savedTrue : savedFalse} className='home-bookmark' onClick={toggleSaved}/>
-                <img src={poster} className='poster-img' />
+                <Link to='/show/3' className='clickable-poster'><img src={poster} className='poster-img' /></Link>
                 <div className='recommendee-card-info'>
-                    <NavLink to='/show/3' className='clickable-title'><h1>{title} ({releaseYear})</h1></NavLink>
-                    <h2>Audience Rating: {rating}/10</h2>
+                    <NavLink to='/show/3' className='clickable-title'><h1 className='title'>{title} ({releaseYear})</h1></NavLink>
+                    <h2 className='audience-rating'>Audience Rating: {rating}/10</h2>
                     <h3>{allGenres}</h3>
                 </div>
             </div>
