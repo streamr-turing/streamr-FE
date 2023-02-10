@@ -7,16 +7,16 @@ import savedFalse from "../../images/bookmark-false.png"
 import './_WatchListItem.scss'
 
 const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
-    // const [isSaved, setIsSaved] = useState(false)
+    const [isSaved, setIsSaved] = useState(true)
 
-    // const toggleSaved = () => {
-    //     if (!isSaved) {
-    //       setIsSaved(true)
-    //     }
-    //     else {
-    //       setIsSaved(false)
-    //     }
-    //   }
+    const toggleSaved = () => {
+        if (!isSaved) {
+            setIsSaved(true)
+        }
+        else {
+            setIsSaved(false)
+        }
+    }
 
     // const allGenres = genres.reduce((genreCategories, currentGenre) => {
     //     genreCategories += currentGenre
@@ -60,6 +60,7 @@ const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
     return (
         <div className="watch-list-card-container">
             <div className="watch-list-poster-and-info">
+                <img src={isSaved ? savedTrue : savedFalse} className='watch-list-bookmark' onClick={toggleSaved} />
                 <img src={poster} className='watch-list-poster-img' />
                 <div className='watch-list-card-info'>
                     <div className="watch-list-title-and-share-container">
