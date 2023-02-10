@@ -5,7 +5,7 @@ import { UserContext } from '../../Providers/UserContext'
 import LoginPage from '../LoginPage/LoginPage'
 import MainLayout from '../MainLayout/MainLayout'
 import HomePage from '../HomePage/HomePage'
-import WatchlistPage from '../WatchlistPage/WatchlistPage'
+import WatchListPage from '../WatchlistPage/WatchlistPage'
 import DetailsPage from '../DetailsPage/DetailsPage'
 import PageNotFound from '../PageNotFound/PageNotFound'
 import AllUsersProvider from '../../Providers/AllUsersContext'
@@ -35,7 +35,7 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/' element={<MainLayout />} >
           <Route path='/' element={<HomePage />} />
-          <Route path='/watchlist' element={<WatchlistPage />} />
+          <Route path='/watchlist' element={<WatchListPage />} />
           <Route path='/show/:id' element={<DetailsPage />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>

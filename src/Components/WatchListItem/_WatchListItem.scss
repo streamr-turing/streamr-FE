@@ -1,0 +1,84 @@
+.watch-list-card-container {
+    width: 50vw;
+    height: 25vh;
+    background-color: #ac894b;
+    color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+.watch-list-poster-and-info{
+    margin-left: 2vw;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.rating-and-genres-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.watch-list-bookmark {
+    height: 6vh;
+    position: relative;
+    left: 2.5vw;
+    bottom: 7.5vh;
+    cursor: pointer;
+}
+
+.watch-list-poster-img, .watch-list-clickable-poster {
+    height: 21vh;
+    cursor: pointer;
+}
+
+.watch-list-title-and-share-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    margin: 0;
+}
+
+.share-button{
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    padding: 1%;
+    border-radius: 1vw;
+    position: relative;
+    right: 2vh;
+    bottom: 1vw;
+    cursor: pointer;
+}
+
+.watch-list-share-icon{
+    height: 5vh;
+}
+
+.audience-rating{
+    margin-top: 40px;
+}
+
+.watch-list-genres{
+    margin-right: 2vh;
+}
+
+.clickable-title{
+    text-decoration: none;
+    color: #D9D9D9;
+    margin: 0;
+}
+
+.watch-list-card-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    width: 100%;
+}

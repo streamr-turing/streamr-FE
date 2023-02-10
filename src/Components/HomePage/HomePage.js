@@ -7,8 +7,8 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  console.log("HERE: ", currentUser.recommendations)
-  
+  // console.log("HERE: ", currentUser.recommendations)
+
   const feedResult = () => {
     if (currentUser.recommendations.length) {
       const sortedList = currentUser.recommendations.sort((a, b) => {
@@ -42,7 +42,7 @@ const HomePage = () => {
       return (
         <div className='timeline-container'>
             {timelinePost}
-            <h3>End of feed</h3>
+            <h3 className='end-of-feed-message'>End of feed</h3>
           </div>
         )
     }
