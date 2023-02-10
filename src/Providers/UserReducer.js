@@ -9,8 +9,25 @@ export const USER_INTIAL_STATE = {
             {
                 "tmdbId": 11,
                 "title": "Best dang show",
+                "rating": 7,
+                "genres": [
+                    "Dramady",
+                    "Indie",
+                    "Family"
+                ],
                 "releaseYear": 2022,
-                "thumbnailUrl": "https://media.gq.com/photos/5df5a3794e7a380009b83bbd/16:9/w_2560%2Cc_limit/BestShows.jpg"
+                "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+            },
+            {
+                "tmdbId": 12,
+                "title": "Step Brothers",
+                "rating": 6,
+                "genres": [
+                    "Comedy",
+                    "Raunchy",
+                ],
+                "releaseYear": 2008,
+                "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
             }
         ],
         "recommendations": [

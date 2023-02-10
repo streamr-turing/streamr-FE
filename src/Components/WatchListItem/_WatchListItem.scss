@@ -1,0 +1,67 @@
+.watch-list-card-container {
+    width: 50vw;
+    height: 25vh;
+    background-color: #ac894b;
+    color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+.watch-list-poster-and-info{
+    margin-left: 2vw;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-style: dashed;
+}
+
+.rating-and-genres-container{
+    display: flex;
+    border-style: dashed;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.home-bookmark {
+    height: 6vh;
+    position: relative;
+    left: 3vw;
+    bottom: 12.75vh;
+    cursor: pointer;
+}
+
+.watch-list-poster-img, .watch-list-clickable-poster {
+    height: 21vh;
+    cursor: pointer;
+}
+
+.title{
+    margin: 0;
+}
+
+.audience-rating{
+    margin-top: 40px;
+}
+
+.clickable-title{
+    text-decoration: none;
+    color: #D9D9D9;
+    margin: 0;
+}
+
+.watch-list-card-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    border-style: dashed;
+    border-color: blue;
+    width: 100%;
+}
+
+.post-date {
+    color: #D9D9D9;
+    margin-bottom: 0px;
+    margin-left: 1vw;
+}

@@ -7,7 +7,7 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  console.log("HERE: ", currentUser.recommendations)
+  // console.log("HERE: ", currentUser.recommendations)
   
   const feedResult = () => {
     if (currentUser.recommendations.length) {
