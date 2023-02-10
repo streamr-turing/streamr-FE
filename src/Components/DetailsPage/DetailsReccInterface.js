@@ -1,13 +1,18 @@
 import { useContext } from "react"
 
 import { UserContext } from "../../Providers/UserContext"
+import { RecModalContext } from "../../Providers/RecModalContext"
 import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
+import paperPlane from "../../images/paper-plane.png"
 
-const DetailsReccInterface = ({ id, showModal }) => {
+const DetailsReccInterface = ({ id }) => {
   const {
     currentUser
   } = useContext(UserContext)
+
+  const  { openModal, changeModalState } = useContext(RecModalContext)
+
 
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
@@ -25,6 +30,10 @@ const DetailsReccInterface = ({ id, showModal }) => {
       />
     ))
 
+    const handleModalChange = () => {
+      changeModalState(true)
+    }
+
   return (
     <div className="recc-container">
       <h2 className="recc-container__title">Recommended by Friends:</h2>
@@ -34,8 +43,12 @@ const DetailsReccInterface = ({ id, showModal }) => {
         </div>
         <button
           className="recc-lower__button"
-          onClick={showModal}  
-        >send rec</button>
+          onClick={()=> {
+            handleModalChange()
+          }}  
+        >
+          <img src={paperPlane} alt='Picture of a paper airplane'/>
+        </button>
       </div>
     </div>
   )

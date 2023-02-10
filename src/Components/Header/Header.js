@@ -1,4 +1,4 @@
-import tv from '../../tv.png'
+import tv from '../../images/tv.png'
 import "./_Header.scss"
 
 const Header = () => {

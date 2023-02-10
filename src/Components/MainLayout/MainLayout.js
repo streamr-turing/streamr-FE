@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import { useState } from 'react'
 
 import './_MainLayout.scss'
 
@@ -10,12 +9,13 @@ import RecModal from '../RecModal/RecModal'
 const MainLayout = () => {
 
   return (
+
     <div className='main-layout'>
       <NavBar />
       <div className='header-page-section'>
       <Header />
       <Outlet />
-      <RecModal />
+      {openModal && <RecModal />}
       </div>
     </div>
   )

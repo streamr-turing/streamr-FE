@@ -10,9 +10,10 @@ import './_DetailsPage.scss'
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
-const DetailsPage = () => {
+
+const DetailsPage = ({ showModal, openModal}) => {
   const [isSaved, setIsSaved] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false)
+  
 
   const { 
     currentUser, 
@@ -81,10 +82,10 @@ const DetailsPage = () => {
     }
   }
 
-  const showModal = () => {
-    console.log("this function will open the send recc modal")
-    setModalOpen(true)
-  }
+  // const showModal = () => {
+  //   console.log("this function will open the send recc modal")
+  //   setModalOpen(true)
+  // }
 
   return (
     <>
@@ -117,7 +118,8 @@ const DetailsPage = () => {
                 <p>{data.summary}</p>
                 <DetailsReccInterface 
                   id={data.tmdbId} 
-                  showModal={showModal} 
+                  showModal={showModal}
+                  openModal={openModal} 
                 />
               </div>
             </div>

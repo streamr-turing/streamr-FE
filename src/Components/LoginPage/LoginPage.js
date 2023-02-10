@@ -1,6 +1,6 @@
 
 import './_LoginPage.scss'
-import tv from '../../tv.png'
+import tv from '../../images/tv.png'
 
 const LoginPage = () => {
 
