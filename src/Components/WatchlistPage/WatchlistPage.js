@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { UserContext } from '../../Providers/UserContext'
 import WatchListItem from '../WatchListItem/WatchListItem'
 import NoWatchListItems from '../NoWatchListItems/NoWatchListItems'
-import "./_WatchListPage.scss"
+import "./_WatchlistPage.scss"
 
 const WatchListPage = () => {
   const { currentUser } = useContext(UserContext)
