@@ -20,7 +20,6 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
-  //USEQUERY HOOK WILL BE USED ONCE SERVER IS CONNECTED
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
     variables: {
@@ -33,33 +32,6 @@ const DetailsPage = () => {
   useEffect(() => {
     console.log(data)
   }, [data])
-
-  // HARDCODED MOCK DATA 
-//   const data = {
-//     "tmdbId": 10,
-//     "title": "Succession",
-//     "releaseYear": 2022,
-//     "streamingService": "HBO Max",
-//     "posterUrl": "https://images2.9c9media.com/image_asset/2021_10_15_b63a41c6-ff48-4364-9d9d-3a3504ab9098_png_2000x3000.jpg",
-//     "genres": [
-//         "dark comedy",
-//         "drama"
-//     ],
-//     "rating": 9,
-//     "summary": "Although he has no plans to step aside as the head of Waystar Royco, the international media conglomerate controlled by his family, aging patriarch Logan Roy is contemplating what the future holds.",
-//     "recommendedBy": [
-//         {
-//             "userId": 2,
-//             "username": "Hank",
-//             "avatarUrl": "https://i.natgeofe.com/n/a8ab759f-17a1-44dc-a2c6-9b6a53af4d2b/hedgehog_3x2.jpg"
-//         },
-//         {
-//             "userId": 3,
-//             "username": "Peggy",
-//             "avatarUrl": "https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_giraffe_1_0.jpg"
-//         }
-//     ]
-// }
 
   useEffect(() => {
     if (data) setIsSaved(findIfSaved())
@@ -91,8 +63,10 @@ const DetailsPage = () => {
     setModalOpen(true)
   }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error : {error.message}</p>
+
+  const { tmdbId, genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
   return (
     <>
@@ -101,7 +75,7 @@ const DetailsPage = () => {
           <div className="details">
             <div className="details__lower">
               <div className="details__lower__left">
-                <h1 className="details__title">{`${data.title} (${data.releaseYear})`}</h1>
+                <h1 className="details__title">{`${title} (${releaseYear})`}</h1>
                 <img 
                   data-cy="bookmark" 
                   className="details__lower__left__bookmark" 
@@ -116,15 +90,19 @@ const DetailsPage = () => {
                 <img
                   data-cy="poster"
                   className="details__lower__left__poster" 
-                  src={data.posterUrl} 
-                  alt={`Poster for ${data.title}`}
+                  src={posterUrl} 
+                  alt={`Poster for ${title}`}
                 />
               </div>
               <div className="details__lower__right">
-                <DetailsTable data={data}/>
-                <p>{data.summary}</p>
+                <DetailsTable data={{
+                  streamingService,
+                  genres,
+                  rating
+                }}/>
+                <p>{summary}</p>
                 <DetailsReccInterface 
-                  id={data.tmdbId} 
+                  id={tmdbId} 
                   showModal={showModal} 
                 />
               </div>
