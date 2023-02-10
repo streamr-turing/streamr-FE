@@ -8,7 +8,7 @@ import App from './Components/App/App'
 import UserProvider from './Providers/UserContext'
 
 const client = new ApolloClient({
-  uri: 'https://4ba90cf0-b11c-46cd-a0df-d5628d4b675e.mock.pstmn.io/graphql/show-details',
+  uri: 'https://streamr-be.herokuapp.com/graphql',
   cache: new InMemoryCache(),
   connectToDevTools: true
 })

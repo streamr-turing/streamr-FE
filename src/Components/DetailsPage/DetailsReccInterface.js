@@ -5,16 +5,12 @@ import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
 
 const DetailsReccInterface = ({ id, showModal }) => {
-  const {
-    currentUser
-  } = useContext(UserContext)
+  const { currentUser } = useContext(UserContext)
 
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
       const isDuplicateRecc = acc.some(accRecc => accRecc.recommender.id === recc.recommender.id)
-      if (recc.show.tmdbId === id && !isDuplicateRecc) {
-        acc.push(recc)
-      }
+      if (recc.show.tmdbId === id && !isDuplicateRecc) acc.push(recc)
       return acc
     }, [])
     .map(recc => (
