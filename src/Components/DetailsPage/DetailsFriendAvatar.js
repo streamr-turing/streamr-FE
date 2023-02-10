@@ -1,4 +1,3 @@
-
 import "./_DetailsFriendAvatar.scss"
 
 const DetailsFriendAvatar = ({ username, avatarUrl }) => {

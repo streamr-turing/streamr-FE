@@ -1,18 +1,22 @@
 import { useEffect, useState, useContext } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useQuery } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
 import { UserContext } from "../../Providers/UserContext"
 
+import './_DetailsPage.scss'
 import DetailsTable from "./DetailsTable"
 import DetailsReccInterface from "./DetailsReccInterface"
-import './_DetailsPage.scss'
+
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
   const [isSaved, setIsSaved] = useState(false)
+
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   const { 
     currentUser, 
@@ -20,20 +24,14 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
-  const { id } = useParams()
-
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
-    variables: {
-      tmdbId: parseInt(id),
-      userId: currentUser.id,
-      mediaType: "tv"
-    }
-  })
-
-  useEffect(() => {
-    console.log(id)
-  }, [data])
+      variables: {
+        tmdbId: parseInt(id),
+        userId: currentUser.id,
+        mediaType: "tv"
+      }
+    })
 
   useEffect(() => {
     if (data) setIsSaved(findIfSaved())
@@ -42,28 +40,27 @@ const DetailsPage = () => {
   const findIfSaved = () => currentUser.watchlist.some(show => show.tmdbId === data.tmdbId)
 
   const toggleSaved = () => {
-    console.log(data.tmdbId)
-    const payload = {
-      "tmdbId": data.tmdbId,
-      "title": data.title,
-      "releaseYear": data.releaseYear,
-      "thumbnailUrl": data.posterUrl
+    const currentShow = {
+      "tmdbId": parseInt(id),
+      "title": title,
+      "releaseYear": releaseYear,
+      "thumbnailUrl": posterUrl
     }
 
     if (!isSaved) {
-      addToWatchList(payload)
+      addToWatchList(currentShow)
       setIsSaved(true)
     }
     else {
-      removeFromWatchList(data.tmdbId)
+      removeFromWatchList(parseInt(id))
       setIsSaved(false)
     }
   }
 
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Error : {error.message}</p>
+  if (error) navigate("/error")
 
-  const { tmdbId, genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
   return (
     <>
