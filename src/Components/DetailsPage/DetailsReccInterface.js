@@ -1,8 +1,10 @@
 import { useContext } from "react"
-
 import { UserContext } from "../../Providers/UserContext"
+
 import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
+
+import sendImg from "../../images/send-recc.png"
 
 const DetailsReccInterface = ({ id }) => {
   const { currentUser } = useContext(UserContext)
@@ -32,7 +34,13 @@ const DetailsReccInterface = ({ id }) => {
         </div>
         <button
           className="recc-lower__button"
-        >send rec</button>
+        >
+          <img
+            className="recc-lower__button__img"
+            src={sendImg} 
+            alt="send new recommendation" 
+          />
+        </button>
       </div>
     </div>
   )
