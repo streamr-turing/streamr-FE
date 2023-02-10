@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { UserContext } from '../../Providers/UserContext'
+import { RecModalContext } from '../../Providers/RecModalContext'
 
 import LoginPage from '../LoginPage/LoginPage'
 import MainLayout from '../MainLayout/MainLayout'
@@ -13,6 +14,8 @@ import AllUsersProvider from '../../Providers/AllUsersContext'
 
 function App() {
   const { currentUser, addToWatchList, removeFromWatchList } = useContext(UserContext)
+  // const [openModal, setOpenModal] = useState(false)
+  const  { openModal, changeModalState } = useContext(RecModalContext)
 
   const handleClick = (clickType) => {
     if (clickType === "add") {
@@ -27,6 +30,7 @@ function App() {
       removeFromWatchList(1)
     }
   }
+
 
   return (
     <>

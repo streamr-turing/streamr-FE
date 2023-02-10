@@ -1,17 +1,17 @@
 import { createContext, useReducer } from 'react'
-import userReducer, { RECMODAL_INTIAL_STATE } from "./UserReducer"
+import userReducer, { RECMODAL_INTIAL_STATE } from "./RecModalReducer"
 import RecModalTypes from './RecModalTypes'
 
-export const RecModalContext = createContext(RECMODAL_INTIAL_STATE)
+export const RecModalContext = createContext({...RECMODAL_INTIAL_STATE})
 
 const RecModalProvider = ({ children }) => {
   const [store, dispatch] = useReducer(userReducer, RECMODAL_INTIAL_STATE)
   const { openModal } = store
 
-  const changeModalState = (state) => {
+const changeModalState = (modalState) => {
     dispatch({
         type: RecModalTypes.CHANGE_MODAL_STATE,
-        payload: state
+        payload: modalState
     })
 }
 
