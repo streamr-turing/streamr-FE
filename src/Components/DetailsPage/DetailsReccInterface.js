@@ -8,7 +8,12 @@ import paperPlane from "../../images/paper-plane.png"
 import sendImg from "../../images/send-recc.png"
 
 const DetailsReccInterface = ({ id }) => {
-  const { currentUser } = useContext(UserContext)
+  const {
+    currentUser
+  } = useContext(UserContext)
+
+  const  { changeModalState } = useContext(RecModalContext)
+
 
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
