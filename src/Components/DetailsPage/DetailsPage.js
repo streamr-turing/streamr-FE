@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react"
+import { useParams } from "react-router-dom"
 import { useQuery } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
@@ -12,7 +13,6 @@ import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
   const [isSaved, setIsSaved] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false)
 
   const { 
     currentUser, 
@@ -20,17 +20,19 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
+  const { id } = useParams()
+
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
     variables: {
-      tmdbId: 4610,
-      userId: 1,
+      tmdbId: parseInt(id),
+      userId: currentUser.id,
       mediaType: "tv"
     }
   })
 
   useEffect(() => {
-    console.log(data)
+    console.log(id)
   }, [data])
 
   useEffect(() => {
@@ -56,11 +58,6 @@ const DetailsPage = () => {
       removeFromWatchList(data.tmdbId)
       setIsSaved(false)
     }
-  }
-
-  const showModal = () => {
-    console.log("this function will open the send recc modal")
-    setModalOpen(true)
   }
 
   if (loading) return <p>Loading...</p>
@@ -95,16 +92,15 @@ const DetailsPage = () => {
                 />
               </div>
               <div className="details__lower__right">
-                <DetailsTable data={{
-                  streamingService,
-                  genres,
-                  rating
-                }}/>
-                <p>{summary}</p>
-                <DetailsReccInterface 
-                  id={tmdbId} 
-                  showModal={showModal} 
-                />
+                <div>
+                  <DetailsTable data={{
+                    streamingService,
+                    genres,
+                    rating
+                  }}/>
+                  <p>{summary}</p>
+                </div>
+                <DetailsReccInterface id={id} />
               </div>
             </div>
           </div>

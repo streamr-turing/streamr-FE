@@ -4,7 +4,7 @@ import { UserContext } from "../../Providers/UserContext"
 import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
 
-const DetailsReccInterface = ({ id, showModal }) => {
+const DetailsReccInterface = ({ id }) => {
   const { currentUser } = useContext(UserContext)
 
   const friendAvatars = currentUser.recommendations
@@ -23,14 +23,15 @@ const DetailsReccInterface = ({ id, showModal }) => {
 
   return (
     <div className="recc-container">
-      <h2 className="recc-container__title">Recommended by Friends:</h2>
+      {!!friendAvatars.length && 
+        <h2 className="recc-container__title">Recommended by Friends:</h2> 
+      }
       <div className="recc-lower">
         <div className="recc-lower__avatars-container">
           {friendAvatars}
         </div>
         <button
           className="recc-lower__button"
-          onClick={showModal}  
         >send rec</button>
       </div>
     </div>

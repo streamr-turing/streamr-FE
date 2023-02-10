@@ -52,6 +52,27 @@ export const USER_INTIAL_STATE = {
                 "createdAt": "2023-02-01T22:20:58Z"
             },
             {
+                "id": 10,
+                "recommendeeId": 3,
+                "recommender": {
+                    "id": 5,
+                    "username": "Hank",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940410.png"
+                },
+                "show": {
+                    "tmdbId": 4610,
+                    "title": "Hannah Montana",
+                    "releaseYear": 2006,
+                    "rating": 7,
+                    "genres": [
+                        "Comedy",
+                        "Kids"
+                    ],
+                    "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+                },
+                "createdAt": "2023-02-01T22:20:58Z"
+            },
+            {
                 "id": 13,
                 "recommendeeId": 3,
                 "recommender": {
