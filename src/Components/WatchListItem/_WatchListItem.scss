@@ -14,12 +14,10 @@
     display: flex;
     align-items: center;
     width: 100%;
-    border-style: dashed;
 }
 
 .rating-and-genres-container{
     display: flex;
-    border-style: dashed;
     width: 100%;
     justify-content: space-between;
 }
@@ -37,12 +35,39 @@
     cursor: pointer;
 }
 
+.watch-list-title-and-share-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .title{
     margin: 0;
 }
 
+.share-button{
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    padding: 1%;
+    border-radius: 1vw;
+    position: relative;
+    right: 2vh;
+    bottom: 1vw;
+    cursor: pointer;
+}
+
+.watch-list-share-icon{
+    height: 5vh;
+}
+
 .audience-rating{
     margin-top: 40px;
+}
+
+.watch-list-genres{
+    margin-right: 2vh;
 }
 
 .clickable-title{
@@ -55,8 +80,6 @@
     display: flex;
     flex-direction: column;
     padding-left: 5%;
-    border-style: dashed;
-    border-color: blue;
     width: 100%;
 }
 
