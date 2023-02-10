@@ -46,7 +46,6 @@ const DetailsPage = () => {
       "releaseYear": releaseYear,
       "thumbnailUrl": posterUrl
     }
-
     if (!isSaved) {
       addToWatchList(currentShow)
       setIsSaved(true)
