@@ -43,6 +43,9 @@ $details-inner-width: 90%;
 }
 
 .details__lower__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 40%;
   padding: max(2vw, 28px);
   border-radius: variables.$global-border-radius;

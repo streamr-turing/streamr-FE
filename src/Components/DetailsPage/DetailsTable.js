@@ -8,7 +8,7 @@ const DetailsTable = ({ data }) => {
         { data.streamingService && 
           <tr>
             <td>Available on:</td>
-            <td>netflix</td>
+            <td>{data.streamingService.providerName}</td>
           </tr>
         }
         <tr>
@@ -16,7 +16,7 @@ const DetailsTable = ({ data }) => {
         </tr>
         <tr>
           <td>Audience Rating:</td>
-          <td>{data.rating}/10</td>
+          <td>{Math.round(data.rating)}/10</td>
         </tr>
       </tbody>
     </table>

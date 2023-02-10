@@ -36,6 +36,7 @@ const HomePage = () => {
             date={recommendation.createdAt}
             key={recommendation.id}
             drawSegment={segmentStatus}
+            id={recommendation.id}
           />
         )
       })
