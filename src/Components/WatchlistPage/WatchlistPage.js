@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { UserContext } from '../../Providers/UserContext'
 import WatchListItem from '../WatchListItem/WatchListItem'
+import NoWatchListItems from '../NoWatchListItems/NoWatchListItems'
 import "./_WatchListPage.scss"
 
 const WatchListPage = () => {
@@ -8,19 +9,24 @@ const WatchListPage = () => {
   // console.log("HERE: ", currentUser.watchlist)
 
   const watchListResult = () => {
-    const watchList = currentUser.watchlist.map(savedItem => {
-      return (
-          <WatchListItem
-            poster={savedItem.thumbnailUrl}
-            title={savedItem.title}
-            releaseYear={savedItem.releaseYear}
-            rating={savedItem.rating}
-            key={savedItem.tmdbId}
-            genres={savedItem.genres}
-          />
-      )
-    })
-    return watchList
+    if(currentUser.watchlist.length){
+      const watchList = currentUser.watchlist.map(savedItem => {
+        return (
+            <WatchListItem
+              poster={savedItem.thumbnailUrl}
+              title={savedItem.title}
+              releaseYear={savedItem.releaseYear}
+              rating={savedItem.rating}
+              key={savedItem.tmdbId}
+              genres={savedItem.genres}
+            />
+        )
+      })
+      return watchList
+    }
+    else{
+      return <NoWatchListItems/>
+    }
   }
 
 

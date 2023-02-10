@@ -1,14 +1,14 @@
-import './_NoRecommendations.scss'
+import './_NoWatchListItems.scss'
 import television from "../../images/television.png"
 
-const NoRecommendations = () => {
+const NoWatchListItems = () => {
 
     return (
         <div className='no-recommendations-container'>
             <img src={television} className='shrug-img'/>
-            <h2>No recommendations today. Try again later</h2>
+            <h2>No saved items </h2>
         </div>
     )
 }
 
-export default NoRecommendations
+export default NoWatchListItems
