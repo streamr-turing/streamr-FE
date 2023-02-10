@@ -1,0 +1,3 @@
+export default {
+    CHANGE_MODAL_STATE: 'CHANGE_MODAL_STATE'
+}
