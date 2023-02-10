@@ -8,12 +8,12 @@ import HomePage from '../HomePage/HomePage'
 import WatchlistPage from '../WatchlistPage/WatchlistPage'
 import DetailsPage from '../DetailsPage/DetailsPage'
 import PageNotFound from '../PageNotFound/PageNotFound'
+import AllUsersProvider from '../../Providers/AllUsersContext'
 
 function App() {
   const { currentUser, addToWatchList, removeFromWatchList } = useContext(UserContext)
 
   const handleClick = (clickType) => {
-
     if (clickType === "add") {
       console.log("Added!")
       addToWatchList({

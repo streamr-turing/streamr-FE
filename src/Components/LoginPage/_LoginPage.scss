@@ -2,6 +2,7 @@ $login-background-color: #101419;
 $login-area-color: #320B0C;
 $login-button-color: #F2CF70;
 $text-color: #D9D9D9;
+$invalid-text-color: #44c4a1;
 
 @mixin centerColumn() {
     display: flex;
@@ -22,7 +23,7 @@ $text-color: #D9D9D9;
         justify-content: space-around;
         background-color: $login-area-color;
         width: 60vw;
-        height: 35vw;
+        height: 40vw;
 
         .logo-section {
             width: 100%;
@@ -65,6 +66,11 @@ $text-color: #D9D9D9;
                 padding: 1vw 2vw;
             }
 
+        }
+
+        p {
+            font-size: 1.75vw;
+            color: $invalid-text-color ;
         }
     }
 }
