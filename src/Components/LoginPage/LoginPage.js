@@ -38,7 +38,6 @@ const LoginPage = () => {
       variables: { id: signInData.successUserId }
     })
     // error handling here first
-    console.log(data.fetchUser)
     setUser(data.fetchUser)
   }
 
