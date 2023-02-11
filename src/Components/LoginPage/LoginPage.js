@@ -1,22 +1,46 @@
 
 import './_LoginPage.scss'
-import { useState, useEffect } from 'react'
-import { Navigate } from 'react-router-dom'
+import { UserContext } from '../../Providers/UserContext'
+import { useState, useEffect, useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import tv from '../../images/tv.png'
 
-import useLoginUser from '../../Hooks/useLoginUser'
+import { useLazyQuery } from '@apollo/client'
+import { GET_USER } from '../../GraphQL/Queries'
+
 
 const LoginPage = () => {
   const { error, loading, data } = useQuery(GET_ALL_USERS)
   const [allUsers, setAllUsers] = useState([])
+  const { setUser, currentUser } = useContext(UserContext)
+  const navigate = useNavigate()
   const [signInData, setSignInData] = useState({
     username: '',
     password: '',
     validSignIn: true,
     loggedIn: false,
+    successUserId: null
   })
+  const [getUser] = useLazyQuery(GET_USER)
+
+  useEffect(() => {
+    if (signInData.successUserId) loginUser()
+  }, [signInData.successUserId])
+
+  useEffect(() => {
+    if (currentUser) navigate('/')
+  }, [currentUser])
+
+  const loginUser = async () => {
+    const { error, loading, data } = await getUser({
+      variables: { id: signInData.successUserId }
+    })
+    // error handling here first
+    console.log(data.fetchUser)
+    setUser(data.fetchUser)
+  }
 
   const handleChange = (event) => {
     setSignInData((prevState) => ({
@@ -40,7 +64,8 @@ const LoginPage = () => {
       setSignInData((prevState) => ({
         ...prevState,
         validSignIn: true,
-        loggedIn: true
+        loggedIn: true,
+        successUserId: userFound.userId
       }))
 
     } else {
@@ -88,9 +113,9 @@ const LoginPage = () => {
         />
         <button onClick={event => handleSubmit(event)}>Login</button>
         </form>
-        {signInData.loggedIn &&
+        {/* {signInData.loggedIn &&
           <Navigate to='/' />
-        }
+        } */}
         {!signInData.validSignIn && 
         <p>Sorry, the username/password is incorrect. Please try again.</p>
         }
