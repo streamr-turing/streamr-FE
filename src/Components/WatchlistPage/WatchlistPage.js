@@ -9,17 +9,18 @@ const WatchListPage = () => {
   // console.log("HERE: ", currentUser)
 
   const watchListResult = () => {
-    if(currentUser.watchlist.length){
-      const watchList = currentUser.watchlist.map(savedItem => {
+    if(currentUser.watchlistItems.length){
+      const watchList = currentUser.watchlistItems.map(savedItem => {
         return (
             <WatchListItem
-              poster={savedItem.posterUrl}
-              title={savedItem.title}
-              releaseYear={savedItem.releaseYear}
-              rating={savedItem.rating}
-              key={savedItem.watchlistItemId}
-              genres={savedItem.genres}
-              tmdbId={savedItem.tmdbId}
+              poster={savedItem.show.posterUrl}
+              title={savedItem.show.title}
+              releaseYear={savedItem.show.releaseYear}
+              key={savedItem.id}
+              id={savedItem.show.tmdbId}
+              // rating={savedItem.show.rating}
+              // genres={savedItem.show.genres}
+              tmdbId={savedItem.show.tmdbId}
             />
         )
       })
