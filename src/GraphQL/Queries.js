@@ -31,3 +31,11 @@ export const GET_SHOW_DETAILS = gql`
     }
   }
 `
+export const GET_ALL_USERS = gql`
+  query {
+    users {
+        id
+        username
+    }
+  }
+`

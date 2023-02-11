@@ -1,12 +1,14 @@
 
 import './_LoginPage.scss'
-import { AllUsersContext } from '../../Providers/AllUsersContext'
-import { useContext, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
+import { useQuery } from '@apollo/client'
+import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import tv from '../../images/tv.png'
 
 const LoginPage = () => {
-  const { allUsers } = useContext(AllUsersContext)
+  const { error, loading, data } = useQuery(GET_ALL_USERS)
+  const [allUsers, setAllUsers] = useState([])
   const [signInData, setSignInData] = useState({
     username: '',
     password: '',
@@ -20,6 +22,13 @@ const LoginPage = () => {
       [event.target.name]: event.target.value
     }))
   }
+
+  useEffect(() => {
+    if(data) {
+      console.log('data', data.users)
+      setAllUsers(data.users)
+    }
+  }, [data])
   
   const handleSubmit = (event) => {
     event.preventDefault()

@@ -18,7 +18,7 @@ $invalid-text-color: #44c4a1;
 
     .modalContainer {
         color: $text-color;
-        width: 30vw;
+        width: 40vw;
         border-radius: 12px;
         background-color: rgba(16, 20, 25);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -51,6 +51,7 @@ $invalid-text-color: #44c4a1;
           font-size: 2vw;
           padding: 0.5vw;
           border-radius: 8px;
+          margin: 2vw;
         }
       }
     }
