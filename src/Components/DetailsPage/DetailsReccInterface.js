@@ -11,10 +11,9 @@ const DetailsReccInterface = ({ id }) => {
   const {
     currentUser
   } = useContext(UserContext)
-
+  
   const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
 
-  console.log('currentModal', currentModal)
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
       const isDuplicateRecc = acc.some(accRecc => accRecc.recommender.id === recc.recommender.id)
@@ -31,8 +30,7 @@ const DetailsReccInterface = ({ id }) => {
 
     const handleModalChange = () => {
       changeModalState(true)
-      console.log('id', id)
-      changeModalShow(id)
+      changeModalShow(+id)
     }
 
   return (

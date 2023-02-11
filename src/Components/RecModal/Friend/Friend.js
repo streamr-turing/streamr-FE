@@ -1,10 +1,8 @@
 import './_Friend.scss'
-import { useState } from 'react'
 
 const Friend = ({username, userid, sendList, setSendList}) => {
 
     const handleCheckboxChange = (event) => {
-        console.log('event.target.value', event.target.value)
     const value = event.target.value
     if(sendList.includes(value)) {
         setSendList(sendList.filter(v => v !== value))
@@ -14,10 +12,11 @@ const Friend = ({username, userid, sendList, setSendList}) => {
 
     }
     return (
-        <div>
+        <div className='label-checkbox'>
         <label className='label'>
         {username}
-        <input 
+        <input
+            className='checkbox' 
             type='checkbox'
             id={userid}
             name={username}

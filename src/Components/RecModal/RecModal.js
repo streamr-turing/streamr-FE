@@ -9,7 +9,7 @@ import { useMutation } from '@apollo/client'
 
 
 const RecModal = () => {
-    const  { changeModalState } = useContext(RecModalContext)
+    const  { changeModalState, changeModalShow } = useContext(RecModalContext)
     const { allUsers } = useContext(AllUsersContext)
     const { currentUser } = useContext(UserContext)
     const [sendList, setSendList] = useState([])
@@ -31,6 +31,7 @@ const RecModal = () => {
 
     const closeModal = () => {
         changeModalState(false)
+        changeModalShow(0)
       }
     
     const handleSend = (event) => {
@@ -46,11 +47,8 @@ const RecModal = () => {
                 <button className='titleCloseBtn' onClick={()=> {
             closeModal()
           }}> X </button>
-                <div className="title">
-                    <h1>Recommend to friends!</h1>
-                </div>
                 <form className="body">
-                    <section>
+                    <section className="friend-list">
                     { friendList.length ? friendList: <p>Add some friends!</p> }
                     </section>
                     <button onClick={handleSend}>Send!</button>
