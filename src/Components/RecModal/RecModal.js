@@ -1,7 +1,6 @@
 import './_RecModal.scss'
 import { useContext, useState, useEffect } from "react"
 import { RecModalContext } from "../../Providers/RecModalContext"
-import { AllUsersContext } from '../../Providers/AllUsersContext'
 import { UserContext } from '../../Providers/UserContext'
 
 import Friend from './Friend/Friend'
@@ -11,7 +10,6 @@ import { GET_ALL_USERS } from '../../GraphQL/Queries'
 
 const RecModal = () => {
     const  { changeModalState, changeModalShow } = useContext(RecModalContext)
-    const { allUsers } = useContext(AllUsersContext)
     const { currentUser } = useContext(UserContext)
     const [sendList, setSendList] = useState([])
     const [allFriendsList, setAllFriendsList] = useState([])
