@@ -14,7 +14,7 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
-  const [watchlistId, setWatchlistId] = useState(false)
+  const [watchlistId, setWatchlistId] = useState(null)
 
   const { showId } = useParams()
   const navigate = useNavigate()
@@ -25,8 +25,8 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
-  const [saveShow, saveShowResponse] = useMutation(ADD_TO_WATCHLIST)
-  const [removeShow, removeShowResponse] = useMutation(REMOVE_FROM_WATCHLIST)
+  const [saveShowServer] = useMutation(ADD_TO_WATCHLIST)
+  const [removeShowServer, removeShowResponse] = useMutation(REMOVE_FROM_WATCHLIST)
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
@@ -47,34 +47,33 @@ const DetailsPage = () => {
     return match ? match.watchlistItemId : null
   }
 
-
   const toggleSaved = () => {
     if (!watchlistId) handleSaveShow()
     else handleRemoveShow()
   }
 
-  const handleSaveShow = () => {
-    saveShow({
+  const handleSaveShow = async () => {
+    const { data } = await saveShowServer({
       variables: {
         tmdbId: parseInt(showId),
         userId: currentUser.id,
         mediaType: "tv"
     }})
     const currentShow = {
-      "watchlistItemId": parseInt(saveShowResponse.data.createWatchlistItem.id),
+      "watchlistItemId": parseInt(data.createWatchlistItem.id),
       "tmdbId": parseInt(showId),
       "title": title,
       "releaseYear": releaseYear,
       "posterUrl": posterUrl
     }
     addToWatchList(currentShow)
-    setWatchlistId(true)
+    setWatchlistId(parseInt(data.createWatchlistItem.id))
   }
 
   const handleRemoveShow = () => {
-    removeShow({ variables: { id: watchlistId }})
+    removeShowServer({ variables: { id: watchlistId }})
     removeFromWatchList(parseInt(showId))
-    setWatchlistId(false)
+    setWatchlistId(null)
   }
 
   if (loading) return <p>Loading...</p>
