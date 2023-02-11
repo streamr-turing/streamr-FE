@@ -81,7 +81,7 @@ export const USER_INTIAL_STATE = {
                     "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
                 },
                 "show": {
-                    "tmdbId": 10,
+                    "tmdbId": 11,
                     "title": "Succession",
                     "releaseYear": 2022,
                     "rating": 8,
@@ -101,7 +101,7 @@ export const USER_INTIAL_STATE = {
                     "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940423.png"
                 },
                 "show": {
-                    "tmdbId": 10,
+                    "tmdbId": 8,
                     "title": "Succession",
                     "releaseYear": 2022,
                     "rating": 8,
@@ -123,7 +123,7 @@ export const USER_INTIAL_STATE = {
                     "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940403.png"
                 },
                 "show": {
-                    "tmbdId": 11,
+                    "tmdbId": 16,
                     "title": "GhostBusters",
                     "releaseYear": 1980,
                     "rating": 9,
@@ -144,7 +144,7 @@ export const USER_INTIAL_STATE = {
                     "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940405.png"
                 },
                 "show": {
-                    "tmbdId": 12,
+                    "tmdbId": 20,
                     "title": "Jaws",
                     "releaseYear": 1979,
                     "rating": 6,

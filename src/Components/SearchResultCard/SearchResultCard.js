@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
@@ -49,7 +50,7 @@ const SearchResultCard = ({ poster, title, year }) => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             />
-            <div data-cy="img-container" className="img-container">
+            <Link to="/show/4600"><div data-cy="img-container" className="img-container">
                 <img
                     className={imageClassList}
                     src={poster}
@@ -57,7 +58,7 @@ const SearchResultCard = ({ poster, title, year }) => {
                     onMouseLeave={() => setHover(false)}
                 />
                 {hovering && overlay}
-            </div>
+            </div></Link>
         </div>
     )
 }
