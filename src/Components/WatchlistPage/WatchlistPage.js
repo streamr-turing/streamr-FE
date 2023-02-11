@@ -6,7 +6,7 @@ import "./_WatchlistPage.scss"
 
 const WatchListPage = () => {
   const { currentUser } = useContext(UserContext)
-  // console.log("HERE: ", currentUser.watchlist)
+  // console.log("HERE: ", currentUser)
 
   const watchListResult = () => {
     if(currentUser.watchlist.length){
@@ -19,6 +19,7 @@ const WatchListPage = () => {
               rating={savedItem.rating}
               key={savedItem.watchlistItemId}
               genres={savedItem.genres}
+              tmdbId={savedItem.tmdbId}
             />
         )
       })

@@ -7,9 +7,9 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import './_WatchListItem.scss'
 
-const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
+const WatchListItem = ({ poster, title, releaseYear, rating, genres, tmdbId }) => {
     const [isSaved, setIsSaved] = useState(true)
-    const  { changeModalState, changeModalShow } = useContext(RecModalContext)
+    const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
 
     const toggleSaved = () => {
         if (!isSaved) {
@@ -30,8 +30,10 @@ const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
 
     const handleModalChange = () => {
         changeModalState(true)
-        changeModalShow(+id)
+        changeModalShow(+tmdbId)
       }
+
+    console.log('currentModal', currentModal)
 
     return (
         <div className="watch-list-card-container">
