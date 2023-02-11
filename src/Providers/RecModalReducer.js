@@ -19,7 +19,7 @@ const RecModalReducer = (state, action) => {
             return {
                 currentModal: {
                     ...state.currentModal,
-                    tmbId: action.payload
+                    tmdbId: action.payload
                 }
             }
         default:
