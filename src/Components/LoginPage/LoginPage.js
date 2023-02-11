@@ -1,9 +1,9 @@
 
 import './_LoginPage.scss'
-import tv from '../../tv.png'
 import { AllUsersContext } from '../../Providers/AllUsersContext'
 import { useContext, useState } from 'react'
 import { Navigate } from 'react-router-dom'
+import tv from '../../images/tv.png'
 
 const LoginPage = () => {
   const { allUsers } = useContext(AllUsersContext)

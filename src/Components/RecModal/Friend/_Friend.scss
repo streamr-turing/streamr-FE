@@ -1,0 +1,17 @@
+$login-background-color: rgb(16, 20, 25);
+$login-area-color: rgb(50, 11, 12);
+$login-button-color: rgb(242, 207, 112);
+$text-color: rgb(217, 217, 217);
+
+.label-checkbox {
+
+    .label {
+        margin: 1em;
+        font-size: 2vw;
+        line-height: 1.1;
+        display: grid;
+        grid-template-columns: 1em auto;
+        gap: 15vw;
+        color:$text-color;
+    }
+}

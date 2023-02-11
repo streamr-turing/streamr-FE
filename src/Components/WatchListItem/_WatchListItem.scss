@@ -1,3 +1,5 @@
+@use "../../Utilities/variables";
+
 .watch-list-card-container {
     width: 50vw;
     height: 25vh;
@@ -47,9 +49,13 @@
 }
 
 .share-button{
+    width: 60px;
+    height: 60px;
+    background-color: #00000000;
+    border-radius: variables.$global-border-radius;
     border-style: solid;
     border-color: white;
-    border-width: 5px;
+    border-width: 3px;
     padding: 1%;
     border-radius: 1vw;
     position: relative;
@@ -59,7 +65,8 @@
 }
 
 .watch-list-share-icon{
-    height: 5vh;
+    width: 100%;
+    background-color: #ac894b;
 }
 
 .audience-rating{
