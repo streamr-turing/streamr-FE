@@ -1,8 +1,9 @@
 import { useEffect, useState, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { useQuery } from '@apollo/client'
+import { useQuery, useMutation } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
+import { ADD_TO_WATCHLIST } from "../../GraphQL/Mutations"
 import { UserContext } from "../../Providers/UserContext"
 
 import './_DetailsPage.scss'
@@ -24,6 +25,8 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
+  const [saveShow, { saveError, saveData }] = useMutation(ADD_TO_WATCHLIST)
+
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
       variables: {
@@ -31,7 +34,8 @@ const DetailsPage = () => {
         userId: currentUser.id,
         mediaType: "tv"
       }
-    })
+    }
+  )
 
   useEffect(() => {
     if (data) setIsSaved(findIfSaved())
@@ -40,26 +44,36 @@ const DetailsPage = () => {
   const findIfSaved = () => currentUser.watchlist.some(show => show.tmdbId === data.tmdbId)
 
   const toggleSaved = () => {
+    if (!isSaved) handleSaveShow()
+    else handleRemoveShow()
+  }
+
+  const handleSaveShow = () => {
+    saveShow({
+      variables: {
+        tmdbId: parseInt(id),
+        userId: currentUser.id,
+        mediaType: "tv"
+    }})
     const currentShow = {
       "tmdbId": parseInt(id),
       "title": title,
       "releaseYear": releaseYear,
       "thumbnailUrl": posterUrl
     }
-    if (!isSaved) {
-      addToWatchList(currentShow)
-      setIsSaved(true)
-    }
-    else {
-      removeFromWatchList(parseInt(id))
-      setIsSaved(false)
-    }
+    addToWatchList(currentShow)
+    setIsSaved(true)
+  }
+
+  const handleRemoveShow = () => {
+    removeFromWatchList(parseInt(id))
+    setIsSaved(false)
   }
 
   if (loading) return <p>Loading...</p>
   if (error) navigate("/error") 
 
-  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
+  const { genres, mediaType, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
   return (
     <>
