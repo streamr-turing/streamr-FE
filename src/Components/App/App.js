@@ -8,6 +8,7 @@ import HomePage from '../HomePage/HomePage'
 import WatchListPage from '../WatchlistPage/WatchlistPage'
 import DetailsPage from '../DetailsPage/DetailsPage'
 import PageNotFound from '../PageNotFound/PageNotFound'
+import SearchPage from '../SearchPage/SearchPage'
 import AllUsersProvider from '../../Providers/AllUsersContext'
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/watchlist' element={<WatchListPage />} />
           <Route path='/show/:id' element={<DetailsPage />} />
+          <Route path='/search' element={<SearchPage />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>
