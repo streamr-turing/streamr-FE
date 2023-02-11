@@ -1,14 +1,44 @@
 import './_RecModal.scss'
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { RecModalContext } from "../../Providers/RecModalContext"
+import { AllUsersContext } from '../../Providers/AllUsersContext'
+import { UserContext } from '../../Providers/UserContext'
+
+import Friend from './Friend/Friend'
+
 
 const RecModal = () => {
-
     const  { changeModalState } = useContext(RecModalContext)
+    const { allUsers } = useContext(AllUsersContext)
+    const { currentUser } = useContext(UserContext)
+    const [sendList, setSendList] = useState([])
+
+    const allFriends = allUsers.filter(user => user.userId !== currentUser.id)
+
+    const friendList = allFriends.map(friend => {
+        return(
+            <Friend
+            key={friend.userId}
+            userid={friend.userId}
+            username={friend.username}
+            sendList={sendList}
+            setSendList={setSendList}
+            />
+        )
+    })
 
     const closeModal = () => {
         changeModalState(false)
       }
+    
+    const handleSend = (event) => {
+        event.preventDefault()
+        console.log('send')
+        /*
+
+        */
+        closeModal()
+    }
 
     return (
         <div className="modalBackground">
@@ -19,12 +49,12 @@ const RecModal = () => {
                 <div className="title">
                     <h1>Recommend to friends!</h1>
                 </div>
-                <div className="body">
-                    <p>Form Goes Here!</p>
-                </div>
-                <div className="footer">
-                    <button>Send!</button>
-                </div>
+                <form className="body">
+                    <section>
+                    { friendList.length ? friendList: <p>Add some friends!</p> }
+                    </section>
+                    <button onClick={handleSend}>Send!</button>
+                </form>
             </div>
         </div>
     )
