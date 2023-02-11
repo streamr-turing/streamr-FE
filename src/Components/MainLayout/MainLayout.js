@@ -10,7 +10,7 @@ import RecModal from '../RecModal/RecModal'
 
 const MainLayout = () => {
 
-  const  { openModal } = useContext(RecModalContext)
+  const  { currentModal } = useContext(RecModalContext)
 
   return (
 
@@ -19,7 +19,7 @@ const MainLayout = () => {
       <div className='header-page-section'>
       <Header />
       <Outlet />
-      {openModal && <RecModal />}
+      {currentModal.openModal && <RecModal />}
       </div>
     </div>
   )

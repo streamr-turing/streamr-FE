@@ -2,41 +2,27 @@ import './_Friend.scss'
 import { useState } from 'react'
 
 const Friend = ({username, userid, sendList, setSendList}) => {
-    const [checked, setChecked] = useState(true)
 
-    const toggleCheck = () => {
-        console.log('checkedA', checked)
-        setChecked(!checked)
-        console.log('checkedB', checked)
-        let userInfo = {
-            username: username,
-            userId: userid
-        }
-        if(checked) {
-            const pushedSendList = sendList.push(userInfo)
-            setSendList(pushedSendList)
-        } else {
-            console.log('sendList', sendList)
-            const trueSendList = sendList.filter(sendListUser => {
-                console.log('sendListUser', sendListUser)
-                console.log('userInfo', userInfo)
-                return sendListUser.userId !== userInfo.userId} )
-            console.log('trueSendList', trueSendList)
-            setSendList(trueSendList)
-        }
-        console.log('sendList', sendList)
+    const handleCheckboxChange = (event) => {
+        console.log('event.target.value', event.target.value)
+    const value = event.target.value
+    if(sendList.includes(value)) {
+        setSendList(sendList.filter(v => v !== value))
+    } else {
+        setSendList([...sendList, value])
     }
 
+    }
     return (
         <div>
         <label className='label'>
         {username}
         <input 
             type='checkbox'
-            userid={userid}
-            username='friend'
+            id={userid}
+            name={username}
             value={userid}
-            onClick={toggleCheck}
+            onClick={handleCheckboxChange}
         />
         </label>
         </div>

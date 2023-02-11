@@ -6,7 +6,7 @@ export const RecModalContext = createContext({...RECMODAL_INTIAL_STATE})
 
 const RecModalProvider = ({ children }) => {
   const [store, dispatch] = useReducer(userReducer, RECMODAL_INTIAL_STATE)
-  const { openModal } = store
+  const { currentModal } = store
 
 const changeModalState = (modalState) => {
     dispatch({
@@ -15,10 +15,20 @@ const changeModalState = (modalState) => {
     })
 }
 
+const changeModalShow = (showId) => {
+  dispatch({
+    type: RecModalTypes.CHANGE_MODAL_SHOW,
+    payload: showId
+    //make sure that showId is a number
+  })
+}
+
+
   return (
     <RecModalContext.Provider value={{
-      openModal,
-      changeModalState
+      currentModal,
+      changeModalState,
+      changeModalShow
     }}>
       {children}
     </RecModalContext.Provider>

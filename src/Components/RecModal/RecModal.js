@@ -5,6 +5,7 @@ import { AllUsersContext } from '../../Providers/AllUsersContext'
 import { UserContext } from '../../Providers/UserContext'
 
 import Friend from './Friend/Friend'
+import { useMutation } from '@apollo/client'
 
 
 const RecModal = () => {
@@ -12,6 +13,7 @@ const RecModal = () => {
     const { allUsers } = useContext(AllUsersContext)
     const { currentUser } = useContext(UserContext)
     const [sendList, setSendList] = useState([])
+    // const [createRecommendation, { data }] = useMutation(POST_QUERY)
 
     const allFriends = allUsers.filter(user => user.userId !== currentUser.id)
 
@@ -33,10 +35,8 @@ const RecModal = () => {
     
     const handleSend = (event) => {
         event.preventDefault()
-        console.log('send')
-        /*
-
-        */
+        
+        // createRecommendation({})
         closeModal()
     }
 
