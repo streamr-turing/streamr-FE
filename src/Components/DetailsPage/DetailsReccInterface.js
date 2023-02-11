@@ -12,7 +12,7 @@ const DetailsReccInterface = ({ id }) => {
     currentUser
   } = useContext(UserContext)
 
-  const  { changeModalState, currentModal } = useContext(RecModalContext)
+  const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
 
   console.log('currentModal', currentModal)
   const friendAvatars = currentUser.recommendations
@@ -31,6 +31,8 @@ const DetailsReccInterface = ({ id }) => {
 
     const handleModalChange = () => {
       changeModalState(true)
+      console.log('id', id)
+      changeModalShow(id)
     }
 
   return (
