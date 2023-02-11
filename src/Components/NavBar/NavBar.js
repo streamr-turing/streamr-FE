@@ -9,15 +9,26 @@ import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
 
 const NavBar = () => {
-  const [searchTitle, setSearchTitle] = useState("")
+  const [searchKeyPhrase, setKeyPhrase] = useState("")
 
-  //username, avatarUrl for props
   let location = useLocation()
   let buttonStyles = locationFunction(location)
 
-  const handleChange = (event) => {
-    setSearchTitle(event.target.value)
-    // This function takes in the text input of the search bar and sets the input value to the local variable value. I am thinking that the search functionality/setting state will be handled from here.
+  // const handleChange = (event) => {
+  //   setKeyPhrase((prevState) => ({
+  //   ...prevState, [event.target.name]: [event.target.value]}))
+  // }
+
+  const handleKeyDown = (event) => {
+    if (event.code === 'Enter') {
+      console.log('Enter is pressed!')
+    }
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setKeyPhrase(event.target.value)
+    console.log("hi mama: ", searchKeyPhrase)
   }
 
   return (
@@ -34,12 +45,13 @@ const NavBar = () => {
                 type='text'
                 placeholder='Search'
                 name='search'
-                // value={this.state.value}
-                onChange={handleChange}
+                value=''
+                // onChange={event => handleChange(event)}
+                onKeyDown={event => handleKeyDown(event)}
                 className='search-input'
               />
             </li>
-            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' /></Link>
+            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={event => handleSubmit(event)} /></Link>
           </div>
           <li>
             <NavLink
