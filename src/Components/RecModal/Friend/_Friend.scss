@@ -8,10 +8,11 @@ $text-color: rgb(217, 217, 217);
     .label {
         margin: 1em;
         font-size: 2vw;
-        line-height: 1.1;
+        line-height: 1.5;
         display: grid;
         grid-template-columns: 1em auto;
-        gap: 15vw;
+        white-space: nowrap;
+        gap: 20vw;
         color:$text-color;
     }
 }

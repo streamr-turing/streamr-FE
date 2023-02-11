@@ -1,27 +1,41 @@
 import './_RecModal.scss'
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { RecModalContext } from "../../Providers/RecModalContext"
 import { AllUsersContext } from '../../Providers/AllUsersContext'
 import { UserContext } from '../../Providers/UserContext'
 
 import Friend from './Friend/Friend'
-import { useMutation } from '@apollo/client'
+import { useQuery, useMutation } from '@apollo/client'
 
+import { GET_ALL_USERS } from '../../GraphQL/Queries'
 
 const RecModal = () => {
-    const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
+    const  { changeModalState, changeModalShow } = useContext(RecModalContext)
     const { allUsers } = useContext(AllUsersContext)
     const { currentUser } = useContext(UserContext)
     const [sendList, setSendList] = useState([])
-    // const [createRecommendation, { data }] = useMutation(POST_QUERY)
+    const [allFriendsList, setAllFriendsList] = useState([])
 
-    const allFriends = allUsers.filter(user => user.userId !== currentUser.id)
+    const { error, loading, data } = useQuery(GET_ALL_USERS)
 
-    const friendList = allFriends.map(friend => {
+    useEffect(() => {
+        if(data) {
+            console.log('data', data.users)
+            setAllFriendsList(getFriendsList())
+
+        }
+    }, [data])
+
+    const getFriendsList = () => {
+        return data.users.filter(user => user.Id !== currentUser.id)
+    }
+
+    const friendList = allFriendsList.map(friend => {
+        console.log('friend', friend)
         return(
             <Friend
-            key={friend.userId}
-            userid={friend.userId}
+            key={friend.id}
+            userid={friend.id}
             username={friend.username}
             sendList={sendList}
             setSendList={setSendList}
