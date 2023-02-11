@@ -36,7 +36,7 @@ function App() {
         <Route path='/' element={<MainLayout />} >
           <Route path='/' element={<HomePage />} />
           <Route path='/watchlist' element={<WatchListPage />} />
-          <Route path='/show/:id' element={<DetailsPage />} />
+          <Route path='/show/:showId' element={<DetailsPage />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>

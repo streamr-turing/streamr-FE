@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { useQuery, useMutation } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
-import { ADD_TO_WATCHLIST } from "../../GraphQL/Mutations"
+import { ADD_TO_WATCHLIST, REMOVE_FROM_WATCHLIST } from "../../GraphQL/Mutations"
 import { UserContext } from "../../Providers/UserContext"
 
 import './_DetailsPage.scss'
@@ -14,9 +14,9 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
-  const [isSaved, setIsSaved] = useState(false)
+  const [watchlistId, setWatchlistId] = useState(false)
 
-  const { id } = useParams()
+  const { showId } = useParams()
   const navigate = useNavigate()
 
   const { 
@@ -25,12 +25,13 @@ const DetailsPage = () => {
     removeFromWatchList 
   } = useContext(UserContext)
 
-  const [saveShow, { saveError, saveData }] = useMutation(ADD_TO_WATCHLIST)
+  const [saveShow, saveShowResponse] = useMutation(ADD_TO_WATCHLIST)
+  const [removeShow, removeShowResponse] = useMutation(REMOVE_FROM_WATCHLIST)
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
       variables: {
-        tmdbId: parseInt(id),
+        tmdbId: parseInt(showId),
         userId: currentUser.id,
         mediaType: "tv"
       }
@@ -38,36 +39,42 @@ const DetailsPage = () => {
   )
 
   useEffect(() => {
-    if (data) setIsSaved(findIfSaved())
+    if (data) setWatchlistId(findWatchlistId())
   }, [data])
 
-  const findIfSaved = () => currentUser.watchlist.some(show => show.tmdbId === data.tmdbId)
+  const findWatchlistId = () => {
+    const match = currentUser.watchlist.find(show => show.tmdbId === data.tmdbId)
+    return match ? match.watchlistItemId : null
+  }
+
 
   const toggleSaved = () => {
-    if (!isSaved) handleSaveShow()
+    if (!watchlistId) handleSaveShow()
     else handleRemoveShow()
   }
 
   const handleSaveShow = () => {
     saveShow({
       variables: {
-        tmdbId: parseInt(id),
+        tmdbId: parseInt(showId),
         userId: currentUser.id,
         mediaType: "tv"
     }})
     const currentShow = {
-      "tmdbId": parseInt(id),
+      "watchlistItemId": parseInt(saveShowResponse.data.createWatchlistItem.id),
+      "tmdbId": parseInt(showId),
       "title": title,
       "releaseYear": releaseYear,
-      "thumbnailUrl": posterUrl
+      "posterUrl": posterUrl
     }
     addToWatchList(currentShow)
-    setIsSaved(true)
+    setWatchlistId(true)
   }
 
   const handleRemoveShow = () => {
-    removeFromWatchList(parseInt(id))
-    setIsSaved(false)
+    removeShow({ variables: { id: watchlistId }})
+    removeFromWatchList(parseInt(showId))
+    setWatchlistId(false)
   }
 
   if (loading) return <p>Loading...</p>
@@ -86,11 +93,11 @@ const DetailsPage = () => {
                 <img 
                   data-cy="bookmark" 
                   className="details__lower__left__bookmark" 
-                  src={isSaved ? savedTrue : savedFalse} 
+                  src={watchlistId ? savedTrue : savedFalse} 
                   alt="bookmark icon"
                   role="button"
                   aria-label="toggle saved to watchlist"
-                  aria-pressed={isSaved}
+                  aria-pressed={watchlistId}
                   onClick={toggleSaved}
                   tabIndex={0}
                 />
@@ -110,7 +117,7 @@ const DetailsPage = () => {
                   }}/>
                   <p>{summary}</p>
                 </div>
-                <DetailsReccInterface id={id} />
+                <DetailsReccInterface id={showId} />
               </div>
             </div>
           </div>
