@@ -14,22 +14,29 @@ const NavBar = () => {
   let location = useLocation()
   let buttonStyles = locationFunction(location)
 
-  // const handleChange = (event) => {
-  //   setKeyPhrase((prevState) => ({
-  //   ...prevState, [event.target.name]: [event.target.value]}))
-  // }
+  const handleChange = (event) => {
+    setKeyPhrase(event.target.value)
+  }
 
   const handleKeyDown = (event) => {
     if (event.code === 'Enter') {
-      console.log('Enter is pressed!')
+      setKeyPhrase(event.target.value)
+      console.log("YAS QUWEEN: ", searchKeyPhrase)
     }
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setKeyPhrase(event.target.value)
-    console.log("hi mama: ", searchKeyPhrase)
+  const handleSubmit = () => {
+    console.log("YAS KING: ", searchKeyPhrase)
   }
+
+  // const clearLogin = () => {
+  //   setSignInData({
+  //     ...signInData,
+  //     username: '',
+  //     password: '',
+  //     validSignIn: false
+  //   })
+  // }
 
   return (
     <div className="navbar-area">
@@ -45,13 +52,13 @@ const NavBar = () => {
                 type='text'
                 placeholder='Search'
                 name='search'
-                value=''
-                // onChange={event => handleChange(event)}
+                value={searchKeyPhrase}
+                onChange={handleChange}
                 onKeyDown={event => handleKeyDown(event)}
                 className='search-input'
               />
             </li>
-            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={event => handleSubmit(event)} /></Link>
+            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit} /></Link>
           </div>
           <li>
             <NavLink
