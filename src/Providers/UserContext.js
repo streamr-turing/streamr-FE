@@ -8,6 +8,13 @@ const UserProvider = ({ children }) => {
   const [store, dispatch] = useReducer(userReducer, USER_INTIAL_STATE)
   const { currentUser } = store
 
+  const setUser = userObject => {
+    dispatch({
+      type: UserTypes.SET_USER,
+      payload: userObject
+    })
+  }
+
   const addToWatchList = (show) => {
     dispatch({
       type: UserTypes.ADD_TO_WATCHLIST,
@@ -25,6 +32,7 @@ const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider value={{
       currentUser,
+      setUser,
       addToWatchList,
       removeFromWatchList
     }}>
