@@ -1,6 +1,10 @@
 import { UserContext } from '../../Providers/UserContext'
 import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
+
+import { useQuery } from '@apollo/client'
+import { GET_SEARCH_RESULTS } from '../../GraphQL/Queries'
+
 import SearchResultCard from '../SearchResultCard/SearchResultCard'
 import NoSearchResults from '../NoSearchResults/NoSearchResults'
 import "./_SearchPage.scss"
@@ -12,6 +16,18 @@ const SearchPage = () => {
 
   const { currentUser } = useContext(UserContext)
   // console.log("YO YO: ", currentUser.recommendations)
+
+  const { error, loading, data } = useQuery(
+    GET_SEARCH_RESULTS, {
+      variables: {
+        query: keyPhrase
+      }
+    }
+  )
+
+  if(!loading){
+    console.log("DATA HERE: ", data)
+  }
   
   const searchResult = () => {
     if (currentUser.recommendations.length) {

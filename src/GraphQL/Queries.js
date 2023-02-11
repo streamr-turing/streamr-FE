@@ -31,6 +31,19 @@ export const GET_SHOW_DETAILS = gql`
     }
   }
 `
+export const GET_SEARCH_RESULTS = gql`
+query shows($query: String!){
+  shows(
+      query: $query
+  )
+  {
+      tmdbId
+      title
+      imageUrl
+      yearCreated
+  }
+}
+`
 export const GET_ALL_USERS = gql`
   query {
     users {
