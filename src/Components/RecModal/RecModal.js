@@ -9,7 +9,7 @@ import { useMutation } from '@apollo/client'
 
 
 const RecModal = () => {
-    const  { changeModalState, changeModalShow } = useContext(RecModalContext)
+    const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
     const { allUsers } = useContext(AllUsersContext)
     const { currentUser } = useContext(UserContext)
     const [sendList, setSendList] = useState([])
@@ -36,7 +36,8 @@ const RecModal = () => {
     
     const handleSend = (event) => {
         event.preventDefault()
-        
+        // console.log('currentModal', currentModal)
+        // console.log('sendList', sendList)
         // createRecommendation({})
         closeModal()
     }
