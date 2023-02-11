@@ -1,10 +1,15 @@
 import { UserContext } from '../../Providers/UserContext'
 import { useEffect, useState, useContext } from "react"
+import { useParams } from "react-router-dom"
 import SearchResultCard from '../SearchResultCard/SearchResultCard'
 import NoSearchResults from '../NoSearchResults/NoSearchResults'
 import "./_SearchPage.scss"
 
 const SearchPage = () => {
+  let { keyPhrase } = useParams()
+  keyPhrase = keyPhrase.split('%20').join(' ')
+  console.log("KIKO: ", keyPhrase)
+
   const { currentUser } = useContext(UserContext)
   // console.log("YO YO: ", currentUser.recommendations)
   

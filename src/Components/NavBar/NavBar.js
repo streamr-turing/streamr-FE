@@ -58,7 +58,7 @@ const NavBar = () => {
                 className='search-input'
               />
             </li>
-            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit} /></Link>
+            <Link to={`/search/${searchKeyPhrase}`}><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit}/></Link>
           </div>
           <li>
             <NavLink
