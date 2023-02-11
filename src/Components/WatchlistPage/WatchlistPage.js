@@ -13,11 +13,11 @@ const WatchListPage = () => {
       const watchList = currentUser.watchlist.map(savedItem => {
         return (
             <WatchListItem
-              poster={savedItem.thumbnailUrl}
+              poster={savedItem.posterUrl}
               title={savedItem.title}
               releaseYear={savedItem.releaseYear}
               rating={savedItem.rating}
-              key={savedItem.tmdbId}
+              key={savedItem.watchlistItemId}
               genres={savedItem.genres}
             />
         )

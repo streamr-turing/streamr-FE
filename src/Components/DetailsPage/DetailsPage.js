@@ -79,7 +79,7 @@ const DetailsPage = () => {
   if (loading) return <p>Loading...</p>
   if (error) navigate("/error") 
 
-  const { genres, mediaType, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
   return (
     <>
