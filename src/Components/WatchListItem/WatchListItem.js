@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { NavLink, Link } from "react-router-dom"
+import { RecModalContext } from "../../Providers/RecModalContext"
 
 import shareIcon from "../../images/paper-plane.png"
 import savedTrue from "../../images/bookmark-true.png"
@@ -8,6 +9,7 @@ import './_WatchListItem.scss'
 
 const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
     const [isSaved, setIsSaved] = useState(true)
+    const  { changeModalState, changeModalShow } = useContext(RecModalContext)
 
     const toggleSaved = () => {
         if (!isSaved) {
@@ -26,6 +28,11 @@ const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
         return genreCategories
     }, "")
 
+    const handleModalChange = () => {
+        changeModalState(true)
+        changeModalShow(+id)
+      }
+
     return (
         <div className="watch-list-card-container">
             <div className="watch-list-poster-and-info">
@@ -34,9 +41,15 @@ const WatchListItem = ({ poster, title, releaseYear, rating, genres }) => {
                 <div className='watch-list-card-info'>
                     <div className="watch-list-title-and-share-container">
                         <NavLink to='/show/3' className='clickable-title'><h1 className='title'>{title} ({releaseYear})</h1></NavLink>
-                        <div className="share-button">
-                            <img src={shareIcon} className="watch-list-share-icon" />
-                        </div>
+                        <button 
+                        className="share-button"
+                        onClick={()=> {
+                            handleModalChange()
+                          }}
+                        >
+                            <img src={shareIcon}  className="watch-list-share-icon"
+                            alt='Picture of a paper airplane' />
+                        </button>
                     </div>
                     <div className="rating-and-genres-container">
                         <h2>Audience Rating: {rating}/10</h2>

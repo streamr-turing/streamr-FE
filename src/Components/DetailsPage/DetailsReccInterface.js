@@ -1,18 +1,17 @@
 import { useContext } from "react"
 import { UserContext } from "../../Providers/UserContext"
 import { RecModalContext } from "../../Providers/RecModalContext"
+
 import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
 import paperPlane from "../../images/paper-plane.png"
-
-import sendImg from "../../images/send-recc.png"
 
 const DetailsReccInterface = ({ id }) => {
   const {
     currentUser
   } = useContext(UserContext)
   
-  const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
+  const  { changeModalState, changeModalShow } = useContext(RecModalContext)
 
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
