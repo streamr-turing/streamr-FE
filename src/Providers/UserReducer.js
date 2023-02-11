@@ -7,6 +7,7 @@ export const USER_INTIAL_STATE = {
         "avatarUrl": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg",
         "watchlist": [
             {
+                "watchlistItemId": 2,
                 "tmdbId": 11,
                 "title": "Best dang show",
                 "rating": 7,
@@ -16,9 +17,10 @@ export const USER_INTIAL_STATE = {
                     "Family"
                 ],
                 "releaseYear": 2022,
-                "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+                "posterUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
             },
             {
+                "watchlistItemId": 3,
                 "tmdbId": 12,
                 "title": "Step Brothers",
                 "rating": 6,
@@ -27,7 +29,7 @@ export const USER_INTIAL_STATE = {
                     "Raunchy",
                 ],
                 "releaseYear": 2008,
-                "thumbnailUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
+                "posterUrl": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/268821/4556789/apiihy1mm__31528.1625622408.jpg?c=2"
             }
         ],
         "recommendations": [
