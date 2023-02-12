@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { NavLink, useLocation, Link } from "react-router-dom"
+import { NavLink, useLocation, Link, useNavigate } from "react-router-dom"
 import { locationFunction } from "./helper-functions"
 import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
@@ -9,6 +9,7 @@ const NavBar = () => {
   const [searchKeyPhrase, setKeyPhrase] = useState("")
   let location = useLocation()
   let buttonStyles = locationFunction(location)
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     setKeyPhrase(event.target.value)
@@ -17,6 +18,8 @@ const NavBar = () => {
   const handleKeyDown = (event) => {
     if (event.code === 'Enter') {
       setKeyPhrase(event.target.value)
+      navigate(`/search/${searchKeyPhrase}`)
+      clearLogin()
     }
   }
 
