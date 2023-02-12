@@ -7,7 +7,7 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import './_WatchListItem.scss'
 
-const WatchListItem = ({ poster, title, releaseYear, id, /* rating, genres, */ tmdbId  }) => {
+const WatchListItem = ({ poster, title, releaseYear, id, rating, genres,  tmdbId  }) => {
     const [isSaved, setIsSaved] = useState(true)
     const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
 
@@ -20,13 +20,13 @@ const WatchListItem = ({ poster, title, releaseYear, id, /* rating, genres, */ t
         }
     }
 
-    // const allGenres = genres.reduce((genreCategories, currentGenre) => {
-    //     genreCategories += currentGenre
-    //     if (currentGenre !== genres[genres.length - 1]) {
-    //         genreCategories += " - "
-    //     }
-    //     return genreCategories
-    // }, "")
+    const allGenres = genres.reduce((genreCategories, currentGenre) => {
+        genreCategories += currentGenre
+        if (currentGenre !== genres[genres.length - 1]) {
+            genreCategories += " - "
+        }
+        return genreCategories
+    }, "")
 
     const handleModalChange = () => {
         changeModalState(true)
@@ -54,8 +54,8 @@ const WatchListItem = ({ poster, title, releaseYear, id, /* rating, genres, */ t
                         </button>
                     </div>
                     <div className="rating-and-genres-container">
-                        {/* <h2>Audience Rating: {rating}/10</h2> */}
-                        {/* <h3 className="watch-list-genres">{allGenres}</h3> */}
+                        <h2>Audience Rating: {rating}/10</h2>
+                        <h3 className="watch-list-genres">{allGenres}</h3>
                     </div>
                 </div>
             </div>

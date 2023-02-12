@@ -16,20 +16,20 @@ const userReducer = (state, action) => {
       return {
         currentUser: {
           ...state.currentUser,
-          watchlist: [
-            ...state.currentUser.watchlist,
+          watchlistItems: [
+            ...state.currentUser.watchlistItems,
             action.payload
           ]
         }
       }
     case UserTypes.REMOVE_FROM_WATCHLIST:
-      const filteredList = state.currentUser.watchlist.filter(show => {
-        return show.tmdbId !== action.payload
+      const filteredList = state.currentUser.watchlistItems.filter(item => {
+        return item.show.tmdbId !== action.payload
       })
       return {
         currentUser: {
           ...state.currentUser,
-          watchlist: filteredList
+          watchlistItems: filteredList
         }
       }
     default:
