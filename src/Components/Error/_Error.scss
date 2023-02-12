@@ -1,25 +1,26 @@
 @use "../../Utilities/variables";
 @use "../../Utilities/mixins";
 
+$text-color: rgb(217, 217, 217);
 
 .error {
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #000000;
+    color: $text-color;
 
     .error-icon {
         font-size: 5vw;
     }
     
     .message {
-        font-size: 1.5vw;
+        font-size: 3vw;
         text-align: center;
     }
 
     img {
-        width: 4vw
+        width: 4vw;
     }
 }
 

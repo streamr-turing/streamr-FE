@@ -2,7 +2,7 @@
 import './_LoginPage.scss'
 import { UserContext } from '../../Providers/UserContext'
 import { useState, useEffect, useContext } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import tv from '../../images/tv.png'

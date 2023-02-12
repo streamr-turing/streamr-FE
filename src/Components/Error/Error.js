@@ -7,8 +7,8 @@ const Error = () => {
         <div className="error">
         <BiError className="error-icon" />
         <BiServer className="error-icon" />
-        <p >Bummer! The server isn't responding. Our team is working on it! Come back later!</p>
-        <img className="message" src={fix} alt='Legs of a person fixing a server sticking out of wires' />
+        <p className="message">Bummer! The server isn't responding. Our team is working on it! Come back later!</p>
+        <img src={fix} alt='Legs of a person fixing a server sticking out of wires' />
         </div>
     )
 }
