@@ -43,12 +43,8 @@ const DetailsPage = () => {
   }, [data])
 
   const toggleSaved = () => {
-    if (!watchlistId) {
-      handleSaveShow(currentUser.id, data.showDetails)
-    } else {
-      handleRemoveShow(watchlistId)
-      setWatchlistId(null)
-    }
+    if (!watchlistId) handleSaveShow(data.showDetails)
+    else handleRemoveShow(watchlistId)
   }
 
   if (loading) return <p>Loading...</p>

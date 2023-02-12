@@ -3,6 +3,7 @@ import RecommendeeIcon from "../RecommendeeIcon/RecommendeeIcon"
 import './_TimelinePost.scss'
 
 const TimelinePost = ({ recommenderAvatar, recommenderName, poster, title, releaseYear, rating, genres, date, drawSegment, id }) => {
+
   return (
     <div className="timeline-post-container">
       <RecommendeeIcon 

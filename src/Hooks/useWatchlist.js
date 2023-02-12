@@ -23,11 +23,11 @@ const useWatchlist = defaultState => {
     setWatchlistId(match ? match.id : null)
   }
 
-  const handleSaveShow = async (userId, showDetails) => {
+  const handleSaveShow = async (showDetails) => {
     const { data, error } = await saveShowServer({
       variables: {
         tmdbId: parseInt(showDetails.tmdbId),
-        userId: parseInt(userId),
+        userId: parseInt(currentUser.id),
         mediaType: "tv"
     }})
     if (error) {
@@ -57,6 +57,7 @@ const useWatchlist = defaultState => {
       return
     }
     removeFromWatchList(showId)
+    setWatchlistId(null)
   }
 
   return [
