@@ -17,9 +17,8 @@ const WatchListPage = () => {
               releaseYear={savedItem.show.releaseYear}
               key={savedItem.id}
               id={savedItem.show.tmdbId}
-              // rating={savedItem.show.rating}
-              // genres={savedItem.show.genres}
-              // back-end needs to add rating and genres for each watchlistItem, if we want them
+              rating={savedItem.show.rating}
+              genres={savedItem.show.genres}
               tmdbId={savedItem.show.tmdbId}
             />
         )

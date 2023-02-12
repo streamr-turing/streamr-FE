@@ -46,8 +46,8 @@ const DetailsPage = () => {
   }, [data])
 
   const findWatchlistId = () => {
-    const match = currentUser.watchlistItems.find(item => item.show.tmdbId === data.tmdbId)
-    return match ? match.watchlistItemId : null
+    const match = currentUser.watchlistItems.find(item => item.show.tmdbId === data.showDetails.tmdbId)
+    return match ? match.id : null
   }
 
   const toggleSaved = () => {
@@ -59,15 +59,20 @@ const DetailsPage = () => {
     const { data } = await saveShowServer({
       variables: {
         tmdbId: parseInt(showId),
-        userId: currentUser.id,
+        userId: parseInt(currentUser.id),
         mediaType: "tv"
     }})
     const currentShow = {
-      "watchlistItemId": parseInt(data.createWatchlistItem.id),
-      "tmdbId": parseInt(showId),
-      "title": title,
-      "releaseYear": releaseYear,
-      "posterUrl": posterUrl
+      "id": parseInt(data.createWatchlistItem.id),
+      "show": {
+        "tmdbId": parseInt(showId),
+        "title": title,
+        "releaseYear": releaseYear,
+        "posterUrl": posterUrl,
+        "mediaType": "tv",
+        "genres": genres,
+        "rating": rating
+      }
     }
     addToWatchList(currentShow)
     setWatchlistId(parseInt(data.createWatchlistItem.id))
