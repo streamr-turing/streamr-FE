@@ -21,14 +21,16 @@ const RecModal = () => {
 
     useEffect(() => {
         if(data) {
+            const getFriendsList = () => {
+                return data.users.filter(user => user.id !== currentUser.id)
+            }
+            
             setAllFriendsList(getFriendsList())
 
         }
+ 
     }, [data])
 
-    const getFriendsList = () => {
-        return data.users.filter(user => user.Id !== currentUser.id)
-    }
 
     const friendList = allFriendsList.map(friend => {
         return(
