@@ -5,7 +5,7 @@ import savedFalse from "../../images/bookmark-false.png"
 import tv from '../../images/tv.png'
 import './_SearchResultCard.scss'
 
-const SearchResultCard = ({ poster, title, year }) => {
+const SearchResultCard = ({ poster, title, year, id }) => {
     const [isSaved, setIsSaved] = useState(false)
     const [hovering, setHover] = useState(false)
 
@@ -43,7 +43,7 @@ const SearchResultCard = ({ poster, title, year }) => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             />
-            <Link to="/show/4600"><div data-cy="img-container" className="img-container">
+            <Link to={`/show/${id}`}><div data-cy="img-container" className="img-container">
                 <img
                     className={imageClassList}
                     src={poster ? poster : tv}
