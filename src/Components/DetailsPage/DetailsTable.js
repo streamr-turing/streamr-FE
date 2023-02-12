@@ -1,14 +1,28 @@
 import "./_DetailsPage.scss"
 
 const DetailsTable = ({ data }) => {
-  
+  const streamingServiceDataResult = () => {
+    if (data.streamingService.length) {
+      const providerNames = data.streamingService.map(service => {
+        return <img src={service.logoPath} className='provider-icons' />
+      })
+      return providerNames
+    }
+  }
+
+  const streamingServiceTitleResult = () => {
+    if (data.streamingService.length) {
+      return <td>Available on:</td>
+    }
+  }
+
   return (
     <table>
       <tbody>
-        { data.streamingService && 
+        {data.streamingService &&
           <tr>
-            <td>Available on:</td>
-            <td>{data.streamingService.providerName}</td>
+            {streamingServiceTitleResult()}
+            <td>{streamingServiceDataResult()}</td>
           </tr>
         }
         <tr>

@@ -52,7 +52,7 @@ const DetailsPage = () => {
   // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
-
+  console.log('ok : ', streamingService)
   return (
     <>
       { data &&
