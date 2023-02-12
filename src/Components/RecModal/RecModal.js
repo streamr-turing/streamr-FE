@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import { RecModalContext } from "../../Providers/RecModalContext"
 import { UserContext } from '../../Providers/UserContext'
+import Error from '../Error/Error'
 
 import Friend from './Friend/Friend'
 import { useQuery, useMutation } from '@apollo/client'
@@ -18,7 +19,7 @@ const RecModal = () => {
     const [sendList, setSendList] = useState([])
     const [allFriendsList, setAllFriendsList] = useState([])
     const [createRecommendation] = useMutation(SEND_RECOMMENDATION)
-    const { error, loading, data } = useQuery(GET_ALL_USERS)
+    const { error, loading, data } = useQuery(GET_ALL_USERS, {fetchPolicy: 'network-only'})
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -79,13 +80,14 @@ const RecModal = () => {
                 <button className='titleCloseBtn' onClick={()=> {
             closeModal()
           }}> X </button>
-                 {data &&
+                 {data ?
                     <form className="body">
                         <section className="friend-list">
                         { friendList.length ? friendList: <p>Add some friends!</p> }
                         </section>
                         <button onClick={handleSend}>Send!</button>
                     </form>
+                    : <Error />
                 }
             </div>
         </div>
