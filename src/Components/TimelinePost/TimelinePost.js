@@ -15,13 +15,13 @@ const TimelinePost = ({ recommenderAvatar, recommenderName, poster, title, relea
         {drawSegment ? <div className="timeline-tail"></div> : <div className="timeline-tail-end"></div>}
       </div>
       <RecommendeeCard
-        poster={poster}
+        posterUrl={poster}
         title={title}
         releaseYear={releaseYear}
         rating={rating}
         genres={genres}
         date={date}
-        id={id}
+        tmdbId={id}
       />
     </div>
   )
