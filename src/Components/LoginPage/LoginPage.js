@@ -49,7 +49,6 @@ const LoginPage = () => {
 
   useEffect(() => {
     if(data) {
-      console.log('data', data.users)
       setAllUsers(data.users)
     }
   }, [data])
