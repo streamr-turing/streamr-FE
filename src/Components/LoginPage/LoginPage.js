@@ -38,6 +38,7 @@ const LoginPage = () => {
     })
     // error handling here first
     setUser(data.fetchUser)
+    // localStorage.setItem('currentUserId', data.fetchUser.id.toString())
   }
 
   const handleChange = (event) => {
