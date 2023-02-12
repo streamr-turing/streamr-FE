@@ -1,6 +1,8 @@
-import { Outlet } from 'react-router-dom'
 import { useContext } from 'react'
+import { Outlet, Navigate } from 'react-router-dom'
+
 import { RecModalContext } from '../../Providers/RecModalContext'
+import { UserContext } from '../../Providers/UserContext'
 
 import './_MainLayout.scss'
 
@@ -11,16 +13,24 @@ import RecModal from '../RecModal/RecModal'
 const MainLayout = () => {
 
   const  { currentModal } = useContext(RecModalContext)
+  const { currentUser } = useContext(UserContext)
 
   return (
 
     <div className='main-layout'>
-      <NavBar />
-      <div className='header-page-section'>
-      <Header />
-      <Outlet />
-      {currentModal.openModal && <RecModal />}
-      </div>
+      {!currentUser &&
+        <Navigate to="/login" />
+      }
+      {currentUser &&
+        <>
+          <NavBar />
+          <div className='header-page-section'>
+            <Header />
+            <Outlet />
+            {currentModal.openModal && <RecModal />}
+          </div>
+        </>
+      }
     </div>
   )
 }

@@ -1,20 +1,44 @@
 
 import './_LoginPage.scss'
-import { useState, useEffect } from 'react'
-import { Navigate } from 'react-router-dom'
+import { UserContext } from '../../Providers/UserContext'
+import { useState, useEffect, useContext } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import tv from '../../images/tv.png'
 
+import { useLazyQuery } from '@apollo/client'
+import { GET_USER } from '../../GraphQL/Queries'
+
 const LoginPage = () => {
+  const navigate = useNavigate()
+  const { setUser, currentUser } = useContext(UserContext)
   const { error, loading, data } = useQuery(GET_ALL_USERS)
+  const [getUser] = useLazyQuery(GET_USER)
   const [allUsers, setAllUsers] = useState([])
   const [signInData, setSignInData] = useState({
     username: '',
     password: '',
     validSignIn: true,
     loggedIn: false,
+    successUserId: null
   })
+
+  useEffect(() => {
+    if (signInData.successUserId) loginUser()
+  }, [signInData.successUserId])
+
+  useEffect(() => {
+    if (currentUser) navigate('/')
+  }, [currentUser])
+
+  const loginUser = async () => {
+    const { error, loading, data } = await getUser({
+      variables: { id: signInData.successUserId }
+    })
+    // add error handling here first
+    setUser(data.fetchUser)
+  }
 
   const handleChange = (event) => {
     setSignInData((prevState) => ({
@@ -38,7 +62,8 @@ const LoginPage = () => {
       setSignInData((prevState) => ({
         ...prevState,
         validSignIn: true,
-        loggedIn: true
+        loggedIn: true,
+        successUserId: userFound.id
       }))
 
     } else {
@@ -86,9 +111,6 @@ const LoginPage = () => {
         />
         <button onClick={event => handleSubmit(event)}>Login</button>
         </form>
-        {signInData.loggedIn &&
-          <Navigate to='/' />
-        }
         {!signInData.validSignIn && 
         <p>Sorry, the username/password is incorrect. Please try again.</p>
         }

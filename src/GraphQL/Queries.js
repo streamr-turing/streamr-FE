@@ -1,5 +1,43 @@
 import { gql } from '@apollo/client'
 
+export const GET_USER = gql`
+  query fetchUser($id: ID!) {
+    fetchUser (id: $id) {
+      id
+      username
+      avatarUrl
+      watchlistItems {
+        id
+        show {
+          tmdbId
+          title
+          releaseYear
+          posterUrl
+          mediaType
+        }
+      }
+      recommendations {
+        recommendeeId
+        recommender {
+          id
+          username
+          avatarUrl
+        }
+        show {
+          tmdbId
+          title
+          releaseYear
+          rating
+          genres
+          posterUrl
+          mediaType
+        }
+        createdAt
+      }
+    }
+  }
+`
+
 export const GET_SHOW_DETAILS = gql`
   query showDetails(
     $tmdbId: Int! 

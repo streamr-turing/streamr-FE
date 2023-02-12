@@ -32,18 +32,21 @@ const DetailsPage = () => {
     GET_SHOW_DETAILS, {
       variables: {
         tmdbId: parseInt(showId),
-        userId: currentUser.id,
+        userId: parseInt(currentUser.id),
         mediaType: "tv"
       }
     }
   )
 
   useEffect(() => {
-    if (data) setWatchlistId(findWatchlistId())
+    if (data) {
+      console.log(data)
+      setWatchlistId(findWatchlistId())
+    }
   }, [data])
 
   const findWatchlistId = () => {
-    const match = currentUser.watchlist.find(show => show.tmdbId === data.tmdbId)
+    const match = currentUser.watchlistItems.find(item => item.show.tmdbId === data.tmdbId)
     return match ? match.watchlistItemId : null
   }
 
@@ -77,7 +80,10 @@ const DetailsPage = () => {
   }
 
   if (loading) return <p>Loading...</p>
-  if (error) navigate("/error") 
+  if (error) {
+    console.log(error)
+    navigate("/error", { replace: true }) 
+  }
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 

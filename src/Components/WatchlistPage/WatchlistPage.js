@@ -6,20 +6,21 @@ import "./_WatchlistPage.scss"
 
 const WatchListPage = () => {
   const { currentUser } = useContext(UserContext)
-  // console.log("HERE: ", currentUser)
 
   const watchListResult = () => {
-    if(currentUser.watchlist.length){
-      const watchList = currentUser.watchlist.map(savedItem => {
+    if(currentUser.watchlistItems?.length){
+      const watchList = currentUser.watchlistItems.map(savedItem => {
         return (
             <WatchListItem
-              poster={savedItem.posterUrl}
-              title={savedItem.title}
-              releaseYear={savedItem.releaseYear}
-              rating={savedItem.rating}
-              key={savedItem.watchlistItemId}
-              genres={savedItem.genres}
-              tmdbId={savedItem.tmdbId}
+              poster={savedItem.show.posterUrl}
+              title={savedItem.show.title}
+              releaseYear={savedItem.show.releaseYear}
+              key={savedItem.id}
+              id={savedItem.show.tmdbId}
+              // rating={savedItem.show.rating}
+              // genres={savedItem.show.genres}
+              // back-end needs to add rating and genres for each watchlistItem, if we want them
+              tmdbId={savedItem.show.tmdbId}
             />
         )
       })
@@ -29,7 +30,6 @@ const WatchListPage = () => {
       return <NoWatchListItems/>
     }
   }
-
 
   return (
     <div className="watch-list-container">
