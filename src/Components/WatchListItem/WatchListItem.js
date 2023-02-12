@@ -7,7 +7,7 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import './_WatchListItem.scss'
 
-const WatchListItem = ({ poster, title, releaseYear, id /* rating, genres, */ tmdbId  }) => {
+const WatchListItem = ({ poster, title, releaseYear, id, /* rating, genres, */ tmdbId  }) => {
     const [isSaved, setIsSaved] = useState(true)
     const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
 

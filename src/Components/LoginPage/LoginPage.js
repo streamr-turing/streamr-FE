@@ -1,7 +1,7 @@
 
 import './_LoginPage.scss'
 import { UserContext } from '../../Providers/UserContext'
-import { useState, useEffect, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
@@ -10,12 +10,12 @@ import tv from '../../images/tv.png'
 import { useLazyQuery } from '@apollo/client'
 import { GET_USER } from '../../GraphQL/Queries'
 
-
 const LoginPage = () => {
-  const { error, loading, data } = useQuery(GET_ALL_USERS)
-  const [allUsers, setAllUsers] = useState([])
-  const { setUser, currentUser } = useContext(UserContext)
   const navigate = useNavigate()
+  const { setUser, currentUser } = useContext(UserContext)
+  const { error, loading, data } = useQuery(GET_ALL_USERS)
+  const [getUser] = useLazyQuery(GET_USER)
+  const [allUsers, setAllUsers] = useState([])
   const [signInData, setSignInData] = useState({
     username: '',
     password: '',
@@ -23,7 +23,6 @@ const LoginPage = () => {
     loggedIn: false,
     successUserId: null
   })
-  const [getUser] = useLazyQuery(GET_USER)
 
   useEffect(() => {
     if (signInData.successUserId) loginUser()
@@ -64,7 +63,7 @@ const LoginPage = () => {
         ...prevState,
         validSignIn: true,
         loggedIn: true,
-        successUserId: userFound.userId
+        successUserId: userFound.id
       }))
 
     } else {
