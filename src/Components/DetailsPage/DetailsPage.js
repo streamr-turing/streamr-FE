@@ -19,10 +19,10 @@ const DetailsPage = () => {
   const { showId } = useParams()
   const navigate = useNavigate()
 
-  const { 
-    currentUser, 
-    addToWatchList, 
-    removeFromWatchList 
+  const {
+    currentUser,
+    addToWatchList,
+    removeFromWatchList
   } = useContext(UserContext)
 
   const [saveShowServer] = useMutation(ADD_TO_WATCHLIST)
@@ -30,12 +30,12 @@ const DetailsPage = () => {
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
-      variables: {
-        tmdbId: parseInt(showId),
-        userId: parseInt(currentUser.id),
-        mediaType: "tv"
-      }
+    variables: {
+      tmdbId: parseInt(showId),
+      userId: parseInt(currentUser.id),
+      mediaType: "tv"
     }
+  }
   )
 
   useEffect(() => {
@@ -61,7 +61,8 @@ const DetailsPage = () => {
         tmdbId: parseInt(showId),
         userId: parseInt(currentUser.id),
         mediaType: "tv"
-    }})
+      }
+    })
     const currentShow = {
       "id": parseInt(data.createWatchlistItem.id),
       "show": {
@@ -79,7 +80,7 @@ const DetailsPage = () => {
   }
 
   const handleRemoveShow = () => {
-    removeShowServer({ variables: { id: watchlistId }})
+    removeShowServer({ variables: { id: watchlistId } })
     removeFromWatchList(parseInt(showId))
     setWatchlistId(null)
   }
@@ -87,23 +88,23 @@ const DetailsPage = () => {
   if (loading) return <p>Loading...</p>
   if (error) {
     console.log(error)
-    navigate("/error", { replace: true }) 
+    navigate("/error", { replace: true })
   }
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
-  console.log('ok : ', streamingService)
+  console.log('ok: ', streamingService)
   return (
-    <>
-      { data &&
+    <div className="detail-and-title-container">
+      <h1 className="detail-title">{`${title} (${releaseYear})`}</h1>
+      {data &&
         <section className="details-parent">
           <div className="details">
             <div className="details__lower">
               <div className="details__lower__left">
-                <h1 className="details__title">{`${title} (${releaseYear})`}</h1>
-                <img 
-                  data-cy="bookmark" 
-                  className="details__lower__left__bookmark" 
-                  src={watchlistId ? savedTrue : savedFalse} 
+                <img
+                  data-cy="bookmark"
+                  className="details__lower__left__bookmark"
+                  src={watchlistId ? savedTrue : savedFalse}
                   alt="bookmark icon"
                   role="button"
                   aria-label="toggle saved to watchlist"
@@ -113,8 +114,8 @@ const DetailsPage = () => {
                 />
                 <img
                   data-cy="poster"
-                  className="details__lower__left__poster" 
-                  src={posterUrl} 
+                  className="details__lower__left__poster"
+                  src={posterUrl}
                   alt={`Poster for ${title}`}
                 />
               </div>
@@ -123,9 +124,9 @@ const DetailsPage = () => {
                   <DetailsTable data={{
                     streamingService,
                     genres,
-                    rating
-                  }}/>
-                  <p>{summary}</p>
+                    rating,
+                    summary
+                  }} />
                 </div>
                 <DetailsReccInterface id={showId} />
               </div>
@@ -133,7 +134,7 @@ const DetailsPage = () => {
           </div>
         </section>
       }
-    </>
+    </div>
   )
 }
 

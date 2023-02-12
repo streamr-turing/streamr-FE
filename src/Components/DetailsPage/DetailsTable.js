@@ -12,28 +12,22 @@ const DetailsTable = ({ data }) => {
 
   const streamingServiceTitleResult = () => {
     if (data.streamingService.length) {
-      return <td>Available on:</td>
+      return <div className="detail-available-title">Streaming on:</div>
     }
   }
 
   return (
-    <table>
-      <tbody>
-        {data.streamingService &&
-          <tr>
-            {streamingServiceTitleResult()}
-            <td>{streamingServiceDataResult()}</td>
-          </tr>
-        }
-        <tr>
-          <td>{data.genres.join(", ")}</td>
-        </tr>
-        <tr>
-          <td>Audience Rating:</td>
-          <td>{Math.round(data.rating)}/10</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="detail-mini-data-container">
+      <div className="stream-rating-container">
+        {streamingServiceTitleResult()}
+        <div className="stream-icon-container">
+          {streamingServiceDataResult()}
+        </div>
+      </div>
+      <p>Audience Rating: {Math.round(data.rating)}/10 ⭐️</p>
+      <p className="detail-genre-data">Genre: <b>{data.genres.join(", ")}</b></p>
+      <p className="detail-summary-data">{data.summary}</p>
+    </div>
   )
 }
 
