@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
+import tv from '../../images/tv.png'
+
 import './_SearchResultCard.scss'
 
 const SearchResultCard = ({ poster, title, year }) => {
@@ -17,7 +19,7 @@ const SearchResultCard = ({ poster, title, year }) => {
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
-            <p className="overlay-text">{title} ({year})</p>
+            <p className="overlay-text">{title} ({year.slice(0,4)})</p>
         </div>
 
     const imageClassList = hovering ?
@@ -53,7 +55,7 @@ const SearchResultCard = ({ poster, title, year }) => {
             <Link to="/show/4600"><div data-cy="img-container" className="img-container">
                 <img
                     className={imageClassList}
-                    src={poster}
+                    src={poster ? poster : tv}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 />

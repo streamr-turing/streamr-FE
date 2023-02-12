@@ -27,16 +27,12 @@ const NavBar = () => {
 
   const handleSubmit = () => {
     console.log("YAS KING: ", searchKeyPhrase)
+    clearLogin()
   }
 
-  // const clearLogin = () => {
-  //   setSignInData({
-  //     ...signInData,
-  //     username: '',
-  //     password: '',
-  //     validSignIn: false
-  //   })
-  // }
+  const clearLogin = () => {
+    setKeyPhrase("")
+  }
 
   return (
     <div className="navbar-area">

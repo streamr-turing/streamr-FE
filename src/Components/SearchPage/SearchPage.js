@@ -25,26 +25,28 @@ const SearchPage = () => {
     }
   )
 
-  if(!loading){
-    console.log("DATA HERE: ", data)
-  }
-  
   const searchResult = () => {
-    if (currentUser.recommendations.length) {
-      const showCards = currentUser.recommendations.map(show => {
-        return (
-          <SearchResultCard
-            poster={show.show.thumbnailUrl}
-            title={show.show.title}
-            year={show.show.releaseYear} 
-            key={show.show.tmdbId}
-          />
-        )
-      })
-      return showCards
+    if(!loading){
+      console.log("DATA HERE: ", data.shows)
+      if (data.shows.length) {
+        const showCards = data.shows.map(show => {
+          return (
+            <SearchResultCard
+              poster={show.imageUrl}
+              title={show.title}
+              year={show.yearCreated} 
+              key={show.tmdbId}
+            />
+          )
+        })
+        return showCards
+      }
+      else {
+        return <NoSearchResults />
+      }
     }
-    else {
-      return <NoSearchResults />
+    else{
+      return <h1>Loading...</h1>
     }
   }
 
@@ -60,7 +62,7 @@ const SearchPage = () => {
 
   return (
     <div className="search-and-poster-container">
-      <h1 className="search-title">Search Results for ""</h1>
+      <h1 className="search-title">Search Results for "{keyPhrase}"</h1>
       <div className={classnameResult()}>
         {searchResult()}
       </div>
