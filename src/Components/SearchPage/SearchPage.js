@@ -23,11 +23,13 @@ const SearchPage = () => {
         const showCards = data.shows.map(show => {
           return (
             <SearchResultCard
-              poster={show.imageUrl}
+              posterUrl={show.imageUrl}
               title={show.title}
-              year={show.yearCreated}
+              releaseYear={show.yearCreated}
+              genres={["placeholder genre", "another placeholder genre"]} //placeholders
+              rating={7} // placeholder rating until BE adds genres/rating to search results
               key={show.tmdbId}
-              id={show.tmdbId}
+              tmdbId={show.tmdbId}
             />
           )
         })

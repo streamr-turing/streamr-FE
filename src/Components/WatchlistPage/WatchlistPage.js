@@ -8,25 +8,25 @@ const WatchListPage = () => {
   const { currentUser } = useContext(UserContext)
 
   const watchListResult = () => {
-    if(currentUser.watchlistItems?.length){
+    if (currentUser.watchlistItems?.length) {
       const watchList = currentUser.watchlistItems.map(savedItem => {
         return (
-            <WatchListItem
-              poster={savedItem.show.posterUrl}
-              title={savedItem.show.title}
-              releaseYear={savedItem.show.releaseYear}
-              key={savedItem.id}
-              id={savedItem.show.tmdbId}
-              rating={savedItem.show.rating}
-              genres={savedItem.show.genres}
-              tmdbId={savedItem.show.tmdbId}
-            />
+          <WatchListItem
+            posterUrl={savedItem.show.posterUrl}
+            title={savedItem.show.title}
+            releaseYear={savedItem.show.releaseYear}
+            key={savedItem.id}
+            id={savedItem.show.tmdbId}
+            rating={savedItem.show.rating}
+            genres={savedItem.show.genres}
+            tmdbId={savedItem.show.tmdbId}
+          />
         )
       })
       return watchList
     }
-    else{
-      return <NoWatchListItems/>
+    else {
+      return <NoWatchListItems />
     }
   }
 

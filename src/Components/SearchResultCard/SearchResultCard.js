@@ -1,59 +1,79 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import useWatchlist from "../../Hooks/useWatchlist"
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import tv from '../../images/tv.png'
 import './_SearchResultCard.scss'
 
-const SearchResultCard = ({ poster, title, year, id }) => {
-    const [isSaved, setIsSaved] = useState(false)
-    const [hovering, setHover] = useState(false)
+const SearchResultCard = ({ posterUrl, title, releaseYear, genres, rating, tmdbId }) => {
+  const [hovering, setHover] = useState(false)
+  const [
+    watchlistId,
+    findWatchlistId,
+    saveError,
+    removeError,
+    handleSaveShow,
+    handleRemoveShow
+  ] = useWatchlist(null)
 
-    const overlay =
-        <div
-            className="overlay"
-            data-cy="overlay"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-        >
-            <p className="overlay-text">{title} ({year.slice(0, 4)})</p>
-        </div>
+  useEffect(() => {
+    findWatchlistId(tmdbId)
+  }, [])
 
-    const imageClassList = hovering ?
-        `hover-animation tile-img` :
-        `tile-img`
-
-    const toggleSaved = () => {
-        if (!isSaved) {
-            setIsSaved(true)
-        }
-        else {
-            setIsSaved(false)
-        }
+  const toggleSaved = () => {
+    const showDetails = {
+      tmdbId,
+      title,
+      releaseYear,
+      posterUrl,
+      genres,
+      rating
     }
+    if (!watchlistId) handleSaveShow(showDetails)
+    else handleRemoveShow(watchlistId)
+  }
 
-    return (
-        <div>
-            <img
-                data-cy="bookmark-tile"
-                className='bookmark bookmark-tile'
-                src={isSaved ? savedTrue : savedFalse}
-                alt="bookmark icon"
-                onClick={toggleSaved}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-            />
-            <Link to={`/show/${id}`}><div data-cy="img-container" className="img-container">
-                <img
-                    className={imageClassList}
-                    src={poster ? poster : tv}
-                    onMouseEnter={() => setHover(true)}
-                    onMouseLeave={() => setHover(false)}
-                />
-                {hovering && overlay}
-            </div></Link>
-        </div>
-    )
+
+  const overlay =
+    <div
+      className="overlay"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <p className="overlay-text">{title} ({releaseYear.slice(0, 4)})</p>
+    </div>
+
+  const imageClassList = hovering ?
+    `hover-animation tile-img` :
+    `tile-img`
+
+
+  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
+  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
+
+  return (
+    <div>
+      <img
+        data-cy="bookmark-tile"
+        className='bookmark bookmark-tile'
+        src={watchlistId ? savedTrue : savedFalse}
+        alt="bookmark icon"
+        onClick={toggleSaved}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      />
+      <Link to={`/show/${tmdbId}`}><div data-cy="img-container" className="img-container">
+        <img
+          className={imageClassList}
+          src={posterUrl ? posterUrl : tv}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        />
+        {hovering && overlay}
+      </div></Link>
+    </div>
+  )
 }
 
 export default SearchResultCard

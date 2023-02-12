@@ -1,9 +1,9 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useContext } from "react"
+import useWatchlist from "../../Hooks/useWatchlist"
 import { useParams, useNavigate } from "react-router-dom"
-import { useQuery, useMutation } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
-import { ADD_TO_WATCHLIST, REMOVE_FROM_WATCHLIST } from "../../GraphQL/Mutations"
 import { UserContext } from "../../Providers/UserContext"
 
 import './_DetailsPage.scss'
@@ -14,19 +14,18 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
-  const [watchlistId, setWatchlistId] = useState(null)
+  const [
+    watchlistId, 
+    findWatchlistId,
+    saveError,
+    removeError,
+    handleSaveShow,
+    handleRemoveShow
+  ] = useWatchlist(null)
 
+  const { currentUser } = useContext(UserContext)
   const { showId } = useParams()
   const navigate = useNavigate()
-
-  const { 
-    currentUser, 
-    addToWatchList, 
-    removeFromWatchList 
-  } = useContext(UserContext)
-
-  const [saveShowServer] = useMutation(ADD_TO_WATCHLIST)
-  const [removeShowServer, removeShowResponse] = useMutation(REMOVE_FROM_WATCHLIST)
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
@@ -39,56 +38,18 @@ const DetailsPage = () => {
   )
 
   useEffect(() => {
-    if (data) {
-      console.log(data)
-      setWatchlistId(findWatchlistId())
-    }
+    if (data) findWatchlistId(data.showDetails.tmdbId)
   }, [data])
 
-  const findWatchlistId = () => {
-    const match = currentUser.watchlistItems.find(item => item.show.tmdbId === data.showDetails.tmdbId)
-    return match ? match.id : null
-  }
-
   const toggleSaved = () => {
-    if (!watchlistId) handleSaveShow()
-    else handleRemoveShow()
-  }
-
-  const handleSaveShow = async () => {
-    const { data } = await saveShowServer({
-      variables: {
-        tmdbId: parseInt(showId),
-        userId: parseInt(currentUser.id),
-        mediaType: "tv"
-    }})
-    const currentShow = {
-      "id": parseInt(data.createWatchlistItem.id),
-      "show": {
-        "tmdbId": parseInt(showId),
-        "title": title,
-        "releaseYear": releaseYear,
-        "posterUrl": posterUrl,
-        "mediaType": "tv",
-        "genres": genres,
-        "rating": rating
-      }
-    }
-    addToWatchList(currentShow)
-    setWatchlistId(parseInt(data.createWatchlistItem.id))
-  }
-
-  const handleRemoveShow = () => {
-    removeShowServer({ variables: { id: watchlistId }})
-    removeFromWatchList(parseInt(showId))
-    setWatchlistId(null)
+    if (!watchlistId) handleSaveShow(data.showDetails)
+    else handleRemoveShow(watchlistId)
   }
 
   if (loading) return <p>Loading...</p>
-  if (error) {
-    console.log(error)
-    navigate("/error", { replace: true }) 
-  }
+  if (error) navigate("/error", { replace: true }) //error for page not initially loading
+  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
+  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 

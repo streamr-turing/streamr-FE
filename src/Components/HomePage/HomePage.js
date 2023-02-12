@@ -8,7 +8,7 @@ import "./_HomePage.scss"
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
   // console.log("HERE: ", currentUser.recommendations)
-  
+
   const feedResult = () => {
     if (currentUser.recommendations.length) {
       const sortedList = [...currentUser.recommendations].sort((a, b) => {
@@ -16,37 +16,37 @@ const HomePage = () => {
         b = b.createdAt.slice(0, 10).split('-').join('')
         return b - a
       })
-      const timelinePost = sortedList.map(recommendation => {
-        let segmentStatus = false
-        if (recommendation !== sortedList[sortedList.length - 1]) {
-          segmentStatus = true
-        }
-        else (
-          segmentStatus = false
-        )
-        return (
-          <TimelinePost
-            recommenderAvatar={recommendation.recommender.avatarUrl}
-            recommenderName={recommendation.recommender.username}
-            poster={recommendation.show.posterUrl}
-            title={recommendation.show.title}
-            releaseYear={recommendation.show.releaseYear}
-            rating={recommendation.show.rating}
-            genres={recommendation.show.genres}
-            date={recommendation.createdAt}
-            key={recommendation.createdAt}
-            // back-end needs to create unique id for each recc for use as key here ^
-            drawSegment={segmentStatus}
-            id={recommendation.show.tmdbId}
-          />
-        )
-      })
+    const timelinePost = sortedList.map(recommendation => {
+      let segmentStatus = false
+      if (recommendation !== sortedList[sortedList.length - 1]) {
+        segmentStatus = true
+      }
+      else (
+        segmentStatus = false
+      )
+      return (
+        <TimelinePost
+          recommenderAvatar={recommendation.recommender.avatarUrl}
+          recommenderName={recommendation.recommender.username}
+          poster={recommendation.show.posterUrl}
+          title={recommendation.show.title}
+          releaseYear={recommendation.show.releaseYear}
+          rating={recommendation.show.rating}
+          genres={recommendation.show.genres}
+          date={recommendation.createdAt}
+          key={recommendation.createdAt}
+          // back-end needs to create unique id for each recc for use as key here ^
+          drawSegment={segmentStatus}
+          id={recommendation.show.tmdbId}
+        />
+      )
+    })
       return (
         <div className='timeline-container'>
           {timelinePost}
           <h3 className='end-of-feed-message'>End of feed</h3>
         </div>
-        )
+      )
     }
     else {
       return <NoRecommendations />
