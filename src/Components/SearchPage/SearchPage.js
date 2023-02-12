@@ -11,22 +11,21 @@ const SearchPage = () => {
 
   const { error, loading, data } = useQuery(
     GET_SEARCH_RESULTS, {
-      variables: {
-        query: keyPhrase
-      }
+    variables: {
+      query: keyPhrase
     }
+  }
   )
 
   const searchResult = () => {
-    if(!loading){
-      console.log("DATA HERE: ", data.shows)
+    if (!loading) {
       if (data.shows.length) {
         const showCards = data.shows.map(show => {
           return (
             <SearchResultCard
               poster={show.imageUrl}
               title={show.title}
-              year={show.yearCreated} 
+              year={show.yearCreated}
               key={show.tmdbId}
             />
           )
@@ -37,13 +36,13 @@ const SearchPage = () => {
         return <NoSearchResults />
       }
     }
-    else{
+    else {
       return <h1>Loading...</h1>
     }
   }
 
   const classnameResult = () => {
-    if(!loading){
+    if (!loading) {
       if (data.shows.length) {
         return "mini-poster-container"
       }
@@ -52,7 +51,6 @@ const SearchPage = () => {
       }
     }
   }
-
 
   return (
     <div className="search-and-poster-container">

@@ -16,7 +16,7 @@ const SearchResultCard = ({ poster, title, year }) => {
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
-            <p className="overlay-text">{title} ({year.slice(0,4)})</p>
+            <p className="overlay-text">{title} ({year.slice(0, 4)})</p>
         </div>
 
     const imageClassList = hovering ?

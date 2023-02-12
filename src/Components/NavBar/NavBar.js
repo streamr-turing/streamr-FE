@@ -1,13 +1,12 @@
 import { useState } from "react"
 import { NavLink, useLocation, Link } from "react-router-dom"
 import { locationFunction } from "./helper-functions"
-import "./_NavBar.scss"
 import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
+import "./_NavBar.scss"
 
 const NavBar = () => {
   const [searchKeyPhrase, setKeyPhrase] = useState("")
-
   let location = useLocation()
   let buttonStyles = locationFunction(location)
 
@@ -49,7 +48,7 @@ const NavBar = () => {
                 className='search-input'
               />
             </li>
-            <Link to={`/search/${searchKeyPhrase}`}><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit}/></Link>
+            <Link to={`/search/${searchKeyPhrase}`}><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit} /></Link>
           </div>
           <li>
             <NavLink
