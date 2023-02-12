@@ -1,9 +1,6 @@
 import "./_DetailsPage.scss"
 
 const DetailsTable = ({ data }) => {
-
-  console.log('hello papa: ', data.recommendedBy)
-
   const streamingServiceDataResult = () => {
     if (data.streamingService.length) {
       const providerNames = data.streamingService.map(service => {

@@ -91,8 +91,7 @@ const DetailsPage = () => {
     navigate("/error", { replace: true })
   }
 
-  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data.showDetails
-  // console.log("hello mama: ", recommendedBy)
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy, tmdbId } = data.showDetails
   return (
     <div className="detail-and-title-container">
       <h1 className="detail-title">{`${title} (${releaseYear})`}</h1>
@@ -127,7 +126,9 @@ const DetailsPage = () => {
                     rating,
                     summary,
                     recommendedBy
-                  }} />
+                  }}
+                  key = {Date.now()}
+                   />
                 </div>
                 <DetailsReccInterface id={showId} />
               </div>
