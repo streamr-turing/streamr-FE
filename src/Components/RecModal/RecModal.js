@@ -49,6 +49,7 @@ const RecModal = () => {
     
     const handleSend = (event) => {
         event.preventDefault()
+        console.log('currentUser', currentUser)
         const recommendedPostList = sendList.map(friendId => 
             ( {
                 tmdbId: currentModal.tmdbId,
