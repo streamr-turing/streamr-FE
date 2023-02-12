@@ -19,6 +19,7 @@ function App() {
           <Route path='/watchlist' element={<WatchListPage />} />
           <Route path='/show/:showId' element={<DetailsPage />} />
           <Route path='/search/:keyPhrase' element={<SearchPage />} />
+          <Route path='/error' element={<Error />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>
