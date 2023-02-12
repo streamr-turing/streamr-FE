@@ -3,13 +3,10 @@ import { useState } from "react"
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import tv from '../../images/tv.png'
-
 import './_SearchResultCard.scss'
 
 const SearchResultCard = ({ poster, title, year }) => {
     const [isSaved, setIsSaved] = useState(false)
-
-    ///////////SAM VERSION START//////
     const [hovering, setHover] = useState(false)
 
     const overlay =
@@ -25,7 +22,6 @@ const SearchResultCard = ({ poster, title, year }) => {
     const imageClassList = hovering ?
         `hover-animation tile-img` :
         `tile-img`
-    ////////////SAM VERSION END///////////////
 
     const toggleSaved = () => {
         if (!isSaved) {
@@ -38,11 +34,6 @@ const SearchResultCard = ({ poster, title, year }) => {
 
     return (
         <div>
-            {/* KIKO VERSION */}
-            {/* <img src={isSaved ? savedTrue : savedFalse} className='search-bookmark' onClick={toggleSaved} />
-            <img src={poster} className='search-posters'/> */}
-
-            {/* SAM VERSION */}
             <img
                 data-cy="bookmark-tile"
                 className='bookmark bookmark-tile'

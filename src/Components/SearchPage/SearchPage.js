@@ -1,10 +1,6 @@
-import { UserContext } from '../../Providers/UserContext'
-import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
-
 import { useQuery } from '@apollo/client'
 import { GET_SEARCH_RESULTS } from '../../GraphQL/Queries'
-
 import SearchResultCard from '../SearchResultCard/SearchResultCard'
 import NoSearchResults from '../NoSearchResults/NoSearchResults'
 import "./_SearchPage.scss"
@@ -12,10 +8,6 @@ import "./_SearchPage.scss"
 const SearchPage = () => {
   let { keyPhrase } = useParams()
   keyPhrase = keyPhrase.split('%20').join(' ')
-  console.log("KIKO: ", keyPhrase)
-
-  const { currentUser } = useContext(UserContext)
-  // console.log("YO YO: ", currentUser.recommendations)
 
   const { error, loading, data } = useQuery(
     GET_SEARCH_RESULTS, {
@@ -51,11 +43,13 @@ const SearchPage = () => {
   }
 
   const classnameResult = () => {
-    if (currentUser.recommendations.length) {
-      return "mini-poster-container"
-    }
-    else {
-      return "search-error-container"
+    if(!loading){
+      if (data.shows.length) {
+        return "mini-poster-container"
+      }
+      else {
+        return "search-error-container"
+      }
     }
   }
 

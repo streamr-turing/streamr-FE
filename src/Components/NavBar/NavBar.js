@@ -1,9 +1,6 @@
-import { UserContext } from '../../Providers/UserContext'
-import { useEffect, useState, useContext } from "react"
+import { useState } from "react"
 import { NavLink, useLocation, Link } from "react-router-dom"
-
 import { locationFunction } from "./helper-functions"
-
 import "./_NavBar.scss"
 import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
@@ -21,12 +18,10 @@ const NavBar = () => {
   const handleKeyDown = (event) => {
     if (event.code === 'Enter') {
       setKeyPhrase(event.target.value)
-      console.log("YAS QUWEEN: ", searchKeyPhrase)
     }
   }
 
   const handleSubmit = () => {
-    console.log("YAS KING: ", searchKeyPhrase)
     clearLogin()
   }
 
