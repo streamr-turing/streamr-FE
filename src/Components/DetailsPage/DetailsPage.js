@@ -91,7 +91,7 @@ const DetailsPage = () => {
   }
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
-
+  console.log('ok : ', streamingService)
   return (
     <>
       { data &&
