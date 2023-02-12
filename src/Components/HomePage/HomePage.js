@@ -35,7 +35,7 @@ const HomePage = () => {
             genres={recommendation.show.genres}
             date={recommendation.createdAt}
             key={recommendation.createdAt}
-            //back-end needs to create unique id for each recc for use as key here ^
+            // back-end needs to create unique id for each recc for use as key here ^
             drawSegment={segmentStatus}
             id={recommendation.show.tmdbId}
           />
@@ -43,9 +43,9 @@ const HomePage = () => {
       })
       return (
         <div className='timeline-container'>
-            {timelinePost}
-            <h3 className='end-of-feed-message'>End of feed</h3>
-          </div>
+          {timelinePost}
+          <h3 className='end-of-feed-message'>End of feed</h3>
+        </div>
         )
     }
     else {

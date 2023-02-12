@@ -36,9 +36,8 @@ const LoginPage = () => {
     const { error, loading, data } = await getUser({
       variables: { id: signInData.successUserId }
     })
-    // error handling here first
+    // add error handling here first
     setUser(data.fetchUser)
-    // localStorage.setItem('currentUserId', data.fetchUser.id.toString())
   }
 
   const handleChange = (event) => {
@@ -112,9 +111,6 @@ const LoginPage = () => {
         />
         <button onClick={event => handleSubmit(event)}>Login</button>
         </form>
-        {/* {signInData.loggedIn &&
-          <Navigate to='/' />
-        } */}
         {!signInData.validSignIn && 
         <p>Sorry, the username/password is incorrect. Please try again.</p>
         }
