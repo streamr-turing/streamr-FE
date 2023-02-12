@@ -38,7 +38,7 @@ $details-inner-width: 90%;
   }
 
   &__poster {
-    width: min(340px, 28vw);
+    width: min(380px, 28vw);
     height: fit-content;
   }
 }
@@ -96,6 +96,38 @@ $details-inner-width: 90%;
   margin-top: 0;
 }
 
-.details-parent{
+.detail-summary-data {
+  max-height: 20vh;
+  overflow: auto;
+}
+
+.details-parent {
   margin-top: -9vh;
+}
+
+.detail-recommender-avatar {
+  width: 5vh;
+}
+
+.detail-recommender-and-avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin-right: 15px;
+}
+
+.detail-recommender-username {
+  margin: 0;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 0.8vw;
+}
+
+.detail-recommender-data {
+  display: flex;
+}
+
+.detail-recommended-by-friends-text{
+  margin-top: 0;
 }
