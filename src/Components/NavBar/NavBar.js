@@ -1,23 +1,34 @@
-import { UserContext } from '../../Providers/UserContext'
-import { useEffect, useState, useContext } from "react"
-import { NavLink, useLocation, Link } from "react-router-dom"
-
+import { useState } from "react"
+import { NavLink, useLocation, Link, useNavigate } from "react-router-dom"
 import { locationFunction } from "./helper-functions"
-
-import "./_NavBar.scss"
 import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
+import "./_NavBar.scss"
 
 const NavBar = () => {
-  const [searchTitle, setSearchTitle] = useState("")
-
-  //username, avatarUrl for props
+  const [searchKeyPhrase, setKeyPhrase] = useState("")
   let location = useLocation()
   let buttonStyles = locationFunction(location)
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
-    setSearchTitle(event.target.value)
-    // This function takes in the text input of the search bar and sets the input value to the local variable value. I am thinking that the search functionality/setting state will be handled from here.
+    setKeyPhrase(event.target.value)
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.code === 'Enter') {
+      setKeyPhrase(event.target.value)
+      navigate(`/search/${searchKeyPhrase}`)
+      clearLogin()
+    }
+  }
+
+  const handleSubmit = () => {
+    clearLogin()
+  }
+
+  const clearLogin = () => {
+    setKeyPhrase("")
   }
 
   return (
@@ -34,12 +45,13 @@ const NavBar = () => {
                 type='text'
                 placeholder='Search'
                 name='search'
-                // value={this.state.value}
+                value={searchKeyPhrase}
                 onChange={handleChange}
+                onKeyDown={event => handleKeyDown(event)}
                 className='search-input'
               />
             </li>
-            <Link to='/search'><img src={magnifyingGlass} className='magnifying-glass-icon' /></Link>
+            <Link to={`/search/${searchKeyPhrase}`}><img src={magnifyingGlass} className='magnifying-glass-icon' onClick={handleSubmit} /></Link>
           </div>
           <li>
             <NavLink
