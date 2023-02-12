@@ -27,6 +27,7 @@ const SearchPage = () => {
               title={show.title}
               year={show.yearCreated}
               key={show.tmdbId}
+              id={show.tmdbId}
             />
           )
         })
