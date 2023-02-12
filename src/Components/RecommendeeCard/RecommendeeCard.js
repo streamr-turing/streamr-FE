@@ -11,7 +11,6 @@ import './_RecommendeeCard.scss'
 const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, tmdbId }) => {
   const [
     watchlistId,
-    setWatchlistId,
     findWatchlistId,
     saveError,
     removeError,
@@ -66,6 +65,9 @@ const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, 
     date = `${month} ${day} ${year}`
     return date
   }
+
+  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
+  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   return (
     <div>

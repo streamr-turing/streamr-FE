@@ -61,8 +61,7 @@ const useWatchlist = defaultState => {
   }
 
   return [
-    watchlistId, 
-    setWatchlistId, 
+    watchlistId,
     findWatchlistId,
     saveError,
     removeError,

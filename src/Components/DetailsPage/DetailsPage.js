@@ -16,7 +16,6 @@ import savedFalse from "../../images/bookmark-false.png"
 const DetailsPage = () => {
   const [
     watchlistId, 
-    setWatchlistId, 
     findWatchlistId,
     saveError,
     removeError,
