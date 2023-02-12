@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { UserContext } from '../../Providers/UserContext'
-import { Link } from "react-router-dom"
 import NoRecommendations from '../NoRecommendations/NoRecommendations'
 
 import TimelinePost from "../TimelinePost/TimelinePost"
@@ -57,7 +56,6 @@ const HomePage = () => {
 
   return (
     <div className="home-container">
-      <Link to="show/4601" >HERE</Link>
       <h1 className="recommend-title">Recommended By Friends</h1>
       {feedResult()}
     </div>
