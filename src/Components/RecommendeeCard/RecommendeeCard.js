@@ -1,11 +1,14 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { NavLink, Link } from "react-router-dom"
+
+import { UserContext } from "../../Providers/UserContext"
 
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import './_RecommendeeCard.scss'
 
 const RecommendeeCard = ({ poster, title, releaseYear, rating, genres, date, id }) => {
+  const { currentUser } = useContext(UserContext)
     const [isSaved, setIsSaved] = useState(false)
 
     const toggleSaved = () => {

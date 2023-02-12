@@ -1,4 +1,5 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useContext } from "react"
+import useWatchlistId from "../../Hooks/useWatchlistId"
 import { useParams, useNavigate } from "react-router-dom"
 import { useQuery, useMutation } from '@apollo/client'
 
@@ -14,7 +15,7 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
-  const [watchlistId, setWatchlistId] = useState(null)
+  const [watchlistId, setWatchlistId, findWatchlistId] = useWatchlistId(null)
 
   const { showId } = useParams()
   const navigate = useNavigate()
@@ -39,16 +40,8 @@ const DetailsPage = () => {
   )
 
   useEffect(() => {
-    if (data) {
-      console.log(data)
-      setWatchlistId(findWatchlistId())
-    }
+    if (data) findWatchlistId(data.showDetails.tmdbId)
   }, [data])
-
-  const findWatchlistId = () => {
-    const match = currentUser.watchlistItems.find(item => item.show.tmdbId === data.showDetails.tmdbId)
-    return match ? match.id : null
-  }
 
   const toggleSaved = () => {
     if (!watchlistId) handleSaveShow()
@@ -86,7 +79,6 @@ const DetailsPage = () => {
 
   if (loading) return <p>Loading...</p>
   if (error) navigate("/error", { replace: true }) 
-
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
