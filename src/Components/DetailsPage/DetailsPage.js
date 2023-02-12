@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react"
-import useWatchlistId from "../../Hooks/useWatchlistId"
+import useWatchlist from "../../Hooks/useWatchlist"
 import { useParams, useNavigate } from "react-router-dom"
 import { useQuery, useMutation } from '@apollo/client'
 
@@ -15,7 +15,15 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
 const DetailsPage = () => {
-  const [watchlistId, setWatchlistId, findWatchlistId] = useWatchlistId(null)
+  const [
+    watchlistId, 
+    setWatchlistId, 
+    findWatchlistId,
+    saveError,
+    removeError,
+    handleSaveShow,
+    handleRemoveShow
+  ] = useWatchlist(null)
 
   const { showId } = useParams()
   const navigate = useNavigate()
@@ -44,38 +52,44 @@ const DetailsPage = () => {
   }, [data])
 
   const toggleSaved = () => {
-    if (!watchlistId) handleSaveShow()
-    else handleRemoveShow()
-  }
-
-  const handleSaveShow = async () => {
-    const { data } = await saveShowServer({
-      variables: {
-        tmdbId: parseInt(showId),
-        userId: parseInt(currentUser.id),
-        mediaType: "tv"
-    }})
-    const currentShow = {
-      "id": parseInt(data.createWatchlistItem.id),
-      "show": {
-        "tmdbId": parseInt(showId),
-        "title": title,
-        "releaseYear": releaseYear,
-        "posterUrl": posterUrl,
-        "mediaType": "tv",
-        "genres": genres,
-        "rating": rating
-      }
+    if (!watchlistId) {
+      handleSaveShow(currentUser.id, data.showDetails)
+    } else {
+      handleRemoveShow(watchlistId)
+      setWatchlistId(null)
     }
-    addToWatchList(currentShow)
-    setWatchlistId(parseInt(data.createWatchlistItem.id))
   }
 
-  const handleRemoveShow = () => {
-    removeShowServer({ variables: { id: watchlistId }})
-    removeFromWatchList(parseInt(showId))
-    setWatchlistId(null)
-  }
+  // const handleSaveShow = async () => {
+  //   const { data, error } = await saveShowServer({
+  //     variables: {
+  //       tmdbId: parseInt(showId),
+  //       userId: parseInt(currentUser.id),
+  //       mediaType: "tv"
+  //   }})
+  //   // add error handling for failing to add to watchlist
+  //   const currentShow = {
+  //     "id": parseInt(data.createWatchlistItem.id),
+  //     "show": {
+  //       "tmdbId": parseInt(showId),
+  //       "title": title,
+  //       "releaseYear": releaseYear,
+  //       "posterUrl": posterUrl,
+  //       "mediaType": "tv",
+  //       "genres": genres,
+  //       "rating": rating
+  //     }
+  //   }
+  //   addToWatchList(currentShow)
+  //   setWatchlistId(parseInt(data.createWatchlistItem.id))
+  // }
+
+  // const handleRemoveShow = async () => {
+  //   const { error } = await removeShowServer({ variables: { id: watchlistId }})
+  //   // add error handling for failing to remove from watchlist
+  //   removeFromWatchList(parseInt(showId))
+  //   setWatchlistId(null)
+  // }
 
   if (loading) return <p>Loading...</p>
   if (error) navigate("/error", { replace: true }) 

@@ -24,7 +24,7 @@ const userReducer = (state, action) => {
       }
     case UserTypes.REMOVE_FROM_WATCHLIST:
       const filteredList = state.currentUser.watchlistItems.filter(item => {
-        return item.show.tmdbId !== action.payload
+        return item.id !== action.payload
       })
       return {
         currentUser: {
