@@ -1,10 +1,9 @@
 import { useEffect, useContext } from "react"
 import useWatchlist from "../../Hooks/useWatchlist"
 import { useParams, useNavigate } from "react-router-dom"
-import { useQuery, useMutation } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
 import { GET_SHOW_DETAILS } from '../../GraphQL/Queries'
-import { ADD_TO_WATCHLIST, REMOVE_FROM_WATCHLIST } from "../../GraphQL/Mutations"
 import { UserContext } from "../../Providers/UserContext"
 
 import './_DetailsPage.scss'
@@ -25,17 +24,9 @@ const DetailsPage = () => {
     handleRemoveShow
   ] = useWatchlist(null)
 
+  const { currentUser } = useContext(UserContext)
   const { showId } = useParams()
   const navigate = useNavigate()
-
-  const { 
-    currentUser, 
-    addToWatchList, 
-    removeFromWatchList 
-  } = useContext(UserContext)
-
-  const [saveShowServer] = useMutation(ADD_TO_WATCHLIST)
-  const [removeShowServer, removeShowResponse] = useMutation(REMOVE_FROM_WATCHLIST)
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
@@ -60,39 +51,10 @@ const DetailsPage = () => {
     }
   }
 
-  // const handleSaveShow = async () => {
-  //   const { data, error } = await saveShowServer({
-  //     variables: {
-  //       tmdbId: parseInt(showId),
-  //       userId: parseInt(currentUser.id),
-  //       mediaType: "tv"
-  //   }})
-  //   // add error handling for failing to add to watchlist
-  //   const currentShow = {
-  //     "id": parseInt(data.createWatchlistItem.id),
-  //     "show": {
-  //       "tmdbId": parseInt(showId),
-  //       "title": title,
-  //       "releaseYear": releaseYear,
-  //       "posterUrl": posterUrl,
-  //       "mediaType": "tv",
-  //       "genres": genres,
-  //       "rating": rating
-  //     }
-  //   }
-  //   addToWatchList(currentShow)
-  //   setWatchlistId(parseInt(data.createWatchlistItem.id))
-  // }
-
-  // const handleRemoveShow = async () => {
-  //   const { error } = await removeShowServer({ variables: { id: watchlistId }})
-  //   // add error handling for failing to remove from watchlist
-  //   removeFromWatchList(parseInt(showId))
-  //   setWatchlistId(null)
-  // }
-
   if (loading) return <p>Loading...</p>
-  if (error) navigate("/error", { replace: true }) 
+  if (error) navigate("/error", { replace: true }) //error for page not initially loading
+  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
+  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
 
