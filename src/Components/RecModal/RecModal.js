@@ -68,7 +68,10 @@ const RecModal = () => {
     }
 
     if (loading) return <Loading/>
-    if (error) navigate("/error") 
+    if (error) {
+      console.log(error)
+      navigate("/error", { replace: true }) 
+    }
 
     return (
         <div className="modalBackground">
@@ -76,12 +79,13 @@ const RecModal = () => {
                 <button className='titleCloseBtn' onClick={()=> {
             closeModal()
           }}> X </button>
-               { data && <form className="body">
-                    <section className="friend-list">
-                    { friendList.length ? friendList: <p>Add some friends!</p> }
-                    </section>
-                    <button onClick={handleSend}>Send!</button>
-                </form>
+                 {data &&
+                    <form className="body">
+                        <section className="friend-list">
+                        { friendList.length ? friendList: <p>Add some friends!</p> }
+                        </section>
+                        <button onClick={handleSend}>Send!</button>
+                    </form>
                 }
             </div>
         </div>
