@@ -50,10 +50,11 @@ const RecModal = () => {
     const handleSend = (event) => {
         event.preventDefault()
         console.log('currentUser', currentUser)
+        console.log('currentModal', currentModal)
         const recommendedPostList = sendList.map(friendId => 
             ( {
                 tmdbId: currentModal.tmdbId,
-                recommenderId: currentUser.id,
+                recommenderId: +currentUser.id,
                 recommendeeId: +friendId,
                 mediaType: "tv"
             })
