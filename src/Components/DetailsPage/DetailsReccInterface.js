@@ -10,6 +10,8 @@ const DetailsReccInterface = ({ id }) => {
   const { currentUser } = useContext(UserContext)
   const { changeModalState, changeModalShow } = useContext(RecModalContext)
 
+  const addlRecommendersMsg = <p className="addl-recommenders">and other friends</p>
+
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
       const isDuplicateRecc = acc.some(accRecc => accRecc.recommender.id === recc.recommender.id)
@@ -23,6 +25,11 @@ const DetailsReccInterface = ({ id }) => {
         key={recc.recommender.id}
       />
     ))
+    .reduce((acc, node) => {
+      if (acc.length < 3) acc.push(node)
+      else if (acc.length === 3) acc.push(addlRecommendersMsg)
+      return acc
+    }, [])
 
     const handleModalChange = () => {
       changeModalState(true)

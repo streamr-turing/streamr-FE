@@ -8,7 +8,9 @@ const DetailsFriendAvatar = ({ username, avatarUrl }) => {
         className="details-avatar__img"
         src={avatarUrl}
       />
-      <p className="details-avatar__name">{username}</p>
+      <p className="details-avatar__name">
+        {username}
+      </p>
     </div>
   )
 }
