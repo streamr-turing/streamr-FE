@@ -73,7 +73,7 @@ const WatchListItem = ({ posterUrl, title, releaseYear, id, rating, genres, tmdb
                       </button>
                   </div>
                   <div className="rating-and-genres-container">
-                      <h2>Audience Rating: {rating}/10</h2>
+                      <h2>Audience Rating: {Math.round(rating)}/10</h2>
                       <h3 className="watch-list-genres">{allGenres}</h3>
                   </div>
               </div>

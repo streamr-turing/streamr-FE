@@ -13,6 +13,8 @@ import DetailsReccInterface from "./DetailsReccInterface"
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 
+import Loading from "../Loading/Loading"
+
 const DetailsPage = () => {
   const [
     watchlistId, 
@@ -46,7 +48,7 @@ const DetailsPage = () => {
     else handleRemoveShow(watchlistId)
   }
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading/>
   if (error) navigate("/error", { replace: true }) //error for page not initially loading
   // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
   // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
