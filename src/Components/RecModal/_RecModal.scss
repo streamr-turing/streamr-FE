@@ -56,3 +56,38 @@ $invalid-text-color: #44c4a1;
       }
     }
   }
+
+
+  .sent-container {        
+  color: $text-color;
+  width: 10vw;
+  border-radius: 12px;
+  background-color: rgba(16, 20, 25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+
+    .sent-text {
+      font-size: 2vw;
+      text-align: center;
+    }
+  }
+
+  .failed-container {        
+    color: $text-color;
+    width: 15vw;
+    border-radius: 12px;
+    background-color: rgba(16, 20, 25);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+
+      .failed-text {
+        font-size: 2vw;
+        text-align: center;
+      }
+    }

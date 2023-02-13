@@ -1,11 +1,13 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useQuery } from '@apollo/client'
 import { GET_SEARCH_RESULTS } from '../../GraphQL/Queries'
 import SearchResultCard from '../SearchResultCard/SearchResultCard'
 import NoSearchResults from '../NoSearchResults/NoSearchResults'
+import Loading from "../Loading/Loading"
 import "./_SearchPage.scss"
 
 const SearchPage = () => {
+  const navigate = useNavigate()
   let { keyPhrase } = useParams()
   keyPhrase = keyPhrase.split('%20').join(' ')
 
@@ -40,7 +42,7 @@ const SearchPage = () => {
       }
     }
     else {
-      return <h1>Loading...</h1>
+      return <Loading/>
     }
   }
 
@@ -53,6 +55,11 @@ const SearchPage = () => {
         return "search-error-container"
       }
     }
+  }
+
+  if (error) {
+    console.log(error)
+    navigate("/error", { replace: true }) 
   }
 
   return (
