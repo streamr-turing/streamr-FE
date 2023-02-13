@@ -74,14 +74,12 @@ const RecModal = () => {
             const sendResult = await createRecommendation({ variables: recommendation })
             if(sendResult.data?.createRecommendation) {
                 setSentStatus('sent')
-                setTimeout(() => {
-                closeModal()}, 1000)
+                setTimeout(closeModal, 1000)
             }
         } catch (error) {
             console.log(error)
             setSentStatus('failed')
-            setTimeout(() => {
-            closeModal()}, 1500)
+            setTimeout(closeModal, 1500)
         }
     }
 
@@ -94,9 +92,7 @@ const RecModal = () => {
         return(
             <div className="modalBackground">
             <div className="modalContainer">
-                <button className='titleCloseBtn' onClick={()=> {
-            closeModal()
-          }}> X </button>
+                <button className='titleCloseBtn' onClick={closeModal}> X </button>
                  {data ?
                     <form className="body">
                         <section className="friend-list">
