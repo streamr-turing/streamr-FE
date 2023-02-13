@@ -10,6 +10,8 @@ import { useQuery, useMutation } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import { SEND_RECOMMENDATION } from '../../GraphQL/Mutations'
 
+import Loading from '../Loading/Loading'
+
 const RecModal = () => {
     const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
     const { currentUser } = useContext(UserContext)
@@ -65,7 +67,7 @@ const RecModal = () => {
         closeModal()
     }
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <Loading/>
     if (error) navigate("/error") 
 
     return (
