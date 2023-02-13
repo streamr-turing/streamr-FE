@@ -7,11 +7,8 @@ import DetailsFriendAvatar from "./DetailsFriendAvatar"
 import paperPlane from "../../images/paper-plane.png"
 
 const DetailsReccInterface = ({ id }) => {
-  const {
-    currentUser
-  } = useContext(UserContext)
-  
-  const  { changeModalState, changeModalShow } = useContext(RecModalContext)
+  const { currentUser } = useContext(UserContext)
+  const { changeModalState, changeModalShow } = useContext(RecModalContext)
 
   const friendAvatars = currentUser.recommendations
     .reduce((acc, recc) => {
@@ -43,9 +40,7 @@ const DetailsReccInterface = ({ id }) => {
         </div>
         <button
           className="recc-lower__button"
-          onClick={()=> {
-            handleModalChange()
-          }}  
+          onClick={handleModalChange}  
         >
           <img src={paperPlane} alt='Picture of a paper airplane'/>
         </button>
