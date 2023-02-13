@@ -4,7 +4,7 @@ const DetailsTable = ({ data }) => {
   const streamingServiceDataResult = () => {
     if (data.streamingService.length) {
       const providerNames = data.streamingService.map(service => {
-        return <img src={service.logoPath} className='provider-icons' />
+        return <img src={service.logoPath} className='provider-icons' key={service.logoPath}/>
       })
       return providerNames
     }
@@ -20,8 +20,8 @@ const DetailsTable = ({ data }) => {
     if (data.recommendedBy.length) {
       const friendNames = data.recommendedBy.map(friend => {
         return (
-          <div className="detail-recommender-and-avatar-container">
-            <img src={friend.avatarUrl} className='detail-recommender-avatar'/>
+          <div className="detail-recommender-and-avatar-container" key={`${Date.now()}${friend.avatarUrl}`}>
+            <img src={friend.avatarUrl} className='detail-recommender-avatar' key={friend.avatarUrl}/>
             <p className="detail-recommender-username">{friend.username}</p>
           </div>
         )
