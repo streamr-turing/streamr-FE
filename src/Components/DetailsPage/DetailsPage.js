@@ -29,12 +29,12 @@ const DetailsPage = () => {
 
   const { error, loading, data } = useQuery(
     GET_SHOW_DETAILS, {
-      variables: {
-        tmdbId: parseInt(showId),
-        userId: parseInt(currentUser.id),
-        mediaType: "tv"
-      }
+    variables: {
+      tmdbId: parseInt(showId),
+      userId: parseInt(currentUser.id),
+      mediaType: "tv"
     }
+  }
   )
 
   useEffect(() => {
@@ -51,20 +51,19 @@ const DetailsPage = () => {
   // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
   // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
-  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title } = data.showDetails
-
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy, tmdbId } = data.showDetails
   return (
-    <>
-      { data &&
+    <div className="detail-and-title-container">
+      <h1 className="detail-title">{`${title} (${releaseYear})`}</h1>
+      {data &&
         <section className="details-parent">
           <div className="details">
             <div className="details__lower">
               <div className="details__lower__left">
-                <h1 className="details__title">{`${title} (${releaseYear})`}</h1>
-                <img 
-                  data-cy="bookmark" 
-                  className="details__lower__left__bookmark" 
-                  src={watchlistId ? savedTrue : savedFalse} 
+                <img
+                  data-cy="bookmark"
+                  className="details__lower__left__bookmark"
+                  src={watchlistId ? savedTrue : savedFalse}
                   alt="bookmark icon"
                   role="button"
                   aria-label="toggle saved to watchlist"
@@ -74,8 +73,8 @@ const DetailsPage = () => {
                 />
                 <img
                   data-cy="poster"
-                  className="details__lower__left__poster" 
-                  src={posterUrl} 
+                  className="details__lower__left__poster"
+                  src={posterUrl}
                   alt={`Poster for ${title}`}
                 />
               </div>
@@ -84,9 +83,12 @@ const DetailsPage = () => {
                   <DetailsTable data={{
                     streamingService,
                     genres,
-                    rating
-                  }}/>
-                  <p>{summary}</p>
+                    rating,
+                    summary,
+                    recommendedBy
+                  }}
+                  key = {Date.now()}
+                   />
                 </div>
                 <DetailsReccInterface id={showId} />
               </div>
@@ -94,7 +96,7 @@ const DetailsPage = () => {
           </div>
         </section>
       }
-    </>
+    </div>
   )
 }
 
