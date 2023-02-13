@@ -1,9 +1,10 @@
-$details-avatar-width: 60px;
+$details-avatar-width: 50px;
 
 .details-avatar {
   width: $details-avatar-width;
   text-align: center;
   margin: 0px 10px;
+  width: 80px;
 }
 
 .details-avatar__img {
@@ -11,5 +12,6 @@ $details-avatar-width: 60px;
 }
 
 .details-avatar__name {
+  font-size: .8rem;
   margin: 0px;
 }

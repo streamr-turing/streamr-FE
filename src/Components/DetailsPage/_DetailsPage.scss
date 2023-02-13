@@ -1,7 +1,5 @@
 @use "../../Utilities/variables";
 
-$details-inner-width: 90%;
-
 .details-parent {
   display: flex;
   justify-content: center;
@@ -11,13 +9,14 @@ $details-inner-width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
-  width: $details-inner-width;
+  margin-top: 40px;
+  width: min(1065px, 80%);
   color: white;
 }
 
 .details__title {
   position: absolute;
+  white-space: nowrap;
   top: -80px;
   font-size: 2rem;
   margin-bottom: 15px;
@@ -26,12 +25,12 @@ $details-inner-width: 90%;
 
 .details__lower {
   display: flex;
-  justify-content: center;
+  justify-content: space-around
 }
 
 .details__lower__left {
   position: relative;
-  width: 40%;
+  width: 37%;
   
   &__bookmark {
     position: absolute;
@@ -42,8 +41,7 @@ $details-inner-width: 90%;
   }
   
   &__poster {
-    width: min(340px, 28vw);
-    height: fit-content;
+    width: 100%;
   }
 }
 
@@ -51,18 +49,23 @@ $details-inner-width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
   padding: max(2vw, 28px);
   border-radius: variables.$global-border-radius;
   background-color: #A58048;
 }
 
 .details-table {
-  width: 50%;
+  width: 42%;
+  height: 17vh;
 }
 
-.provider-icon {
+.details-table__provider-icon {
   height: 3vw;
   margin-right: 0.5vw;
   border-radius: 50%;
+}
+
+.details-table__genres {
+  font-weight: 800;
 }
