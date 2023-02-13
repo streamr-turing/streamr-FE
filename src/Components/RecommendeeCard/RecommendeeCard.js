@@ -76,7 +76,7 @@ const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, 
         <Link to={`/show/${tmdbId}`} className='clickable-poster'><img src={posterUrl} className='poster-img' /></Link>
         <div className='recommendee-card-info'>
           <NavLink to={`/show/${tmdbId}`} className='clickable-title'><h1 className='title'>{title} ({releaseYear})</h1></NavLink>
-          <h2 className='audience-rating'>Audience Rating: {rating}/10</h2>
+          <h2 className='audience-rating'>Audience Rating: {Math.round(rating * 10) / 10}/10</h2>
           <h3>{allGenres}</h3>
         </div>
       </div>

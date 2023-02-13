@@ -44,7 +44,7 @@ const DetailsTable = ({ data }) => {
           {streamingServiceDataResult()}
         </div>
       </div>
-      <p>Audience Rating: {Math.round(data.rating)}/10 ⭐️</p>
+      <p>Audience Rating: {Math.round(data.rating * 10) / 10}/10 ⭐️</p>
       <p className="detail-genre-data">Genre: <b>{data.genres.join(", ")}</b></p>
       <p className="detail-summary-data">{data.summary}</p>
       <div className="detail-recommend-data">

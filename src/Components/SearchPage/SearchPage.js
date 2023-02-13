@@ -26,8 +26,8 @@ const SearchPage = () => {
               posterUrl={show.imageUrl}
               title={show.title}
               releaseYear={show.yearCreated}
-              genres={["placeholder genre", "another placeholder genre"]} //placeholders
-              rating={7} // placeholder rating until BE adds genres/rating to search results
+              genres={show.genres}
+              rating={show.rating}
               key={show.tmdbId}
               tmdbId={show.tmdbId}
             />
