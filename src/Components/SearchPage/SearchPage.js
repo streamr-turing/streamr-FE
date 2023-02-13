@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import { GET_SEARCH_RESULTS } from '../../GraphQL/Queries'
 import SearchResultCard from '../SearchResultCard/SearchResultCard'
 import NoSearchResults from '../NoSearchResults/NoSearchResults'
+import Loading from "../Loading/Loading"
 import "./_SearchPage.scss"
 
 const SearchPage = () => {
@@ -40,7 +41,7 @@ const SearchPage = () => {
       }
     }
     else {
-      return <h1>Loading...</h1>
+      return <Loading/>
     }
   }
 
