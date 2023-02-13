@@ -81,6 +81,8 @@ query shows($query: String!){
       title
       imageUrl
       yearCreated
+      genres
+      rating
   }
 }
 `
