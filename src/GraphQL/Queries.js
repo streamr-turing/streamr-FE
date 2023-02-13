@@ -85,7 +85,7 @@ query shows($query: String!){
 }
 `
 export const GET_ALL_USERS = gql`
-  query {
+  query users {
     users {
         id
         username

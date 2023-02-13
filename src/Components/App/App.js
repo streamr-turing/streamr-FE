@@ -7,6 +7,7 @@ import WatchListPage from '../WatchlistPage/WatchlistPage'
 import DetailsPage from '../DetailsPage/DetailsPage'
 import PageNotFound from '../PageNotFound/PageNotFound'
 import SearchPage from '../SearchPage/SearchPage'
+import Error from '../Error/Error'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/watchlist' element={<WatchListPage />} />
           <Route path='/show/:showId' element={<DetailsPage />} />
           <Route path='/search/:keyPhrase' element={<SearchPage />} />
+          <Route path='/error' element={<Error />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>

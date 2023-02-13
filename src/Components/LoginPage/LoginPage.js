@@ -2,11 +2,11 @@
 import './_LoginPage.scss'
 import { UserContext } from '../../Providers/UserContext'
 import { useState, useEffect, useContext } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_ALL_USERS } from '../../GraphQL/Queries'
 import tv from '../../images/tv.png'
-
+import Error from '../Error/Error'
 import { useLazyQuery } from '@apollo/client'
 import { GET_USER } from '../../GraphQL/Queries'
 
@@ -14,6 +14,7 @@ const LoginPage = () => {
   const navigate = useNavigate()
   const { setUser, currentUser } = useContext(UserContext)
   const { error, loading, data } = useQuery(GET_ALL_USERS)
+  const [errorState, setErrorState] = useState(false)
   const [getUser] = useLazyQuery(GET_USER)
   const [allUsers, setAllUsers] = useState([])
   const [signInData, setSignInData] = useState({
@@ -33,11 +34,13 @@ const LoginPage = () => {
   }, [currentUser])
 
   const loginUser = async () => {
-    const { error, loading, data } = await getUser({
-      variables: { id: signInData.successUserId }
-    })
-    // add error handling here first
-    setUser(data.fetchUser)
+      const { error, loading, data } = await getUser({
+        variables: { id: signInData.successUserId }
+      })
+      if(error) {
+        setErrorState(true)
+      }
+      setUser(data.fetchUser)
   }
 
   const handleChange = (event) => {
@@ -84,9 +87,15 @@ const LoginPage = () => {
     })
   }
 
+  if (error) {
+    console.log(error)
+    navigate("/error", { replace: true }) 
+  }
+
   return (
     <div className="login-background">
-      <div className="login-area">
+      {!errorState ?
+       <div className="login-area">
         <section className="logo-section">
           <img src={tv} alt='Drawing of a TV' />
           <h1>Streamr</h1>
@@ -114,6 +123,7 @@ const LoginPage = () => {
         <p>Sorry, the username/password is incorrect. Please try again.</p>
         }
       </div>
+      : <Error />}
     </div>
   )
 }
