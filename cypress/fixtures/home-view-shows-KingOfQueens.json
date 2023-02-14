@@ -1,0 +1,52 @@
+{
+    "data": {
+        "shows": [
+            {
+                "tmdbId": 4238,
+                "title": "The King of Queens",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//9YFQQYRcK7yzOSI77WZKwyVhlCP.jpg",
+                "yearCreated": "1998-09-21",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 7.064,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 77615,
+                "title": "Kings and Queens",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//e252T7AC0feuZc2QtMnHKkyYqQg.jpg",
+                "yearCreated": "2002-06-24",
+                "genres": [
+                    "Documentary"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 70160,
+                "title": "King and Queen",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bgjtObAosrSK8ZX265apXTw4lKo.jpg",
+                "yearCreated": "1998-06-06",
+                "genres": [
+                    "Drama",
+                    "War \u0026 Politics"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 113878,
+                "title": "The Legend of Beggar King and Big Foot Queen",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//hUjWT6Q93vfBHhl30c8OqxdIk2s.jpg",
+                "yearCreated": "2016-06-25",
+                "genres": [
+                    "Drama",
+                    "Comedy"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            }
+        ]
+    }
+}
