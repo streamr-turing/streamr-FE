@@ -1,0 +1,194 @@
+{
+    "data": {
+        "fetchUser": {
+            "id": "1",
+            "username": "snoop_dogg",
+            "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940414.png",
+            "watchlistItems": [
+                {
+                    "id": "1",
+                    "show": {
+                        "tmdbId": 1400,
+                        "title": "Seinfeld",
+                        "releaseYear": "1989",
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg",
+                        "mediaType": "tv",
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "rating": 8.3,
+                        "__typename": "Show"
+                    },
+                    "__typename": "WatchlistItem"
+                },
+                {
+                    "id": "3",
+                    "show": {
+                        "tmdbId": 8592,
+                        "title": "Parks and Recreation",
+                        "releaseYear": "2009",
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/5IOj62y2Eb2ngyYmEn1IJ7bFhzH.jpg",
+                        "mediaType": "tv",
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "rating": 8.043,
+                        "__typename": "Show"
+                    },
+                    "__typename": "WatchlistItem"
+                },
+                {
+                    "id": "74",
+                    "show": {
+                        "tmdbId": 4608,
+                        "title": "30 Rock",
+                        "releaseYear": "2006",
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/k3RbNzPEPW0cmkfkn1xVCTk3Qde.jpg",
+                        "mediaType": "tv",
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "rating": 7.45,
+                        "__typename": "Show"
+                    },
+                    "__typename": "WatchlistItem"
+                },
+                {
+                    "id": "75",
+                    "show": {
+                        "tmdbId": 4608,
+                        "title": "30 Rock",
+                        "releaseYear": "2006",
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/k3RbNzPEPW0cmkfkn1xVCTk3Qde.jpg",
+                        "mediaType": "tv",
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "rating": 7.45,
+                        "__typename": "Show"
+                    },
+                    "__typename": "WatchlistItem"
+                }
+            ],
+            "recommendations": [
+                {
+                    "recommendeeId": 1,
+                    "recommender": {
+                        "id": "2",
+                        "username": "martha_stewart",
+                        "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940448.png",
+                        "__typename": "User"
+                    },
+                    "show": {
+                        "tmdbId": 4608,
+                        "title": "30 Rock",
+                        "releaseYear": "2006",
+                        "rating": 7.45,
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/k3RbNzPEPW0cmkfkn1xVCTk3Qde.jpg",
+                        "mediaType": "tv",
+                        "__typename": "Show"
+                    },
+                    "createdAt": "2023-02-12T19:25:41Z",
+                    "__typename": "Recommendation"
+                },
+                {
+                    "recommendeeId": 1,
+                    "recommender": {
+                        "id": "3",
+                        "username": "james-white-rules",
+                        "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940405.png",
+                        "__typename": "User"
+                    },
+                    "show": {
+                        "tmdbId": 4608,
+                        "title": "30 Rock",
+                        "releaseYear": "2006",
+                        "rating": 7.45,
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/k3RbNzPEPW0cmkfkn1xVCTk3Qde.jpg",
+                        "mediaType": "tv",
+                        "__typename": "Show"
+                    },
+                    "createdAt": "2023-02-12T19:26:41Z",
+                    "__typename": "Recommendation"
+                },
+                {
+                    "recommendeeId": 1,
+                    "recommender": {
+                        "id": "3",
+                        "username": "james-white-rules",
+                        "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940405.png",
+                        "__typename": "User"
+                    },
+                    "show": {
+                        "tmdbId": 8592,
+                        "title": "Parks and Recreation",
+                        "releaseYear": "2009",
+                        "rating": 8.043,
+                        "genres": [
+                            "Comedy"
+                        ],
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/5IOj62y2Eb2ngyYmEn1IJ7bFhzH.jpg",
+                        "mediaType": "tv",
+                        "__typename": "Show"
+                    },
+                    "createdAt": "2023-02-12T19:27:41Z",
+                    "__typename": "Recommendation"
+                },
+                {
+                    "recommendeeId": 1,
+                    "recommender": {
+                        "id": "4",
+                        "username": "sean_not_shaun",
+                        "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940421.png",
+                        "__typename": "User"
+                    },
+                    "show": {
+                        "tmdbId": 100088,
+                        "title": "The Last of Us",
+                        "releaseYear": "2023",
+                        "rating": 8.829,
+                        "genres": [
+                            "Drama",
+                            "Action \u0026 Adventure"
+                        ],
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+                        "mediaType": "tv",
+                        "__typename": "Show"
+                    },
+                    "createdAt": "2023-02-12T19:28:41Z",
+                    "__typename": "Recommendation"
+                },
+                {
+                    "recommendeeId": 1,
+                    "recommender": {
+                        "id": "4",
+                        "username": "sean_not_shaun",
+                        "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940421.png",
+                        "__typename": "User"
+                    },
+                    "show": {
+                        "tmdbId": 4601,
+                        "title": "Law \u0026 Order: Criminal Intent",
+                        "releaseYear": "2001",
+                        "rating": 7.6,
+                        "genres": [
+                            "Drama"
+                        ],
+                        "posterUrl": "https://image.tmdb.org/t/p/w500/mwynkwd6jql0qamRW6i5Dv6aZ4k.jpg",
+                        "mediaType": "tv",
+                        "__typename": "Show"
+                    },
+                    "createdAt": "2023-02-13T18:41:56Z",
+                    "__typename": "Recommendation"
+                }
+            ],
+            "__typename": "User"
+        }
+    }
+}

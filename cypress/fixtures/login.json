@@ -1,0 +1,31 @@
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "username": "snoop_dogg",
+        "__typename": "User"
+      },
+      {
+        "id": "2",
+        "username": "martha_stewart",
+        "__typename": "User"
+      },
+      {
+        "id": "3",
+        "username": "james-white-rules",
+        "__typename": "User"
+      },
+      {
+        "id": "4",
+        "username": "sean_not_shaun",
+        "__typename": "User"
+      },
+      {
+        "id": "5",
+        "username": "the_burger_king",
+        "__typename": "User"
+      }
+    ]
+  }
+}
