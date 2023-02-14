@@ -37,19 +37,26 @@ const DetailsReccInterface = ({ id }) => {
     }
 
   return (
-    <div className="recc-container">
+    <div 
+      className="recc-container"
+      data-cy="recc-container"
+    >
       {!!friendAvatars.length && 
         <h2 className="recc-container__title">Recommended by Friends:</h2> 
       }
       <div className="recc-lower">
-        <div className="recc-lower__avatars-container">
+        <div 
+          className="recc-lower__avatars-container"
+          data-cy="avatars-container"
+        >
           {friendAvatars}
         </div>
         <button
           className="recc-lower__button"
-          onClick={handleModalChange}  
+          onClick={handleModalChange}
+          data-cy="open-modal"
         >
-          <img src={paperPlane} alt='Picture of a paper airplane'/>
+          <img src={paperPlane} alt='airplane icon'/>
         </button>
       </div>
     </div>

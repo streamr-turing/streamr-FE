@@ -55,49 +55,49 @@ const DetailsPage = () => {
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data.showDetails
   return (
     <>
-      {data &&
-        <section className="details-parent">
-          <div className="details">
-            <div className="details__lower">
-              <div className="details__lower__left">
-                <h1 className="details__title">{`${title} (${releaseYear})`}</h1>
-                <img
-                  data-cy="bookmark"
-                  className="details__lower__left__bookmark"
-                  src={watchlistId ? savedTrue : savedFalse}
-                  alt="bookmark icon"
-                  role="button"
-                  aria-label="toggle saved to watchlist"
-                  aria-pressed={watchlistId}
-                  onClick={toggleSaved}
-                  tabIndex={0}
+      <section className="details-parent">
+        <div className="details">
+          <div className="details__lower">
+            <div className="details__lower__left">
+              <h1 
+                className="details__title"
+                data-cy="details-title">{`${title} (${releaseYear})`}</h1>
+              <img
+                className="details__lower__left__bookmark"
+                src={watchlistId ? savedTrue : savedFalse}
+                alt="bookmark icon"
+                role="button"
+                aria-label="toggle saved to watchlist"
+                aria-pressed={watchlistId}
+                onClick={toggleSaved}
+                tabIndex={0}
+                data-cy="bookmark"
+              />
+              <img
+                className="details__lower__left__poster"
+                src={posterUrl}
+                alt={`Poster for ${title}`}
+                data-cy="poster"
+              />
+            </div>
+            <div className="details__lower__right">
+              <div>
+                <DetailsTable
+                  data={{
+                    streamingService,
+                    genres,
+                    rating,
+                    summary,
+                    recommendedBy
+                  }}
                 />
-                <img
-                  data-cy="poster"
-                  className="details__lower__left__poster"
-                  src={posterUrl}
-                  alt={`Poster for ${title}`}
-                />
+                <p data-cy="summary">{summary}</p>
               </div>
-              <div className="details__lower__right">
-                <div>
-                  <DetailsTable
-                    data={{
-                      streamingService,
-                      genres,
-                      rating,
-                      summary,
-                      recommendedBy
-                    }}
-                  />
-                  <p>{summary}</p>
-                </div>
-                <DetailsReccInterface id={parseInt(showId)} />
-              </div>
+              <DetailsReccInterface id={parseInt(showId)} />
             </div>
           </div>
-        </section>
-      }
+        </div>
+      </section>
     </>
   )
 }
