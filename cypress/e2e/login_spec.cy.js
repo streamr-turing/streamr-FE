@@ -6,7 +6,7 @@ describe('Testing Login Page', () => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
       aliasQuery(req, 'users')
       req.reply({
-        fixture: 'login.json'
+        fixture: 'users.json'
       })
     })
     cy.visit('http://localhost:3000/')
