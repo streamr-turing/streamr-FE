@@ -8,6 +8,8 @@ workflows:
   build:
     jobs:
       - cypress/run
+        start: npm start
+      - build_and_test
 
 jobs:
   build_and_test:
@@ -16,12 +18,12 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run : 
-          name : Run build
-          command: npm run build
       - run:
           name: Run tests
           command: npm test
+      - run : 
+          name : Run build
+          command: npm run build
       - persist_to_workspace:
           root: ~/project
           paths:
