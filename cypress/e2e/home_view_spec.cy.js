@@ -84,7 +84,7 @@ describe('Testing Home Page Navigation to Detail and Search Views', () => {
         cy.get('.detail-title').should('contain', '30 Rock (2006)')
     })
 
-    it('Should navigate to Search View after entering show title in search bar via clicking magnifying glass', () => {
+    it('Should navigate to Search View after entering show title in search bar via clicking magnifying glass button', () => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'shows')
             req.reply({

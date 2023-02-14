@@ -1,0 +1,54 @@
+{
+    "data": {
+        "shows": [
+            {
+                "tmdbId": 387,
+                "title": "SpongeBob SquarePants",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//mgRUpjG9fjMgOmaGeHZR5tzbNYS.jpg",
+                "yearCreated": "1999-05-01",
+                "genres": [
+                    "Animation",
+                    "Comedy",
+                    "Family",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 7.595,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 99588,
+                "title": "Kamp Koral: SpongeBob's Under Years",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//peZYB3aFOBoZbpFhOZogrTHVlqX.jpg",
+                "yearCreated": "2021-03-04",
+                "genres": [
+                    "Animation",
+                    "Comedy",
+                    "Family"
+                ],
+                "rating": 7.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 121021,
+                "title": "SpongeBob DocuPants",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//fxB8pHdIri8U1pcrEhIV4qh3Etv.jpg",
+                "yearCreated": "2020-05-14",
+                "genres": [
+                    "Kids",
+                    "Documentary"
+                ],
+                "rating": 8.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 205996,
+                "title": "SpongeBob As Told By",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//ge8Vr33fiXgGBLZBGJJYjlFcW46.jpg",
+                "yearCreated": "2020-05-14",
+                "genres": [],
+                "rating": 0.0,
+                "__typename": "Shows"
+            }
+        ]
+    }
+}
