@@ -80,5 +80,4 @@ describe('Testing Login Page', () => {
     cy.get('p').should('be.visible')
       .and('contain', 'Sorry, the username/password is incorrect. Please try again.')
   })
-
 })
