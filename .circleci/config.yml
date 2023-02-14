@@ -2,24 +2,31 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.7
-  cypress: cypress-io/cypress@2
+  heroku: circleci/heroku@1.2.6 
+  cypress: cypress-io/cypress@2.1.0
 
 workflows:
-  build:
+  test_my_app:
     jobs:
-      - cypress/run
+      - cypress/run:
+          start: npm start
+      - build
+      - deploy:
+          requires:
+            - cypress/run
+            - build # only deploy if the build job has completed
+          filters:
+            branches:
+              only: main # only deploy when on main
 
 jobs:
-  build_and_test:
+  build:
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run:
-          name: Run tests
-          command: npm test
-      - run : 
+      - run :
           name : Run build
           command: npm run build
       - persist_to_workspace:
