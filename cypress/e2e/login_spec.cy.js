@@ -1,4 +1,4 @@
-import { aliasQuery } from "../../src/Utilities/graphql-test-utils"
+import { aliasQuery } from "../utilities/graphql-test-utils"
 
 describe('Testing Login Page', () => {
 
