@@ -11,13 +11,6 @@ workflows:
       - cypress/run:
           start: npm start
       - build
-      - deploy:
-          requires:
-            - cypress/run
-            - build # only deploy if the build job has completed
-          filters:
-            branches:
-              only: main # only deploy when on main
 
 jobs:
   build:
