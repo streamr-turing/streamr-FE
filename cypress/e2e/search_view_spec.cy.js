@@ -157,3 +157,60 @@ describe('Testing Search Page With No Show Results', () => {
         cy.get('h2').should('contain', 'No search results')
     })
 })
+
+describe('Testing Search Page Navigating to Detail View, Home View, and Watch List View', () => {
+    beforeEach(() => {
+        cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+            aliasQuery(req, 'users')
+            req.reply({
+                fixture: 'login-users.json'
+            })
+        })
+        cy.visit('http://localhost:3000/')
+        cy.wait('@gqlusersQuery')
+
+        cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+            aliasQuery(req, 'fetchUser')
+            req.reply({
+                fixture: 'home-view-currentUser-recommendations.json'
+            })
+        })
+        cy.get('[type="text"]').type('snoop_dogg')
+        cy.get('[type="password"]').type('streamr')
+        cy.get('button').click()
+        cy.wait('@gqlfetchUserQuery')
+
+        cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+            aliasQuery(req, 'shows')
+            req.reply({
+                fixture: 'search-view-shows-spongebob.json'
+            })
+        })
+        cy.get('.search-input').type('spongebob')
+        cy.get('.magnifying-glass-icon').click()
+        cy.wait('@gqlshowsQuery')
+    })
+    
+    it('Should navigate to Detail View', () => {
+        cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+            aliasQuery(req, 'showDetails')
+            req.reply({
+                fixture: 'search-view-showDetails-spongebob.json'
+            })
+        })
+        cy.get('.tile-img').eq(1).click()
+        cy.wait('@gqlshowDetailsQuery')
+
+        cy.get('.detail-title').should('contain', 'Kamp Koral: SpongeBob\'s Under Years (2021)')
+    })
+
+    it('Should navigate to Home View', () => {
+        cy.get('p').eq(1).click()
+        cy.get('.recommend-title').should('contain', 'Recommended By Friends')
+    })
+
+    it('Should navigate to Watch List View', () => {
+        cy.get('p').eq(2).click()
+        cy.get('.watch-list-title').should('contain', 'My Watch List')
+    })
+})

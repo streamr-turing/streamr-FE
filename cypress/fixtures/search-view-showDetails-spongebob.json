@@ -1,0 +1,47 @@
+{
+    "data": {
+        "showDetails": {
+            "tmdbId": 99588,
+            "title": "Kamp Koral: SpongeBob's Under Years",
+            "releaseYear": "2021",
+            "streamingService": [
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/jPXksae158ukMLFhhlNvzsvaEyt.jpg",
+                    "providerName": "fuboTV",
+                    "__typename": "StreamingService"
+                },
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/xbhHHa1YgtpwhC8lb1NQ3ACVcLd.jpg",
+                    "providerName": "Paramount Plus",
+                    "__typename": "StreamingService"
+                },
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/3E0RkIEQrrGYazs63NMsn3XONT6.jpg",
+                    "providerName": "Paramount+ Amazon Channel",
+                    "__typename": "StreamingService"
+                },
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/qlVSrZgfXlFw0Jj6hsYq2zi70JD.jpg",
+                    "providerName": "Paramount+ Roku Premium Channel",
+                    "__typename": "StreamingService"
+                },
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/xL9SUR63qrEjFZAhtsipskeAMR7.jpg",
+                    "providerName": "DIRECTV",
+                    "__typename": "StreamingService"
+                }
+            ],
+            "posterUrl": "https://image.tmdb.org/t/p/w500/peZYB3aFOBoZbpFhOZogrTHVlqX.jpg",
+            "genres": [
+                "Animation",
+                "Comedy",
+                "Family"
+            ],
+            "rating": 7.2,
+            "summary": "SpongeBob and friends spend the summer catching jellyfish, building camp-fires, and swimming in Lake Yuckymuck at Camp Coral, located in the Kelp Forest.",
+            "mediaType": "tv",
+            "recommendedBy": [],
+            "__typename": "Show"
+        }
+    }
+}
