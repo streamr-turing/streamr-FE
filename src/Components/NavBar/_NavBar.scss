@@ -10,8 +10,12 @@ $text-color:  #D9D9D9;
 .navbar-area {
     @include centerColumn();
     background-color: $nav-background-color;
+    border-radius: 20px;
     width: 20vw;
-    height: 100vh;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: sticky;
     .user-info {
         margin: 20px 0%;
         @include centerColumn();

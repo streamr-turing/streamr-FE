@@ -1,11 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { NavLink, useLocation, Link, useNavigate } from "react-router-dom"
 import { locationFunction } from "./helper-functions"
 import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
 import "./_NavBar.scss"
+import { UserContext } from "../../Providers/UserContext"
 
 const NavBar = () => {
+  const { currentUser } = useContext(UserContext)
+  console.log('currentUser', currentUser)
   const [searchKeyPhrase, setKeyPhrase] = useState("")
   let location = useLocation()
   let buttonStyles = locationFunction(location)
@@ -34,8 +37,8 @@ const NavBar = () => {
   return (
     <div className="navbar-area">
       <section className="user-info">
-        <img src={rabbit} alt='Picture of your avatar' />
-        <p>Courtney</p>
+        <img src={currentUser.avatarUrl} alt='Picture of your avatar' />
+        <p>{currentUser.username}</p>
       </section>
       <nav className="search-navigation">
         <ul>
