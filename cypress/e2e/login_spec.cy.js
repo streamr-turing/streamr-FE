@@ -50,11 +50,35 @@ describe('Testing Login Page', () => {
   })
 
   it('Should see an invalid username/ password message if input an invalid password and click submit', () => {
-    cy.get('[type="text"]').type('martha_stewart')
+    cy.get('[type="text"]').type('snoop_dogg')
     cy.get('[type="password"]').type('banana')
     cy.get('button').click()
 
     cy.get('p').should('be.visible')
       .and('contain', 'Sorry, the username/password is incorrect. Please try again.')
   })
+
+  it('Should see an invalid username/ password message if username input is left empty and click submit', () => {
+    cy.get('[type="password"]').type('streamr')
+    cy.get('button').click()
+
+    cy.get('p').should('be.visible')
+      .and('contain', 'Sorry, the username/password is incorrect. Please try again.')
+  })
+
+  it('Should see an invalid username/ password message if password input is left empty and click submit', () => {
+    cy.get('[type="text"]').type('snoop_dogg')
+    cy.get('button').click()
+
+    cy.get('p').should('be.visible')
+      .and('contain', 'Sorry, the username/password is incorrect. Please try again.')
+  })
+
+  it('Should see an invalid username/ password message if password and username inputs are left empty and click submit', () => {
+    cy.get('button').click()
+
+    cy.get('p').should('be.visible')
+      .and('contain', 'Sorry, the username/password is incorrect. Please try again.')
+  })
+
 })
