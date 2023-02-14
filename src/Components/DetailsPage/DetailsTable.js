@@ -5,6 +5,7 @@ const DetailsTable = ({ data }) => {
   const streamingServiceIcons = data.streamingService.map(service => (
     <img
       className="details-table__provider-icon"
+      alt={service.providerName}
       src={service.logoPath}
       key={service.providerName}
     />
@@ -15,21 +16,19 @@ const DetailsTable = ({ data }) => {
       <tbody>
         {data.streamingService &&
           <tr>
-            <td>Streaming on:</td>
-            <td>
-              <div>
-                {streamingServiceIcons}
-              </div>
+            <td className="details-table__key">Streaming on:</td>
+            <td className="details-table__providers">
+              {streamingServiceIcons}
             </td>
           </tr>
         }
         <tr>
-          <td>Genres:</td>
+          <td className="details-table__key">Genres:</td>
           <td className="details-table__genres">{data.genres.join(", ")}</td>
         </tr>
         <tr>
-          <td>Audience Rating:</td>
-          <td>{Math.round(data.rating)}/10 ⭐️</td>
+          <td className="details-table__key">Audience Rating:</td>
+          <td className="details-table__rating">{Math.round(data.rating)}/10 ⭐️</td>
         </tr>
       </tbody>
     </table>

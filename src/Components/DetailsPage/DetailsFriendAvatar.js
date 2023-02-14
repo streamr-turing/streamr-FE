@@ -6,6 +6,7 @@ const DetailsFriendAvatar = ({ username, avatarUrl }) => {
     <div className="details-avatar">
       <img
         className="details-avatar__img"
+        alt={`profile picture for ${username}`}
         src={avatarUrl}
       />
       <p className="details-avatar__name">
