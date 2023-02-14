@@ -1,0 +1,26 @@
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "username": "sam"
+      },
+      {
+        "id": "2",
+        "username": "martha_stewart"
+      },
+      {
+        "id": "3",
+        "username": "james-white-rules"
+      },
+      {
+        "id": "4",
+        "username": "sean_not_shaun"
+      },
+      {
+        "id": "5",
+        "username": "the_burger_king"
+      }
+    ]
+  }
+}
