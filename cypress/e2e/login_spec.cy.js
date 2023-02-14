@@ -6,7 +6,7 @@ describe('Testing Login Page', () => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
       aliasQuery(req, 'users')
       req.reply({
-        fixture: 'login.json'
+        fixture: 'login-users.json'
       })
     })
     cy.visit('http://localhost:3000/')
@@ -31,7 +31,7 @@ describe('Testing Login Page', () => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
       aliasQuery(req, 'fetchUser')
       req.reply({
-        fixture: 'currentUser.json'
+        fixture: 'login-currentUser.json'
       })
     })
     cy.get('[type="text"]').type('snoop_dogg')
