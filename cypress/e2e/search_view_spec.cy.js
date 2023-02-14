@@ -146,13 +146,42 @@ describe('Testing Search Page With No Show Results', () => {
                 fixture: 'search-view-shows-no-results.json'
             })
         })
+    })
+    
+    it('Should show updated page name and "No results" message" when user searches for "asdf"', () => {
         cy.get('.search-input').type('asdf')
         cy.get('.magnifying-glass-icon').click()
         cy.wait('@gqlshowsQuery')
+
+        cy.get('.search-title').should('contain', 'Search Results for "asdf"')
+        cy.get('.shrug-img').should('be.visible')
+        cy.get('h2').should('contain', 'No search results')
     })
 
-    it('Should show updated page name and "No results" message"', () => {
-        cy.get('.search-title').should('contain', 'Search Results for "asdf"')
+    it('Should show updated page name and "No results" message" when user searches for "" via magnifying glass button', () => {
+        cy.get('.magnifying-glass-icon').click()
+
+        cy.get('.shrug-img').should('be.visible')
+        cy.get('h2').should('contain', 'No search results')
+    })
+
+    it('Should show updated page name and "No results" message" when user searches for "" via enter key', () => {
+        cy.get('.search-input').type('{enter}')
+
+        cy.get('.shrug-img').should('be.visible')
+        cy.get('h2').should('contain', 'No search results')
+    })
+
+    it('Should show updated page name and "No results" message" when user searches for " " via magnifying glass button', () => {
+        cy.get('.magnifying-glass-icon').click()
+
+        cy.get('.shrug-img').should('be.visible')
+        cy.get('h2').should('contain', 'No search results')
+    })
+
+    it('Should show updated page name and "No results" message" when user searches for " " via enter key', () => {
+        cy.get('.search-input').type(' {enter}')
+
         cy.get('.shrug-img').should('be.visible')
         cy.get('h2').should('contain', 'No search results')
     })
