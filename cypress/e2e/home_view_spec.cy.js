@@ -37,7 +37,7 @@ describe('Testing Home Page Nav Bar and Header', () => {
     })
 })
 
-describe('Testing Home Page Navigation to Detail and Search Views', () => {
+describe('Testing Home Page Navigation to Detail, Search View, and Watch List View', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'users')
@@ -107,6 +107,11 @@ describe('Testing Home Page Navigation to Detail and Search Views', () => {
         cy.get('.search-input').type('king of queens{enter}')
         cy.wait('@gqlshowsQuery')
         cy.get('.search-title').should('contain', 'Search Results for "king of queens"')
+    })
+
+    it('Should navigate to Watch List View after clicking "Watchlist"', () => {
+        cy.get('p').eq(2).click()
+        cy.get('.watch-list-title').should('contain', 'My Watch List')
     })
 })
 
