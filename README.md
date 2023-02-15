@@ -11,6 +11,9 @@
 - James White [GitHub](https://github.com/James-E-White) | [LinkedIn](https://www.linkedin.com/in/james-ed-wh/)
 - William Wang [GitHub](https://github.com/willjw2) | [LinkedIn](https://www.linkedin.com/in/william-wang-814442240/)
 
+## Deployed Site
+[Streamr](https://main--frabjous-halva-33ef87.netlify.app/)
+
 ## About The Project
 
 Streamr is a convenient tool that allows users to share, save, and look up their favorite shows to stream. After logging in, users are shown a "Recommended By Friends" feed of the latest greatest shows to binge. From there, they can may view the show's details, look up other shows, or save shows to their Watch List to check out later. Streamr was constructed with GraphQl, React (v6), Router, Sass, Contex, CircleCI, and Cypress testing. This project was comprised of 3 front-enders and 4 back-enders collaborating through an remote self-learning environment. It took the team approximately 102 hours total to finish within a 17-day timeframe with daily standups and weekly retros to accomplish our finished product.
