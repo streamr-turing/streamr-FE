@@ -122,4 +122,72 @@ describe("Details Page (bad response)", () => {
   it("should not show a table row for streaming providers if there are none available", () => {
     cy.url().should("eq", "http://localhost:3000/error")
   })
+
+})
+describe('Testing Details Page Navigation to Home View, Search View, and Watch List View', () => {
+  beforeEach(() => {
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'users')
+      req.reply({
+        fixture: 'login-users.json'
+      })
+    })
+    cy.visit('http://localhost:3000/')
+    cy.wait('@gqlusersQuery')
+
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'fetchUser')
+      req.reply({
+        fixture: 'home-view-currentUser-recommendations.json'
+      })
+    })
+    cy.get('[type="text"]').type('snoop_dogg')
+    cy.get('[type="password"]').type('streamr')
+    cy.get('button').click()
+    cy.wait('@gqlfetchUserQuery')
+
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'showDetails')
+      req.reply({
+        fixture: 'home-view-showDetails-30Rock.json'
+      })
+    })
+    cy.get('.poster-img').eq(0).click()
+    cy.wait('@gqlshowDetailsQuery')
+  })
+
+  it('Should navigate to Home View after clicking on "Home" link', () => {
+    cy.get('p').eq(1).click()
+    cy.get('.recommend-title').should('contain', 'Recommended By Friends')
+  })
+
+  it('Should navigate to Search View after entering show title in search bar via clicking magnifying glass button', () => {
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'shows')
+      req.reply({
+        fixture: 'home-view-shows-KingOfQueens.json'
+      })
+    })
+    cy.get('.search-input').type('king of queens')
+    cy.get('.magnifying-glass-icon').click()
+    cy.wait('@gqlshowsQuery')
+    cy.get('.search-title').should('contain', 'Search Results for "king of queens"')
+  })
+
+  it('Should navigate to Search View after entering show title in search bar via pressing enter', () => {
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      aliasQuery(req, 'shows')
+      req.reply({
+        fixture: 'home-view-shows-KingOfQueens.json'
+      })
+    })
+    cy.get('.search-input').type('king of queens{enter}')
+    cy.wait('@gqlshowsQuery')
+    cy.get('.search-title').should('contain', 'Search Results for "king of queens"')
+  })
+
+  it('Should navigate to Watch List View after clicking "Watchlist"', () => {
+    cy.get('p').eq(2).click()
+    cy.get('.watch-list-title').should('contain', 'My Watch List')
+  })
 })
