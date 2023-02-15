@@ -1,0 +1,11 @@
+{
+    "data": {
+      "users": [
+        {
+          "id": "1",
+          "username": "snoop_dogg",
+          "__typename": "User"
+        }
+      ]
+    }
+  }

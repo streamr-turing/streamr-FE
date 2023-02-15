@@ -1,0 +1,10 @@
+{
+    "data": {
+        "createRecommendation": {
+            "tmdbId": 4608,
+            "recommenderId": 1,
+            "recommendeeId": 4,
+            "__typename": "Recommendation"
+        }
+    }
+}
