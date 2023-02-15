@@ -119,11 +119,18 @@ describe("Details Page (bad response)", () => {
     cy.wait("@gqlshowDetailsQuery")
   })
 
-  it("should not show a table row for streaming providers if there are none available", () => {
+  it.only("should redirect to Error Component if there is a bad response", () => {
     cy.url().should("eq", "http://localhost:3000/error")
+    cy.get('.error').should('be.visible')
+    cy.get('[d="M13.768 4.2C13.42 3.545 12.742 3.138 12 3.138s-1.42.407-1.768 1.063L2.894 18.064a1.986 1.986 0 0 0 .054 1.968A1.984 1.984 0 0 0 4.661 21h14.678c.708 0 1.349-.362 1.714-.968a1.989 1.989 0 0 0 .054-1.968L13.768 4.2zM4.661 19 12 5.137 19.344 19H4.661z"]').should('be.visible')
+    cy.get('[d="M20 3H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM4 9V5h16v4zm16 4H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zM4 19v-4h16v4z"]').should('be.visible')
+    cy.get('.oops').should('be.visible')
+    .and('contain', 'Bummer! The server isn\'t responding.')
+    cy.get('.message').should('be.visible')
+    .and('contain', 'Our team is working on it! Come back later!')
   })
-
 })
+
 describe('Testing Details Page Navigation to Home View, Search View, and Watch List View', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {

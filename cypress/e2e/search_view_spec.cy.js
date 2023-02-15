@@ -243,3 +243,39 @@ describe('Testing Search Page Navigating to Detail View, Home View, and Watch Li
         cy.get('.watch-list-title').should('contain', 'My Watch List')
     })
 })
+
+
+
+describe("Search View (bad response)", () => {
+    beforeEach(() => {
+      cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+        switch (req.body.operationName) {
+          case "users":
+            aliasQuery(req, "users")
+            req.reply({ fixture: "login-users.json" })
+            break
+          case "fetchUser":
+            aliasQuery(req, "fetchUser")
+            req.reply({ fixture: "home-view-currentUser-recommendations.json" })
+            break
+          case "shows":
+            aliasQuery(req, "shows")
+            req.reply({ fixture: "bad-response.json" })
+            break
+        }
+      })
+      cy.visit("http://localhost:3000/")
+      cy.wait("@gqlusersQuery")
+      cy.get('[type="text"]').type("snoop_dogg")
+      cy.get('[type="password"]').type("streamr")
+      cy.get("button").click()
+      cy.wait("@gqlfetchUserQuery")
+      cy.get('.search-input').type('spongebob')
+      cy.get('.magnifying-glass-icon').click()
+      cy.wait('@gqlshowsQuery')
+    })
+  
+    it.only("should display Error view with a bad response", () => {
+      cy.url().should("eq", "http://localhost:3000/error")
+    })
+})
