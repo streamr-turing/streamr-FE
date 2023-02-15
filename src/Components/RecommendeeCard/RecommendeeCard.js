@@ -8,7 +8,7 @@ import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
 import './_RecommendeeCard.scss'
 
-const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, tmdbId }) => {
+const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, tmdbId, recommenderName }) => {
   const [
     watchlistId,
     findWatchlistId,
@@ -73,7 +73,7 @@ const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, 
     <div>
       <div className="recommendee-card-container">
         <img src={watchlistId ? savedTrue : savedFalse} className='home-bookmark' onClick={toggleSaved} />
-        <Link to={`/show/${tmdbId}`} className='clickable-poster'><img src={posterUrl} className='poster-img' /></Link>
+        <Link to={`/show/${tmdbId}`} className='clickable-poster' data-cy={`poster-${tmdbId}-${recommenderName}`} ><img src={posterUrl} className='poster-img' /></Link>
         <div className='recommendee-card-info'>
           <NavLink to={`/show/${tmdbId}`} className='clickable-title'><h1 className='title'>{title} ({releaseYear})</h1></NavLink>
           <h2 className='audience-rating'>Audience Rating: {Math.round(rating * 10) / 10}/10</h2>

@@ -1,0 +1,10 @@
+{
+  "data": {
+    "createWatchlistItem": {
+        "id": "75",
+        "tmdbId": 4608,
+        "userId": 1,
+        "__typename": "WatchlistItem"
+    }
+}
+}

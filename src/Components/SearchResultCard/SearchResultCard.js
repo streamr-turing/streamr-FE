@@ -63,7 +63,7 @@ const SearchResultCard = ({ posterUrl, title, releaseYear, genres, rating, tmdbI
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       />
-      <Link to={`/show/${tmdbId}`}><div data-cy="img-container" className="img-container">
+      <Link to={`/show/${tmdbId}`} data-cy={`poster-${tmdbId}`}><div data-cy="img-container" className="img-container">
         <img
           className={imageClassList}
           src={posterUrl ? posterUrl : tv}

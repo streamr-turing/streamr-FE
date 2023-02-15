@@ -22,6 +22,7 @@ const TimelinePost = ({ recommenderAvatar, recommenderName, poster, title, relea
         genres={genres}
         date={date}
         tmdbId={id}
+        recommenderName={recommenderName}
       />
     </div>
   )
