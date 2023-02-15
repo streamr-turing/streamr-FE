@@ -179,7 +179,7 @@ describe('Testing Recommendation Modal', () => {
  
     })
 
-    it.only('Should display "Add Some Friends!" message on the Modal View if the user does not have any users to send recommendations to', () => {
+    it('Should display "Add Some Friends!" message on the Modal View if the user does not have any users to send recommendations to', () => {
         cy.get('.modalContainer').should('be.visible')
         cy.get('[data-cy="recc-modal"]').should('be.visible')
         cy.get('.friend-list > p').should('be.visible')
