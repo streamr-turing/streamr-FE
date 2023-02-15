@@ -220,7 +220,7 @@ describe('Testing Search Page Navigating to Detail View, Home View, and Watch Li
         cy.wait('@gqlshowsQuery')
     })
     
-    it('Should navigate to Detail View', () => {
+    it('Should navigate to Detail View if show information is avaiable', () => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'showDetails')
             req.reply({
