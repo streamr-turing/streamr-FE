@@ -1,0 +1,1223 @@
+{
+    "data": {
+        "shows": [
+            {
+                "tmdbId": 103416,
+                "title": "The Lying Life of Adults",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//cDy24NY2QIXYUxRzelvhkWGbkPH.jpg",
+                "yearCreated": "2023-01-04",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 7.483,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 32209,
+                "title": "Al Fondo Hay Sitio",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//g7cuCCkvoBuSwemTHYz3k0hvvmz.jpg",
+                "yearCreated": "2009-03-30",
+                "genres": [
+                    "Comedy",
+                    "Drama",
+                    "Soap"
+                ],
+                "rating": 8.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1416,
+                "title": "Grey's Anatomy",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//daSFbrt8QCXV2hSwB0hqYjbj681.jpg",
+                "yearCreated": "2005-03-27",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 8.258,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 211163,
+                "title": "Maria Clara and Ibarra",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//tJJKNsoUceHjocfZ81l6sVSC1Bl.jpg",
+                "yearCreated": "2022-10-03",
+                "genres": [
+                    "Drama",
+                    "Comedy",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 7.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 213036,
+                "title": "Tinka and the mirror of the soul",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//zlc7lRq95C7ZTN12pWgtq5AtDga.jpg",
+                "yearCreated": "2022-12-01",
+                "genres": [
+                    "Kids",
+                    "Family"
+                ],
+                "rating": 7.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 213852,
+                "title": "Mi Camino es Amarte",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//1Fp0IVmjRdTUD2FyXAzn07H4Dvt.jpg",
+                "yearCreated": "2022-11-07",
+                "genres": [
+                    "Soap"
+                ],
+                "rating": 7.818,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 114439,
+                "title": "Let's Make a Deal",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//8lQkzJCwPpB0P6GieQeojUOW6PU.jpg",
+                "yearCreated": "2009-10-05",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 6.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 60625,
+                "title": "Rick and Morty",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//cvhNj9eoRBe5SxjCbQTkh05UP5K.jpg",
+                "yearCreated": "2013-12-02",
+                "genres": [
+                    "Animation",
+                    "Comedy",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 8.731,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 65334,
+                "title": "Miraculous: Tales of Ladybug \u0026 Cat Noir",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//psDcRgUX38cIeGeADwLRPyO7SYC.jpg",
+                "yearCreated": "2015-10-19",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Kids"
+                ],
+                "rating": 8.015,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 211782,
+                "title": "Al Thaman",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//uFEV0Tsns33zKyuc12l4XCBoba7.jpg",
+                "yearCreated": "2023-01-08",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 10.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 63824,
+                "title": "Aruseros",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//impacXrdofZzhMJHNboodaqFfaM.jpg",
+                "yearCreated": "2002-09-17",
+                "genres": [
+                    "Comedy",
+                    "Talk",
+                    "News"
+                ],
+                "rating": 5.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 215092,
+                "title": "Alpha Males",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//jk8YHUJ59YylnMwTnMYTFOKkz1r.jpg",
+                "yearCreated": "2022-12-30",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 7.63,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 207863,
+                "title": "Anne Rice's Mayfair Witches",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//zKRBfuRWGbs9R2nxhlNP8CfArUh.jpg",
+                "yearCreated": "2023-01-08",
+                "genres": [
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 7.536,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 203504,
+                "title": "Aashiqana",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//gGtUE7fCPKOzSiJ50KTFEARXCP2.jpg",
+                "yearCreated": "2022-06-06",
+                "genres": [
+                    "Crime",
+                    "Mystery"
+                ],
+                "rating": 6.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 78464,
+                "title": "DOREIKU The Animation",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//q4J6PuFOEqUvPsvvCYrW3KkDWiF.jpg",
+                "yearCreated": "2018-04-13",
+                "genres": [
+                    "Animation",
+                    "Crime",
+                    "Drama"
+                ],
+                "rating": 5.8,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 104877,
+                "title": "Love Is In The Air",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bE71f9A3eztjcd5JT3MmHB8MbzA.jpg",
+                "yearCreated": "2020-07-08",
+                "genres": [
+                    "Drama",
+                    "Comedy"
+                ],
+                "rating": 8.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 106492,
+                "title": "Asia Express",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//ti2AJaexcdrQsCCi5rozqVuq7sS.jpg",
+                "yearCreated": "2018-02-12",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 10.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 135157,
+                "title": "Alchemy of Souls",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//q2IiPRSXPOZ6qVRj36WRAYEQyHs.jpg",
+                "yearCreated": "2022-06-18",
+                "genres": [
+                    "Drama",
+                    "Action \u0026 Adventure",
+                    "Mystery",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.6,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 211855,
+                "title": "The End of Love",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//e0WBmIJiapZxIPIuYRRSCffFNKe.jpg",
+                "yearCreated": "2022-11-04",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 7.6,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 2691,
+                "title": "Two and a Half Men",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//A9QDK4OWpv41W27kCv0LXe30k9S.jpg",
+                "yearCreated": "2003-09-22",
+                "genres": [
+                    "Comedy",
+                    "Drama"
+                ],
+                "rating": 7.433,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 110562,
+                "title": "A Woman Scorned",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//i4dD4K0udXVosxOa7wBXpkCKgP1.jpg",
+                "yearCreated": "2020-10-07",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 6.694,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 7821,
+                "title": "El Chavo: The Animated Series",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//98rkR62d1SeEi18p5Z46kqlNGzM.jpg",
+                "yearCreated": "2006-10-21",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 7.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 31911,
+                "title": "Fullmetal Alchemist: Brotherhood",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+                "yearCreated": "2009-04-05",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.703,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1338,
+                "title": "Alarm for Cobra 11: The Motorway Police",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//mPhVxedeais0wtR38JIcsJdqH5Z.jpg",
+                "yearCreated": "1996-03-12",
+                "genres": [
+                    "Drama",
+                    "Comedy",
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 6.26,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 119058,
+                "title": "Makarov and The Girls",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//sL5guEHAn8pkw1c3Qn7ZKIxifrb.jpg",
+                "yearCreated": "2021-03-09",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 8.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 218485,
+                "title": "America Express",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//3mcoPSeQmjG5cGNQDvR3L8gDdSN.jpg",
+                "yearCreated": "2023-01-15",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 10.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 71790,
+                "title": "S.W.A.T.",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//7Bttz4hEspKlpU0Me57dkHNR3nf.jpg",
+                "yearCreated": "2017-11-02",
+                "genres": [
+                    "Crime",
+                    "Action \u0026 Adventure",
+                    "Drama"
+                ],
+                "rating": 8.122,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 208422,
+                "title": "Club América vs. Club América",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//zzqQ3JSfRUaUJFL0OC6Sn7gF6hE.jpg",
+                "yearCreated": "2022-08-31",
+                "genres": [
+                    "Documentary"
+                ],
+                "rating": 8.444,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 218478,
+                "title": "Falling again",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//esXkEJVabYCvl15jAvzYkBB4gyT.jpg",
+                "yearCreated": "2023-01-20",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 2.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 99966,
+                "title": "All of Us Are Dead",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//pTEFqAjLd5YTsMD6NSUxV6Dq7A6.jpg",
+                "yearCreated": "2022-01-28",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.379,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 66579,
+                "title": "The Three Sides of Ana",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//nHURRha9cvKI6LaFVl7gbfEaGjt.jpg",
+                "yearCreated": "2016-05-23",
+                "genres": [
+                    "Soap",
+                    "Drama"
+                ],
+                "rating": 7.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 70828,
+                "title": "Surviving Escobar - Alias JJ",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//97xpke32aNz0XSl6OHLilu9GK63.jpg",
+                "yearCreated": "2017-02-08",
+                "genres": [
+                    "Drama",
+                    "Crime"
+                ],
+                "rating": 7.775,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 45815,
+                "title": "Brazil Avenue",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//cXkHwgHReqgCQIiQcPHfLsZmjgm.jpg",
+                "yearCreated": "2012-03-26",
+                "genres": [
+                    "Drama",
+                    "Mystery",
+                    "Soap",
+                    "Crime"
+                ],
+                "rating": 8.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1412,
+                "title": "Arrow",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+                "yearCreated": "2012-10-10",
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Mystery",
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 6.768,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 112836,
+                "title": "Money Heist: Korea - Joint Economic Area",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bnfTPTTytrZZ9Aw6hoOQdojiaKo.jpg",
+                "yearCreated": "2022-06-24",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Crime",
+                    "Drama",
+                    "Mystery"
+                ],
+                "rating": 7.966,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1900,
+                "title": "LIVE with Kelly and Ryan",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//hBkyypWN3EcOzkozatiCm5VeaG.jpg",
+                "yearCreated": "1988-09-05",
+                "genres": [
+                    "Talk"
+                ],
+                "rating": 5.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 110316,
+                "title": "Alice in Borderland",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//uFXEoVPENgKJrkxFWlOhNMDwlEk.jpg",
+                "yearCreated": "2020-12-10",
+                "genres": [
+                    "Drama",
+                    "Mystery",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.199,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 88384,
+                "title": "Astrid: Murder in Paris",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//rhzLDXqjNyXOwUWvTV0TR1SJRHd.jpg",
+                "yearCreated": "2020-03-13",
+                "genres": [
+                    "Crime"
+                ],
+                "rating": 7.714,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 37606,
+                "title": "The Amazing World of Gumball",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
+                "yearCreated": "2011-05-03",
+                "genres": [
+                    "Animation",
+                    "Family",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Comedy"
+                ],
+                "rating": 8.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1433,
+                "title": "American Dad!",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//b2XLAyJKLnZWClMmzNieoa33Sf6.jpg",
+                "yearCreated": "2005-02-06",
+                "genres": [
+                    "Animation",
+                    "Comedy"
+                ],
+                "rating": 6.88,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1413,
+                "title": "American Horror Story",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//tiuzjuzalHj377XER1sfq7XQEIT.jpg",
+                "yearCreated": "2011-10-05",
+                "genres": [
+                    "Drama",
+                    "Mystery",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 115857,
+                "title": "Daughter from Another Mother",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//lq0n5QzBA78ndUDb9SdN93P8hjY.jpg",
+                "yearCreated": "2021-01-20",
+                "genres": [
+                    "Comedy",
+                    "Drama"
+                ],
+                "rating": 7.612,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 207567,
+                "title": "Pokémon: The Arceus Chronicles",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//wfToCZbH3pCLzAqIKu0RBL3v1ek.jpg",
+                "yearCreated": "2022-01-21",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 7.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 112321,
+                "title": "A Private Affair",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//lmGRZEuIQtArmyGjt6Ay5Y74hk2.jpg",
+                "yearCreated": "2022-09-16",
+                "genres": [
+                    "Comedy",
+                    "Mystery",
+                    "Drama"
+                ],
+                "rating": 7.593,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 92783,
+                "title": "She-Hulk: Attorney at Law",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//hJfI6AGrmr4uSHRccfJuSsapvOb.jpg",
+                "yearCreated": "2022-08-18",
+                "genres": [
+                    "Comedy",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.543,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 83867,
+                "title": "Star Wars: Andor",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg",
+                "yearCreated": "2022-09-21",
+                "genres": [
+                    "Sci-Fi \u0026 Fantasy",
+                    "Action \u0026 Adventure",
+                    "War \u0026 Politics",
+                    "Drama"
+                ],
+                "rating": 8.232,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 60761,
+                "title": "Ace of Diamond",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//2BipcmjT5zx0bkhveeXHUWkLRA0.jpg",
+                "yearCreated": "2013-10-06",
+                "genres": [
+                    "Animation"
+                ],
+                "rating": 8.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 58710,
+                "title": "Carita de Ángel",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//sTiuV6vIkotMUhKH7HUTXhqE9zd.jpg",
+                "yearCreated": "2000-06-19",
+                "genres": [
+                    "Soap",
+                    "Drama",
+                    "Kids"
+                ],
+                "rating": 7.8,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 790,
+                "title": "Agatha Christie's Poirot",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//owEg4UjJCo60tPFckAZ4CPmR0Ra.jpg",
+                "yearCreated": "1989-01-08",
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Mystery"
+                ],
+                "rating": 8.175,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 5459,
+                "title": "Don't Mess with an Angel",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//3bHMe5ERxVylmdJE6BLqDyEcVxK.jpg",
+                "yearCreated": "2008-06-09",
+                "genres": [
+                    "Drama",
+                    "Soap"
+                ],
+                "rating": 7.539,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 42083,
+                "title": "Joséphine, Guardian Angel",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bklI8tXDDScpibUCvrAjF9KwMtF.jpg",
+                "yearCreated": "1997-12-15",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 5.9,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 63764,
+                "title": "Senora Acero",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//vXhBxsvpW2mGuXRbIK5Yazdp8Zg.jpg",
+                "yearCreated": "2014-09-23",
+                "genres": [
+                    "Drama",
+                    "Crime",
+                    "Soap"
+                ],
+                "rating": 7.776,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 213762,
+                "title": "Sean eternos: Campeones de América",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//kBlqr507IV9bDKHLEFBtEtTfCw3.jpg",
+                "yearCreated": "2022-11-03",
+                "genres": [
+                    "Documentary"
+                ],
+                "rating": 8.671,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 2354,
+                "title": "Home and Away",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//r4E3Mr2uBDUegKmPPaevfdiq8hv.jpg",
+                "yearCreated": "1988-01-17",
+                "genres": [
+                    "Drama",
+                    "Soap"
+                ],
+                "rating": 6.351,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 103086,
+                "title": "All For Love",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//jjmLFjKKnxyRq07lyD29wPbRM2d.jpg",
+                "yearCreated": "2020-01-07",
+                "genres": [],
+                "rating": 7.4,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 80350,
+                "title": "New Amsterdam",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//jsH4AeGZn5Q6h314A3OTUHKxHhR.jpg",
+                "yearCreated": "2018-09-25",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 8.47,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 204716,
+                "title": "Akiba Maid War",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//uSbDmK5y8dWVxngbWSWpmO47EI9.jpg",
+                "yearCreated": "2022-10-07",
+                "genres": [
+                    "Animation",
+                    "Comedy",
+                    "Crime"
+                ],
+                "rating": 7.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 84980,
+                "title": "MÄR: Märchen Awakens Romance",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//dwbBOqCqfc6Fj136zdXUHZiaWOQ.jpg",
+                "yearCreated": "2005-04-03",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Comedy"
+                ],
+                "rating": 8.333,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 215621,
+                "title": "Andy, Lauren, or Peng?",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//m977zw7pczUSl6nTsWHNtWcYj8b.jpg",
+                "yearCreated": "2022-12-03",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 212217,
+                "title": "Secrets of a Nympho",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//abJpwQn2Gk6MyOSNWgVyUBGk5js.jpg",
+                "yearCreated": "2022-10-23",
+                "genres": [
+                    "Drama",
+                    "Crime"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 33623,
+                "title": "The Avengers: Earth's Mightiest Heroes",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//eyUeOUefufuBCeih3lOi2NkFD9r.jpg",
+                "yearCreated": "2010-10-20",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Family"
+                ],
+                "rating": 8.241,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 66330,
+                "title": "W: Two Worlds Apart",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//rBuCoS0VB9M6zkEUCvnVrfeF0J.jpg",
+                "yearCreated": "2016-07-20",
+                "genres": [
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Comedy"
+                ],
+                "rating": 8.501,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 15260,
+                "title": "Adventure Time",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//qk3eQ8jW4opJ48gFWYUXWaMT4l.jpg",
+                "yearCreated": "2010-04-05",
+                "genres": [
+                    "Animation",
+                    "Comedy",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.454,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1516,
+                "title": "The A-Team",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//iJsueZM8TqQzeB55tol4mnyQzb9.jpg",
+                "yearCreated": "1983-01-23",
+                "genres": [
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 7.45,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 19716,
+                "title": "House of Anubis",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//uAUc5XVaCB39qvHa93iV2z84XM7.jpg",
+                "yearCreated": "2006-09-26",
+                "genres": [
+                    "Kids",
+                    "Mystery",
+                    "Soap"
+                ],
+                "rating": 7.3,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 49471,
+                "title": "Danganronpa: The Animation",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//2XKziwAUwPiOonJfSJxnEzFPNSU.jpg",
+                "yearCreated": "2013-07-05",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Drama",
+                    "Mystery"
+                ],
+                "rating": 8.014,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 203741,
+                "title": "Between the World and Us",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//rOF5Rvbq6hgVK2YCBF3mZ5pVLT3.jpg",
+                "yearCreated": "2022-09-14",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 5.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 120155,
+                "title": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//dtULGP3qRi932NzYGsp7u6q6zAS.jpg",
+                "yearCreated": "2022-04-06",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.6,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 97617,
+                "title": "The Misfit of Demon King Academy",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//xBNR7V4s5b0qQfRCiyEvIC5PS6v.jpg",
+                "yearCreated": "2020-07-04",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.6,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1095,
+                "title": "Ghost in the Shell: Stand Alone Complex",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//2bX7NkNB7QCoH6bMZVwIYr2uO9C.jpg",
+                "yearCreated": "2002-10-01",
+                "genres": [
+                    "Animation",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.253,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 66084,
+                "title": "Acapulco Shore",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//fSRyd3ZNZY41awncagc8oqV739M.jpg",
+                "yearCreated": "2014-09-27",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 7.9,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 215232,
+                "title": "Against the Ropes",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//vc1hvP76xJwoOqqEnH8Mz53K3i6.jpg",
+                "yearCreated": "2023-01-25",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 9.25,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 125438,
+                "title": "The Proud Family: Louder and Prouder",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//rRuy69wbGalOVbVFXS92A7qpVfs.jpg",
+                "yearCreated": "2022-02-23",
+                "genres": [
+                    "Family",
+                    "Animation",
+                    "Comedy"
+                ],
+                "rating": 6.9,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 194619,
+                "title": "A Family Affair",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//gkap4pWN722E0UK9WNL2vjGnAtw.jpg",
+                "yearCreated": "2022-06-27",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 3.4,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 74494,
+                "title": "Tempo de Amar",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//6KqzgEHNn1NW0Ic8G6YFuQCJBZU.jpg",
+                "yearCreated": "2017-09-26",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 7.2,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 45790,
+                "title": "JoJo's Bizarre Adventure",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//ogAWwbh3frWtiTyyXrZaVFtqCgp.jpg",
+                "yearCreated": "2012-10-06",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.655,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 207110,
+                "title": "Wag Mong Agawin Ang Akin",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//y7g35IfEkRcbPlICDNWZKsyYcyU.jpg",
+                "yearCreated": "2022-07-31",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1409,
+                "title": "Sons of Anarchy",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//1aiPRnDkSjRXepxG20xzrzU28F1.jpg",
+                "yearCreated": "2008-09-03",
+                "genres": [
+                    "Crime",
+                    "Drama"
+                ],
+                "rating": 8.442,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 137065,
+                "title": "Arknights",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bOHwf20OzBVBrhX31MyUdxQR0d2.jpg",
+                "yearCreated": "2022-10-29",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 39272,
+                "title": "Once Upon a Time",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//49qD372jeHUTmdNMGJkjCFZdv9y.jpg",
+                "yearCreated": "2011-10-23",
+                "genres": [
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 7.295,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 114477,
+                "title": "Harem in the Labyrinth of Another World",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//b4JCDJEyd5yh8u1Z5CQpyM3eiJ4.jpg",
+                "yearCreated": "2022-07-06",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.365,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 70788,
+                "title": "Payitaht Abdulhamid",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//u6XmzhddbhWY0m39TdUq9ZSe4yk.jpg",
+                "yearCreated": "2017-02-24",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Drama",
+                    "War \u0026 Politics"
+                ],
+                "rating": 8.944,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 45835,
+                "title": "Mobile Suit Gundam AGE",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//iOIMFI37oVzG5eI2CIto12l9q3f.jpg",
+                "yearCreated": "2011-10-09",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Drama",
+                    "War \u0026 Politics"
+                ],
+                "rating": 6.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 1403,
+                "title": "Marvel's Agents of S.H.I.E.L.D.",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//gHUCCMy1vvj58tzE3dZqeC9SXus.jpg",
+                "yearCreated": "2013-09-24",
+                "genres": [
+                    "Drama",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 7.485,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 128010,
+                "title": "Welcome to Eden",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//kZO0mtTHAgg9QVscLVtwCcQ7Hgx.jpg",
+                "yearCreated": "2022-05-06",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy",
+                    "Drama"
+                ],
+                "rating": 7.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 206085,
+                "title": "Argentine National Team, Road to Qatar",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//bA5xWzHYJ83vLuab21LJ4qBJiSD.jpg",
+                "yearCreated": "2022-07-22",
+                "genres": [
+                    "Documentary"
+                ],
+                "rating": 7.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 36922,
+                "title": "Rail Away",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//r82uLYRT7jaZjn8Afk5FnohjeTs.jpg",
+                "yearCreated": "1996-01-06",
+                "genres": [
+                    "Documentary"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 67460,
+                "title": "Yu-Gi-Oh! Arc-V",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//wFPxmtST6Sp5vZhDP6LK3SX8NMo.jpg",
+                "yearCreated": "2014-04-06",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.867,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 76806,
+                "title": "Tales of Demons and Gods",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//ac9gah8tZWfVMOtTDc45Xc6GOd.jpg",
+                "yearCreated": "2017-05-09",
+                "genres": [
+                    "Animation",
+                    "Action \u0026 Adventure",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 8.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 16395,
+                "title": "MasterChef Australia",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//m5akdtbWznF8KpOewKyKw0C36s1.jpg",
+                "yearCreated": "2009-04-27",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 7.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 17610,
+                "title": "NCIS: Los Angeles",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//TIIgcznwNfNr3KOZvxn26eKV99.jpg",
+                "yearCreated": "2009-09-22",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Drama",
+                    "Crime",
+                    "Mystery"
+                ],
+                "rating": 7.525,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 215559,
+                "title": "My Agent",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//iGjq7nxpUgyuCGvDqrIdxbcyLRo.jpg",
+                "yearCreated": "2022-12-25",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 0.0,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 58832,
+                "title": "Naked and Afraid",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//nDXJn6wEIQ6AfaWbt1APNQmyswU.jpg",
+                "yearCreated": "2013-06-23",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 7.1,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 65930,
+                "title": "My Hero Academia",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//ivOLM47yJt90P19RH1NvJrAJz9F.jpg",
+                "yearCreated": "2016-04-03",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation"
+                ],
+                "rating": 8.695,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 42280,
+                "title": "Abyss of Passion",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//eMo6VTGf3uNZrh9RShZDFSwwpfQ.jpg",
+                "yearCreated": "2012-01-23",
+                "genres": [
+                    "Drama"
+                ],
+                "rating": 7.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 66515,
+                "title": "Brothers",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//uX5ldo2snjJuZ8P9AxOharboxJn.jpg",
+                "yearCreated": "2015-09-28",
+                "genres": [
+                    "Drama",
+                    "Action \u0026 Adventure"
+                ],
+                "rating": 6.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 72974,
+                "title": "Downtown no Gaki no Tsukai ya Arahende!!",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//59IPwylg1xLeYigjH9bDauN7MCq.jpg",
+                "yearCreated": "1989-10-03",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": 9.5,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 13027,
+                "title": "Amor Real",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//leUsrci2EpuIj2PZQt3nZgbZHae.jpg",
+                "yearCreated": "2003-06-09",
+                "genres": [
+                    "Soap"
+                ],
+                "rating": 7.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 69820,
+                "title": "Granblue Fantasy: The Animation",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//hUo1FNB9WZZZi4pOJ2YE7Vq5UcF.jpg",
+                "yearCreated": "2017-01-21",
+                "genres": [
+                    "Action \u0026 Adventure",
+                    "Animation",
+                    "Sci-Fi \u0026 Fantasy"
+                ],
+                "rating": 6.7,
+                "__typename": "Shows"
+            },
+            {
+                "tmdbId": 108466,
+                "title": "Alle mot alle",
+                "imageUrl": "https://image.tmdb.org/t/p/w500//qmOYqF2ezHT1leCE91Mdm6tu3Vl.jpg",
+                "yearCreated": "2020-08-31",
+                "genres": [
+                    "Reality"
+                ],
+                "rating": 8.0,
+                "__typename": "Shows"
+            }
+        ]
+    }
+}
