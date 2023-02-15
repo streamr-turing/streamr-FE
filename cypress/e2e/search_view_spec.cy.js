@@ -230,7 +230,7 @@ describe('Testing Search Page Navigating to Detail View, Home View, and Watch Li
         cy.get('.tile-img').eq(1).click()
         cy.wait('@gqlshowDetailsQuery')
 
-        cy.get('.detail-title').should('contain', 'Kamp Koral: SpongeBob\'s Under Years (2021)')
+        cy.getByData("details-title").should('contain', 'Kamp Koral: SpongeBob\'s Under Years (2021)')
     })
 
     it('Should navigate to Home View', () => {

@@ -1,57 +1,46 @@
 import "./_DetailsPage.scss"
 
 const DetailsTable = ({ data }) => {
-  const streamingServiceDataResult = () => {
-    if (data.streamingService.length) {
-      const providerNames = data.streamingService.map(service => {
-        return <img src={service.logoPath} className='provider-icons' key={service.logoPath}/>
-      })
-      return providerNames
-    }
-  }
 
-  const streamingServiceTitleResult = () => {
-    if (data.streamingService.length) {
-      return <div className="detail-available-title">Streaming on:</div>
-    }
-  }
-
-  const recommendedDataResult = () => {
-    if (data.recommendedBy.length) {
-      const friendNames = data.recommendedBy.map(friend => {
-        return (
-          <div className="detail-recommender-and-avatar-container" key={`${Date.now()}${friend.avatarUrl}`}>
-            <img src={friend.avatarUrl} className='detail-recommender-avatar' key={friend.avatarUrl}/>
-            <p className="detail-recommender-username">{friend.username}</p>
-          </div>
-        )
-      })
-      return friendNames
-    }
-  }
-
-  const recommendedDataTitle = () => {
-    if(data.recommendedBy.length) {
-      return <p className="detail-recommended-by-friends-text">Recommended By Friends:</p>
-    }
-  }
+  const providerIcons = data.streamingService.map(provider => (
+    <img
+      className="details-table__provider-icon"
+      alt={provider.providerName}
+      src={provider.logoPath}
+      key={provider.providerName}
+    />
+  ))
 
   return (
-    <div className="detail-mini-data-container">
-      <div className="stream-rating-container">
-        {streamingServiceTitleResult()}
-        <div className="stream-icon-container">
-          {streamingServiceDataResult()}
-        </div>
-      </div>
-      <p>Audience Rating: {Math.round(data.rating * 10) / 10}/10 ⭐️</p>
-      <p className="detail-genre-data">Genre: <b>{data.genres.join(", ")}</b></p>
-      <p className="detail-summary-data">{data.summary}</p>
-      <div className="detail-recommend-data">
-        {recommendedDataTitle()}
-        <div className="detail-recommender-data">{recommendedDataResult()}</div>
-      </div>
-    </div>
+    <table className="details-table">
+      <tbody>
+        {!!data.streamingService.length &&
+          <tr>
+            <td className="details-table__key">Streaming on:</td>
+            <td 
+              className="details-table__providers"
+              data-cy="provider-icons"
+            >
+              {providerIcons}
+            </td>
+          </tr>
+        }
+        <tr>
+          <td className="details-table__key">Genres:</td>
+          <td 
+            className="details-table__genres"
+            data-cy="genres"
+          >{data.genres.join(", ")}</td>
+        </tr>
+        <tr>
+          <td className="details-table__key">Audience Rating:</td>
+          <td 
+            className="details-table__rating"
+            data-cy="rating"
+          >{Math.round(data.rating)}/10 ⭐️</td>
+        </tr>
+      </tbody>
+    </table>
   )
 }
 

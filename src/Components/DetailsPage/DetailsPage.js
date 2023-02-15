@@ -17,7 +17,7 @@ import Loading from "../Loading/Loading"
 
 const DetailsPage = () => {
   const [
-    watchlistId, 
+    watchlistId,
     findWatchlistId,
     saveError,
     removeError,
@@ -36,8 +36,7 @@ const DetailsPage = () => {
       userId: parseInt(currentUser.id),
       mediaType: "tv"
     }
-  }
-  )
+  })
 
   useEffect(() => {
     if (data) findWatchlistId(data.showDetails.tmdbId)
@@ -48,57 +47,63 @@ const DetailsPage = () => {
     else handleRemoveShow(watchlistId)
   }
 
-  if (loading) return <Loading/>
-  if (error) navigate("/error", { replace: true }) //error for page not initially loading
+  if (loading) return <Loading />
+  if (error) {
+    navigate("/error", { replace: true })
+    return
+  }
   // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
   // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
-  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy, tmdbId } = data.showDetails
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data?.showDetails
   return (
-    <div className="detail-and-title-container">
-      <h1 className="detail-title">{`${title} (${releaseYear})`}</h1>
-      {data &&
-        <section className="details-parent">
-          <div className="details">
-            <div className="details__lower">
-              <div className="details__lower__left">
-                <img
-                  data-cy="bookmark"
-                  className="details__lower__left__bookmark"
-                  src={watchlistId ? savedTrue : savedFalse}
-                  alt="bookmark icon"
-                  role="button"
-                  aria-label="toggle saved to watchlist"
-                  aria-pressed={watchlistId}
-                  onClick={toggleSaved}
-                  tabIndex={0}
-                />
-                <img
-                  data-cy="poster"
-                  className="details__lower__left__poster"
-                  src={posterUrl}
-                  alt={`Poster for ${title}`}
-                />
-              </div>
-              <div className="details__lower__right">
-                <div>
-                  <DetailsTable data={{
+    <>
+      <section className="details-parent">
+        <div className="details">
+          <div className="details__lower">
+            <div className="details__lower__left">
+              <h1 
+                className="details__title"
+                data-cy="details-title">{`${title} (${releaseYear})`}</h1>
+              <img
+                className="details__lower__left__bookmark"
+                src={watchlistId ? savedTrue : savedFalse}
+                alt="bookmark icon"
+                role="button"
+                aria-label="toggle saved to watchlist"
+                aria-pressed={watchlistId}
+                onClick={toggleSaved}
+                tabIndex={0}
+                data-cy="bookmark"
+              />
+              <img
+                className="details__lower__left__poster"
+                src={posterUrl}
+                alt={`Poster for ${title}`}
+                data-cy="poster"
+              />
+            </div>
+            <div className="details__lower__right">
+              <div>
+                <DetailsTable
+                  data={{
                     streamingService,
                     genres,
                     rating,
-                    summary,
-                    recommendedBy
+                    summary
                   }}
-                  key = {Date.now()}
-                   />
-                </div>
-                <DetailsReccInterface id={showId} />
+                />
+                <p data-cy="summary">{summary}</p>
               </div>
+              <DetailsReccInterface 
+                id={parseInt(showId)} 
+                recommenders={recommendedBy} 
+              />
             </div>
           </div>
-        </section>
-      }
-    </div>
+        </div>
+      </section>
+    </>
   )
 }
 

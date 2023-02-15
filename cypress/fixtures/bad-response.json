@@ -1,0 +1,4 @@
+{
+  "message": "Unexpected end of JSON input",
+  "stack": "SyntaxError: Unexpected end of JSON input\n    at https://streamr-be.herokuapp.com/assets/graphiql/rails/application-d78230954080343c556e7465ad58ff8802dc2c2455d2e14983801a14c3dd0036.js:4352:25\n    at async Object.eval [as onRun] (webpack-internal:///./components/GraphiQL.tsx:139:32)"
+}

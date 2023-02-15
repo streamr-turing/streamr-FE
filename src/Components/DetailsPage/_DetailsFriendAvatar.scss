@@ -1,15 +1,24 @@
-$details-avatar-width: 60px;
-
 .details-avatar {
-  width: $details-avatar-width;
+
   text-align: center;
-  margin: 0px 10px;
+  margin: 0px 15px;
+  width: 80px;
 }
 
 .details-avatar__img {
-  max-width: $details-avatar-width;
+  max-width: 50px;
 }
 
 .details-avatar__name {
+  font-size: .8rem;
   margin: 0px;
+}
+
+.addl-recommenders {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: .8rem;
+  width: 76px;
+  margin-left: 25px;
 }

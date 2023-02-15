@@ -90,7 +90,7 @@ const RecModal = () => {
     }
     if(sentStatus === 'waiting') {
         return(
-            <div className="modalBackground">
+            <div className="modalBackground" data-cy="recc-modal">
             <div className="modalContainer">
                 <button className='titleCloseBtn' onClick={closeModal}> X </button>
                  {data ?
