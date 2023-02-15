@@ -132,7 +132,7 @@ describe('Testing Home Page with items in Watchlist', () => {
 
   it('Should navigate to Recommendation Modal View after clicking on airplane image', () => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
-      aliasQuery(req, 'users')
+      aliasQuery(req, 'allUsers')
       req.reply({
         fixture: 'watchlist-users.json'
       })
@@ -141,7 +141,7 @@ describe('Testing Home Page with items in Watchlist', () => {
     cy.get(':nth-child(2) > .watch-list-poster-and-info > .watch-list-card-info > .watch-list-title-and-share-container > .share-button > .watch-list-share-icon').should('be.visible')
       .and('have.attr', "src", "/static/media/paper-plane.ab83774b7c046ab2cdc9.png")
     cy.get(':nth-child(2) > .watch-list-poster-and-info > .watch-list-card-info > .watch-list-title-and-share-container > .share-button').click()
-    cy.wait('@gqlusersQuery')
+    cy.wait('@gqlallUsersQuery')
     cy.get('.modalContainer').should('be.visible')
   })
 

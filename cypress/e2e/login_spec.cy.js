@@ -82,7 +82,7 @@ describe('Testing Login Page', () => {
   })
 })
 
-describe("Details Page (bad response)", () => {
+describe("Login Page (bad response)", () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
       switch (req.body.operationName) {
