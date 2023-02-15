@@ -53,7 +53,7 @@ GitHub Projects | Zoom | Slack
 
 - Courtney:
 - Keyaanna (Kiko): Learn GraphQL, use React version 6 with hooks, and collorate with the back-end team
-- Sam:
+- Sam: working on a full-stack team (using JSON contracts, approaching architecture decisions from full-stack perspective), implementing Apollo/GraphQL and React custom hooks
 
 ## Preview
 
