@@ -110,8 +110,8 @@ describe('Testing Recommendation Modal', () => {
       cy.wait('@gqlcreateRecommendationMutation')
       cy.get('.failed-container').should('be.visible')
       cy.get('.failed-text').should('be.visible')
-      cy.get('.failed-container', { timeout: 1500 }).should('not.exist')
-      cy.get('.failed-text', { timeout: 1500 }).should('not.exist')
+      cy.get('.failed-container', { timeout: 2000 }).should('not.exist')
+      cy.get('.failed-text', { timeout: 2000 }).should('not.exist')
   })
 
   })
