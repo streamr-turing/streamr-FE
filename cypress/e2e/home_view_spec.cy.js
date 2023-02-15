@@ -73,7 +73,7 @@ describe('Testing Home Page Navigation to Detail, Search View, and Watch List Vi
         })
         cy.get('.poster-img').eq(0).click()
         cy.wait('@gqlshowDetailsQuery')
-        cy.get('.detail-title').should('contain', '30 Rock (2006)')
+        cy.getByData("details-title").should('contain', '30 Rock (2006)')
     })
 
     it('Should navigate to Detail View after clicking on show name', () => {
@@ -85,7 +85,7 @@ describe('Testing Home Page Navigation to Detail, Search View, and Watch List Vi
         })
         cy.get('.title').eq(0).click()
         cy.wait('@gqlshowDetailsQuery')
-        cy.get('.detail-title').should('contain', '30 Rock (2006)')
+        cy.getByData("details-title").should('contain', '30 Rock (2006)')
     })
 
     it('Should navigate to Search View after entering show title in search bar via clicking magnifying glass button', () => {

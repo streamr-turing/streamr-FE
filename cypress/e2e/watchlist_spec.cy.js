@@ -115,7 +115,7 @@ describe('Testing Home Page with items in Watchlist', () => {
     })
     cy.get(':nth-child(3) > .watch-list-poster-and-info > .watch-list-clickable-poster > .watch-list-poster-img').click()
     cy.wait('@gqlshowDetailsQuery')
-    cy.get('.detail-title').should('contain', '30 Rock (2006)')
+    cy.getByData("details-title").should('contain', '30 Rock (2006)')
   })
 
   it('Should navigate to Detail View after clicking on show name', () => {
@@ -127,7 +127,7 @@ describe('Testing Home Page with items in Watchlist', () => {
     })
     cy.get(':nth-child(3) > .watch-list-poster-and-info > .watch-list-card-info > .watch-list-title-and-share-container > .clickable-title > .title').click()
     cy.wait('@gqlshowDetailsQuery')
-    cy.get('.detail-title').should('contain', '30 Rock (2006)')
+    cy.getByData("details-title").should('contain', '30 Rock (2006)')
   })
 
   it('Should navigate to Recommendation Modal View after clicking on airplane image', () => {
