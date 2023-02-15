@@ -7,7 +7,6 @@ import "./_HomePage.scss"
 
 const HomePage = () => {
   const { currentUser } = useContext(UserContext)
-  // console.log("HERE: ", currentUser.recommendations)
 
   const feedResult = () => {
     if (currentUser.recommendations.length) {
@@ -35,7 +34,6 @@ const HomePage = () => {
           genres={recommendation.show.genres}
           date={recommendation.createdAt}
           key={recommendation.createdAt}
-          // back-end needs to create unique id for each recc for use as key here ^
           drawSegment={segmentStatus}
           id={recommendation.show.tmdbId}
         />

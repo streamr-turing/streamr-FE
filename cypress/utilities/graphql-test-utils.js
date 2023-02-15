@@ -1,5 +1,3 @@
-import { operationName } from "@apollo/client";
-
 export const hasOperationName = (req, operationName) => {
     const { body } = req
     return (

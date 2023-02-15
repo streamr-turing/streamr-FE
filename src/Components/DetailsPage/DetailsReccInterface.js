@@ -1,5 +1,4 @@
 import { useContext } from "react"
-import { UserContext } from "../../Providers/UserContext"
 import { RecModalContext } from "../../Providers/RecModalContext"
 
 import "./_DetailsReccInterface.scss"
@@ -10,8 +9,6 @@ const DetailsReccInterface = ({ id, recommenders }) => {
   const { changeModalState, changeModalShow } = useContext(RecModalContext)
 
   const addlRecommendersMsg = <p className="addl-recommenders">and other friends</p>
-
-  console.log("HERE HERE HERE:", recommenders)
 
   const friendAvatars = recommenders
     .map(recc => (
