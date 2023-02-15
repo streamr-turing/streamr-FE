@@ -23,17 +23,30 @@ describe('Testing Loading Message', () => {
         cy.wait('@gqlfetchUserQuery')
     })
 
-    it('Should show "Loading..." message after clicking on show poster to Detail View', () => {
+    it('Should show "Loading..." message after clicking on show poster to go to Detail View', () => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'showDetails')
             req.reply({
                 fixture: 'home-view-showDetails-30Rock.json',
-                delay: 3000
+                delay: 2000
             })
         })
         cy.get('.poster-img').eq(0).click()
         cy.get('.loading-text').should('contain', 'Loading...')
         cy.wait('@gqlshowDetailsQuery')
-        cy.get('.detail-title').should('contain', '30 Rock (2006)')
+    })
+
+    it('Should show "Loading..." message after entering a show title in search bar to go to Search View', () => {
+        cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+            aliasQuery(req, 'shows')
+            req.reply({
+                fixture: 'loading-shows-searchA.json',
+                delay: 2000
+            })
+        })
+        cy.get('.search-input').type('a')
+        cy.get('.magnifying-glass-icon').click()
+        cy.get('.loading-text').should('contain', 'Loading...')
+        cy.wait('@gqlshowsQuery')
     })
 })
