@@ -52,8 +52,6 @@ const DetailsPage = () => {
     navigate("/error", { replace: true })
     return
   }
-  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
-  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data?.showDetails
   return (

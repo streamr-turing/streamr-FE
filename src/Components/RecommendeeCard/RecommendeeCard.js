@@ -1,8 +1,6 @@
-import { useState, useEffect, useContext } from "react"
+import { useEffect } from "react"
 import useWatchlist from "../../Hooks/useWatchlist"
 import { NavLink, Link } from "react-router-dom"
-
-import { UserContext } from "../../Providers/UserContext"
 
 import savedTrue from "../../images/bookmark-true.png"
 import savedFalse from "../../images/bookmark-false.png"
@@ -65,9 +63,6 @@ const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, 
     date = `${month} ${day} ${year}`
     return date
   }
-
-  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
-  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
   return (
     <div>

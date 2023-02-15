@@ -1,14 +1,12 @@
 import { useContext, useState } from "react"
 import { NavLink, useLocation, Link, useNavigate } from "react-router-dom"
 import { locationFunction } from "./helper-functions"
-import rabbit from '../../images/rabbit.png'
 import magnifyingGlass from '../../images/magnifying-glass.png'
 import "./_NavBar.scss"
 import { UserContext } from "../../Providers/UserContext"
 
 const NavBar = () => {
   const { currentUser } = useContext(UserContext)
-  console.log('currentUser', currentUser)
   const [searchKeyPhrase, setKeyPhrase] = useState("")
   let location = useLocation()
   let buttonStyles = locationFunction(location)

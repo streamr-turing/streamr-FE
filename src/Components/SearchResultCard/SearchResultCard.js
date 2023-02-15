@@ -48,10 +48,6 @@ const SearchResultCard = ({ posterUrl, title, releaseYear, genres, rating, tmdbI
     `hover-animation tile-img` :
     `tile-img`
 
-
-  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
-  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
-
   return (
     <div>
       <img
