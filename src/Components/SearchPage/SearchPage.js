@@ -57,9 +57,10 @@ const SearchPage = () => {
     }
   }
 
+  if (loading) return <Loading />
   if (error) {
-    console.log(error)
-    navigate("/error", { replace: true }) 
+    navigate("/error", { replace: true })
+    return
   }
 
   return (
