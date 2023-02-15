@@ -49,16 +49,11 @@ const WatchListItem = ({ posterUrl, title, releaseYear, id, rating, genres, tmdb
       changeModalShow(+tmdbId)
     }
 
-  console.log('currentModal', currentModal)
-
-  // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
-  // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
-
   return (
       <div className="watch-list-card-container">
           <div className="watch-list-poster-and-info">
-              <img src={watchlistId ? savedTrue : savedFalse} className='watch-list-bookmark' onClick={toggleSaved} />
-              <Link to={`/show/${id}`} className='watch-list-clickable-poster'><img src={posterUrl} className='watch-list-poster-img' /></Link>
+              <img src={watchlistId ? savedTrue : savedFalse} className='watch-list-bookmark' onClick={toggleSaved} data-cy="bookmark" />
+              <Link to={`/show/${id}`} className='watch-list-clickable-poster' data-cy={`poster-${id}`} ><img src={posterUrl} className='watch-list-poster-img' /></Link>
               <div className='watch-list-card-info'>
                   <div className="watch-list-title-and-share-container">
                       <NavLink to={`/show/${id}`} className='clickable-title'><h1 className='title'>{title} ({releaseYear})</h1></NavLink>
