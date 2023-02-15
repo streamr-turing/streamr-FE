@@ -1,0 +1,55 @@
+{
+    "data": {
+        "showDetails": {
+            "tmdbId": 4608,
+            "title": "30 Rock",
+            "releaseYear": "2006",
+            "streamingService": [
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/zxrVdFjIjLqkfnwyghnfywTn3Lh.jpg",
+                    "providerName": "Hulu",
+                    "__typename": "StreamingService"
+                },
+                {
+                    "logoPath": "https://image.tmdb.org/t/p/w500/xTHltMrZPAJFLQ6qyCBjAnXSmZt.jpg",
+                    "providerName": "Peacock Premium",
+                    "__typename": "StreamingService"
+                }
+            ],
+            "posterUrl": "https://image.tmdb.org/t/p/w500/k3RbNzPEPW0cmkfkn1xVCTk3Qde.jpg",
+            "genres": [
+                "Comedy"
+            ],
+            "rating": 7.45,
+            "summary": "Liz Lemon, the head writer for a late-night TV variety show in New York, tries to juggle all the egos around her while chasing her own dream.",
+            "mediaType": "tv",
+            "recommendedBy": [
+                {
+                    "id": "2",
+                    "username": "martha_stewart",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940448.png",
+                    "__typename": "User"
+                },
+                {
+                    "id": "3",
+                    "username": "james-white-rules",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940405.png",
+                    "__typename": "User"
+                },
+                {
+                    "id": "4",
+                    "username": "sean_not_shaun",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940421.png",
+                    "__typename": "User"
+                },
+                {
+                    "id": "5",
+                    "username": "the_burger_king",
+                    "avatarUrl": "https://cdn-icons-png.flaticon.com/512/3940/3940429.png",
+                    "__typename": "User"
+                }
+            ],
+            "__typename": "Show"
+        }
+    }
+}

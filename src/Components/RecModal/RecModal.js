@@ -134,7 +134,7 @@ const RecModal = () => {
                         <section className="friend-list">
                         { friendList.length ? friendList: <p>Add some friends!</p> }
                         </section>
-                        <button onClick={handleSend}>Send!</button>
+                        {friendList.length && <button onClick={handleSend}>Send!</button>}
                     </form>
                     : <Error />
                 }
