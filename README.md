@@ -31,7 +31,9 @@ Streamr is a convenient tool that allows users to share, save, and look up their
 </p>
 
 ### Other Technologies
+<p align="center">
 GitHub Projects | Zoom | Slack
+</p>
 
 ## Installation
 1. Clone the FE repo
