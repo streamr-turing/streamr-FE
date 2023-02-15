@@ -29,6 +29,7 @@ Streamr is a convenient tool that allows users to share, save, and look up their
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Cypress.io-6e3596?style=for-the-badge&logo=cypress" />
   <img src="https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white" />
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-CA4245?style=for-the-badge&logo=figma&logoColor=white" />
   <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" />
 </p>
@@ -144,7 +145,7 @@ GitHub Projects | Zoom | Slack
 
 - Courtney Lippman: ""
 - Keyanna (Kiko) Pausch: "This project granted me greater insight into data structures and how to access GraphQL queries in such useful way to prevent over/underfetching. The past 3 weeks has been eye opening for me on the strength of daily stand ups, project boards, and weekly retros to recalibrate and unify as one whole team. I thoughly enjoyed working with a full sized team and appreciate all the upbeat energy as well as though communication amongst our team members to pull off such a sleek useful app."
-- Sam Rice: ""
+- Sam Rice: "My biggest takeaway from designing and building this project was the experience of working on a full stack team—particularly in the planning process. Designing what is essentially a social media app required special attention to planning how state would be managed on the front-end and what types of data would be needed at various application states. I really enjoyed the process of thinking ahead for what would be needed for the features we wanted to implement, and collaborating on the various options for reaching our overal project goals."
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
