@@ -6,23 +6,17 @@ import "./_DetailsReccInterface.scss"
 import DetailsFriendAvatar from "./DetailsFriendAvatar"
 import paperPlane from "../../images/paper-plane.png"
 
-const DetailsReccInterface = ({ id }) => {
-  const { currentUser } = useContext(UserContext)
+const DetailsReccInterface = ({ id, recommenders }) => {
   const { changeModalState, changeModalShow } = useContext(RecModalContext)
 
   const addlRecommendersMsg = <p className="addl-recommenders">and other friends</p>
 
-  const friendAvatars = currentUser.recommendations
-    .reduce((acc, recc) => {
-      const isDuplicateRecc = acc.some(accRecc => accRecc.recommender.id === recc.recommender.id)
-      if (recc.show.tmdbId === id && !isDuplicateRecc) acc.push(recc)
-      return acc
-    }, [])
+  const friendAvatars = recommenders
     .map(recc => (
       <DetailsFriendAvatar
-        username={recc.recommender.username}
-        avatarUrl={recc.recommender.avatarUrl}
-        key={recc.recommender.id}
+        username={recc.username}
+        avatarUrl={recc.avatarUrl}
+        key={recc.id}
       />
     ))
     .reduce((acc, node) => {
@@ -31,21 +25,21 @@ const DetailsReccInterface = ({ id }) => {
       return acc
     }, [])
 
-    const handleModalChange = () => {
-      changeModalState(true)
-      changeModalShow(+id)
-    }
+  const handleModalChange = () => {
+    changeModalState(true)
+    changeModalShow(+id)
+  }
 
   return (
-    <div 
+    <div
       className="recc-container"
       data-cy="recc-container"
     >
-      {!!friendAvatars.length && 
-        <h2 className="recc-container__title">Recommended by Friends:</h2> 
+      {!!friendAvatars.length &&
+        <h2 className="recc-container__title">Recommended by Friends:</h2>
       }
       <div className="recc-lower">
-        <div 
+        <div
           className="recc-lower__avatars-container"
           data-cy="avatars-container"
         >
@@ -56,7 +50,7 @@ const DetailsReccInterface = ({ id }) => {
           onClick={handleModalChange}
           data-cy="open-modal"
         >
-          <img src={paperPlane} alt='airplane icon'/>
+          <img src={paperPlane} alt='airplane icon' />
         </button>
       </div>
     </div>

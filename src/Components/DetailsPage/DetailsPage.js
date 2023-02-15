@@ -87,13 +87,15 @@ const DetailsPage = () => {
                     streamingService,
                     genres,
                     rating,
-                    summary,
-                    recommendedBy
+                    summary
                   }}
                 />
                 <p data-cy="summary">{summary}</p>
               </div>
-              <DetailsReccInterface id={parseInt(showId)} />
+              <DetailsReccInterface 
+                id={parseInt(showId)} 
+                recommenders={recommendedBy} 
+              />
             </div>
           </div>
         </div>

@@ -1,0 +1,18 @@
+{
+  "data": {
+    "showDetails": {
+      "tmdbId": 4601,
+      "title": "Law & Order: Criminal Intent",
+      "releaseYear": "2001",
+      "streamingService": [],
+      "posterUrl": "https://image.tmdb.org/t/p/w500/mwynkwd6jql0qamRW6i5Dv6aZ4k.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.6,
+      "summary": "The third installment of the “Law & Order” franchise takes viewers deep into the minds of its criminals while following the intense psychological approaches the Major Case Squad uses to solve its crimes.",
+      "mediaType": "tv",
+      "recommendedBy": []
+    }
+  }
+}
