@@ -39,8 +39,10 @@ const LoginPage = () => {
       })
       if(error) {
         setErrorState(true)
+      } else {
+        setUser(data.fetchUser)
       }
-      setUser(data.fetchUser)
+
   }
 
   const handleChange = (event) => {
