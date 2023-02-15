@@ -26,21 +26,11 @@ Streamr is a convenient tool that allows users to share, save, and look up their
 GitHub Project Board | Figma | Miro | Zoom | Slack
 
 ## Installation
-
-1. Clone the BE repo
-  ```sh
-  git clone git@github.com:streamr-turing/streamr-be.git
-  ```
-2. Install NPM packages
-  ```sh
-  npm install
-  npm start
-  ```
-3. Clone the FE repo
+1. Clone the FE repo
   ```sh
   git clone git@github.com:streamr-turing/streamr-fe.git
   ```
-4. Install NPM packages
+2. Install NPM packages
   ```sh
   npm install
   npm start
