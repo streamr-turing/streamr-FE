@@ -27,10 +27,12 @@ describe('Testing Loading Message', () => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'showDetails')
             req.reply({
-                fixture: 'home-view-showDetails-30Rock.json'
+                fixture: 'home-view-showDetails-30Rock.json',
+                delay: 3000
             })
         })
         cy.get('.poster-img').eq(0).click()
+        cy.get('.loading-text').should('contain', 'Loading...')
         cy.wait('@gqlshowDetailsQuery')
         cy.get('.detail-title').should('contain', '30 Rock (2006)')
     })
