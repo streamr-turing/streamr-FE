@@ -8,7 +8,7 @@ import Error from '../Error/Error'
 import Friend from './Friend/Friend'
 import { useQuery, useMutation } from '@apollo/client'
 
-import { GET_ALL_USERS } from '../../GraphQL/Queries'
+import { GET_ALL_USERS_FOR_REC } from '../../GraphQL/Queries'
 import { SEND_RECOMMENDATION } from '../../GraphQL/Mutations'
 
 import Loading from '../Loading/Loading'
@@ -20,7 +20,7 @@ const RecModal = () => {
     const [allFriendsList, setAllFriendsList] = useState([])
     const [sentStatus, setSentStatus] = useState('waiting')
     const [createRecommendation] = useMutation(SEND_RECOMMENDATION)
-    const { error, loading, data } = useQuery(GET_ALL_USERS, {fetchPolicy: 'network-only'})
+    const { error, loading, data } = useQuery(GET_ALL_USERS_FOR_REC, {fetchPolicy: 'network-only'})
     const navigate = useNavigate()
 
     useEffect(() => {

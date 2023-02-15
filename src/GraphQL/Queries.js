@@ -94,3 +94,12 @@ export const GET_ALL_USERS = gql`
     }
   }
 `
+
+export const GET_ALL_USERS_FOR_REC = gql`
+  query allUsers {
+    users {
+        id
+        username
+    }
+  }
+`

@@ -98,6 +98,22 @@ describe('Testing Recommendation Modal', () => {
         cy.get('.sent-text', { timeout: 1500 }).should('not.exist')
     })
 
+    it('Should be able to check a friend checkbox, click send button, and a failed message will appear and then disappear after 1500ms if recommendation failed to send', () => {
+      cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+          aliasMutation(req, 'createRecommendation')
+          req.reply({
+            fixture: 'bad-response.json'
+          })
+        })
+      cy.get('[type="checkbox"]').check('4')
+      cy.get('.body > button').click()
+      cy.wait('@gqlcreateRecommendationMutation')
+      cy.get('.failed-container').should('be.visible')
+      cy.get('.failed-text').should('be.visible')
+      cy.get('.failed-container', { timeout: 1500 }).should('not.exist')
+      cy.get('.failed-text', { timeout: 1500 }).should('not.exist')
+  })
+
   })
 
   describe('Testing that the send recommendations modal displays when clicking the share button from different page views', () => {
@@ -202,46 +218,45 @@ describe('Testing Recommendation Modal', () => {
   })
 
 
-  describe("RecModal (bad response)", () => {
-    beforeEach(() => {
-      cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
-        switch (req.body.operationName) {
-          case "users":
-            aliasQuery(req, "users")
-            req.reply({ fixture: "login-users.json" })
-            break
-          case "fetchUser":
-            aliasQuery(req, "fetchUser")
-            req.reply({ fixture: "recModal-currentUser.json" })
-            break
-          case "showDetails":
-            aliasQuery(req, "showDetails")
-            req.reply({ fixture: "recModal-showDetails-30Rock.json" })
-            break
-        }
-      })
-      cy.visit("http://localhost:3000/")
-      cy.wait("@gqlusersQuery")
-      cy.get('[type="text"]').type("snoop_dogg")
-      cy.get('[type="password"]').type("streamr")
-      cy.get("button").click()
-      cy.wait("@gqlfetchUserQuery")
-      cy.get(':nth-child(1) > :nth-child(3) > .recommendee-card-container > .clickable-poster > .poster-img').click()
-      cy.wait("@gqlshowDetailsQuery")
-      cy.get('[data-cy="open-modal"]').click()
+  // describe("RecModal (bad response)", () => {
+  //   beforeEach(() => {
+  //     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+  //       switch (req.body.operationName) {
+  //         case "users":
+  //           aliasQuery(req, "users")
+  //           req.reply({ fixture: "login-users.json" })
+  //           break
+  //         case "fetchUser":
+  //           aliasQuery(req, "fetchUser")
+  //           req.reply({ fixture: "recModal-currentUser.json" })
+  //           break
+  //         case "showDetails":
+  //           aliasQuery(req, "showDetails")
+  //           req.reply({ fixture: "recModal-showDetails-30Rock.json" })
+  //           break
+  //       }
+  //     })
+  //     cy.visit("http://localhost:3000/")
+  //     cy.wait("@gqlusersQuery")
+  //     cy.get('[type="text"]').type("snoop_dogg")
+  //     cy.get('[type="password"]').type("streamr")
+  //     cy.get("button").click()
+  //     cy.wait("@gqlfetchUserQuery")
+  //     cy.get(':nth-child(1) > :nth-child(3) > .recommendee-card-container > .clickable-poster > .poster-img').click()
+  //     cy.wait("@gqlshowDetailsQuery")
+  //     cy.get('[data-cy="open-modal"]').click()
 
 
-    })
+  //   })
   
-    it.only("should not show a table row for streaming providers if there are none available", () => {
-      cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
-        aliasBadQuery(req, 'users')
-        req.reply({
-          fixture: 'bad-response.json'
-        })
-      })
-      cy.visit('http://localhost:3000/')
-      cy.wait('@gqlusersBadQuery')
+  //   it.only("should not show a table row for streaming providers if there are none available", () => {
+  //     cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+  //       aliasQuery(req, 'allUsers')
+  //       req.reply({
+  //         fixture: 'bad-response.json'
+  //       })
+  //     })
+  //     cy.wait('@gqlallUsersQuery')
       
-    })
-  })
+  //   })
+  // })

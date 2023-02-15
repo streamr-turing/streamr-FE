@@ -13,12 +13,6 @@ export const aliasQuery = (req, operationName) => {
     }
 }
 
-export const aliasBadQuery = (req, operationName) => {
-  if (hasOperationName(req, operationName)) {
-    req.alias = `gql${operationName}BadQuery`
-  }
-}
-
 export const aliasMutation = (req, operationName) => {
     if (hasOperationName(req, operationName)) {
       req.alias = `gql${operationName}Mutation`
