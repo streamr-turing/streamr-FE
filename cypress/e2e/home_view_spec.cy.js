@@ -1,6 +1,6 @@
 import { aliasQuery } from "../utilities/graphql-test-utils"
 
-describe('Testing Home Page Nav Bar and Header', () => {
+describe('Testing Home Page Header, Page Name, and Nav Bar', () => {
     beforeEach(() => {
         cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
             aliasQuery(req, 'users')
@@ -26,6 +26,10 @@ describe('Testing Home Page Nav Bar and Header', () => {
     it('Should show Streamr logo in the header', () => {
         cy.get('h1').eq(0).should('contain', 'Streamr')
         cy.get('img').eq(2).should('have.attr', 'src', '/static/media/tv.d1669fef910821b06ff5.png')
+    })
+
+    it('Should display main with page name', () => {
+        cy.get('.recommend-title').should('contain', 'Recommended By Friends')
     })
 
     it('Should display logged in user\'s avatar image, avatar name, search bar, magnifying glass button, and "My Watchlist" link', () => {
@@ -136,10 +140,6 @@ describe('Testing Home Page If Given Recommended Shows', () => {
         cy.get('[type="password"]').type('streamr')
         cy.get('button').click()
         cy.wait('@gqlfetchUserQuery')
-    })
-
-    it('Should display main with page name', () => {
-        cy.get('.recommend-title').should('contain', 'Recommended By Friends')
     })
     
     it('Should display recommenders avatar and name', () => {
