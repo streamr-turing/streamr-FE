@@ -17,18 +17,17 @@ Streamr is a convenient tool that allows users to share, save, and look up their
 
 ## Built With
 
-<p align="left">
+<p align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/-Apollo_GraphQL-311C87?style=for-the-badge&logo=apollo-graphql" />
   <img src="https://img.shields.io/badge/React_Router-20232A?style=for-the-badge&logo=react-router&logoColor=white" />
-  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" /> <br>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Cypress.io-6e3596?style=for-the-badge&logo=cypress" />
   <img src="https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-CA4245?style=for-the-badge&logo=figma&logoColor=white" />
   <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" />
-
 </p>
 
 ### Other Technologies
