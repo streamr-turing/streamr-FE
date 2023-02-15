@@ -90,3 +90,36 @@ describe("Details Page (missing data)", () => {
     cy.getByData("recc-container").should("not.contain", "Recommended by Friends:")
   })
 })
+
+describe("Details Page (bad response)", () => {
+  beforeEach(() => {
+    cy.intercept('POST', 'https://streamr-be.herokuapp.com/graphql', (req) => {
+      switch (req.body.operationName) {
+        case "users":
+          aliasQuery(req, "users")
+          req.reply({ fixture: "login-users.json" })
+          break
+        case "fetchUser":
+          aliasQuery(req, "fetchUser")
+          req.reply({ fixture: "DetailsPage-currentUser.json" })
+          break
+        case "showDetails":
+          aliasQuery(req, "showDetails")
+          req.reply({ fixture: "bad-response.json" })
+          break
+      }
+    })
+    cy.visit("http://localhost:3000/")
+    cy.wait("@gqlusersQuery")
+    cy.get('[type="text"]').type("snoop_dogg")
+    cy.get('[type="password"]').type("streamr")
+    cy.get("button").click()
+    cy.wait("@gqlfetchUserQuery")
+    cy.get(".home-container a").first().click()
+    cy.wait("@gqlshowDetailsQuery")
+  })
+
+  it("should not show a table row for streaming providers if there are none available", () => {
+    cy.url().should("eq", "http://localhost:3000/error")
+  })
+})

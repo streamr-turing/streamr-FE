@@ -48,11 +48,14 @@ const DetailsPage = () => {
   }
 
   if (loading) return <Loading />
-  if (error) navigate("/error", { replace: true })
+  if (error) {
+    navigate("/error", { replace: true })
+    return
+  }
   // if (saveError) GIVE USER FEEDBACK - WAS NOT ABLE TO SAVE TO WATCHLIST (modal?)
   // if (removeError) GIVE USER FEEDBACK - WAS NOT ABLE TO REMOVE FROM WATCHLIST (modal?)
 
-  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data.showDetails
+  const { genres, posterUrl, rating, releaseYear, streamingService, summary, title, recommendedBy } = data?.showDetails
   return (
     <>
       <section className="details-parent">

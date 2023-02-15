@@ -11,6 +11,8 @@ const DetailsReccInterface = ({ id, recommenders }) => {
 
   const addlRecommendersMsg = <p className="addl-recommenders">and other friends</p>
 
+  console.log("HERE HERE HERE:", recommenders)
+
   const friendAvatars = recommenders
     .map(recc => (
       <DetailsFriendAvatar
