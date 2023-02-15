@@ -91,7 +91,7 @@ GitHub Project Board | Figma | Miro | Zoom | Slack
 
 ![Retro](https://user-images.githubusercontent.com/19957834/218937551-09d97f15-cf8c-4348-ad3f-97826573eceb.jpg)
 
-### Wireframing and User Flow
+### Wireframing and User Flow with JSON Contracts
 
 ![Streamr](https://user-images.githubusercontent.com/19957834/218932607-a044ddc1-d803-43c4-9925-85d77fe885fd.jpg)
 
