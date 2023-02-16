@@ -13,7 +13,7 @@ import { GET_USER } from '../../GraphQL/Queries'
 const LoginPage = () => {
   const navigate = useNavigate()
   const { setUser, currentUser } = useContext(UserContext)
-  const { error, loading, data } = useQuery(GET_ALL_USERS)
+  const { error, data } = useQuery(GET_ALL_USERS)
   const [errorState, setErrorState] = useState(false)
   const [getUser] = useLazyQuery(GET_USER)
   const [allUsers, setAllUsers] = useState([])
@@ -34,7 +34,7 @@ const LoginPage = () => {
   }, [currentUser])
 
   const loginUser = async () => {
-      const { error, loading, data } = await getUser({
+      const { error, data } = await getUser({
         variables: { id: signInData.successUserId }
       })
       if(error) {
@@ -89,10 +89,7 @@ const LoginPage = () => {
     })
   }
 
-  if (error) {
-    console.log(error)
-    navigate("/error", { replace: true }) 
-  }
+  if (error) navigate("/error", { replace: true })
 
   return (
     <div className="login-background">

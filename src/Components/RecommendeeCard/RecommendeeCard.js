@@ -10,8 +10,6 @@ const RecommendeeCard = ({ posterUrl, title, releaseYear, rating, genres, date, 
   const [
     watchlistId,
     findWatchlistId,
-    saveError,
-    removeError,
     handleSaveShow,
     handleRemoveShow
   ] = useWatchlist(null)

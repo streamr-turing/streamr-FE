@@ -15,8 +15,7 @@ const SearchPage = () => {
     GET_SEARCH_RESULTS, {
     variables: {
       query: keyPhrase
-    }
-  }
+    }}
   )
 
   const searchResult = () => {

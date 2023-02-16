@@ -19,8 +19,6 @@ const DetailsPage = () => {
   const [
     watchlistId,
     findWatchlistId,
-    saveError,
-    removeError,
     handleSaveShow,
     handleRemoveShow
   ] = useWatchlist(null)

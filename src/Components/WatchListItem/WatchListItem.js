@@ -9,12 +9,10 @@ import savedFalse from "../../images/bookmark-false.png"
 import './_WatchListItem.scss'
 
 const WatchListItem = ({ posterUrl, title, releaseYear, id, rating, genres, tmdbId  }) => {
-  const  { changeModalState, changeModalShow, currentModal } = useContext(RecModalContext)
+  const  { changeModalState, changeModalShow } = useContext(RecModalContext)
   const [
     watchlistId,
     findWatchlistId,
-    saveError,
-    removeError,
     handleSaveShow,
     handleRemoveShow
   ] = useWatchlist(null)
