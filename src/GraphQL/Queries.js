@@ -71,6 +71,7 @@ export const GET_SHOW_DETAILS = gql`
     }
   }
 `
+
 export const GET_SEARCH_RESULTS = gql`
 query shows($query: String!){
   shows(
@@ -86,6 +87,7 @@ query shows($query: String!){
   }
 }
 `
+
 export const GET_ALL_USERS = gql`
   query users {
     users {

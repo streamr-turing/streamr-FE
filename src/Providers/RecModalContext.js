@@ -19,10 +19,8 @@ const changeModalShow = (showId) => {
   dispatch({
     type: RecModalTypes.CHANGE_MODAL_SHOW,
     payload: showId
-    //make sure that showId is a number
   })
 }
-
 
   return (
     <RecModalContext.Provider value={{

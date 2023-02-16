@@ -11,8 +11,6 @@ const SearchResultCard = ({ posterUrl, title, releaseYear, genres, rating, tmdbI
   const [
     watchlistId,
     findWatchlistId,
-    saveError,
-    removeError,
     handleSaveShow,
     handleRemoveShow
   ] = useWatchlist(null)
