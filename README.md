@@ -52,7 +52,7 @@ GitHub Projects | Zoom | Slack
 
 ## Group Goals
 
-- Courtney:
+- Courtney: Collaborating as a Full-Stack team, implementing Apollo/GraphQL, incorporating Sass and utilizing Context API.
 - Keyaanna (Kiko): Learn GraphQL, use React version 6 with hooks, and collorate with the back-end team
 - Sam: working on a full-stack team (using JSON contracts, approaching architecture decisions from full-stack perspective), implementing Apollo/GraphQL and React custom hooks
 
@@ -143,7 +143,7 @@ GitHub Projects | Zoom | Slack
 
 ## Group Reflection
 
-- Courtney Lippman: ""
+- Courtney Lippman: "Gaining the experience of working as a Full-Stack team, was the most valuable part of working on Streamr. Not only did our team have to learn how to collaborate between front-end and back-end teams, but also how to approach a technology that neither team had experience with. Throughout the project everyone on the team collaborated effectively which translated to an enjoyable and smooth experience working on Streamr. I really enjoyed thinking ahead to what end points would be needed to effectively create this application., and then working with the back-end team to create a robust JSON contract."
 - Keyanna (Kiko) Pausch: "This project granted me greater insight into data structures and how to access GraphQL queries in such useful way to prevent over/underfetching. The past 3 weeks has been eye opening for me on the strength of daily stand ups, project boards, and weekly retros to recalibrate and unify as one whole team. I thoughly enjoyed working with a full sized team and appreciate all the upbeat energy as well as though communication amongst our team members to pull off such a sleek useful app."
 - Sam Rice: "My biggest takeaway from designing and building this project was the experience of working on a full stack team—particularly in the planning process. Designing what is essentially a social media app required special attention to planning how state would be managed on the front-end and what types of data would be needed at various application states. I really enjoyed the process of thinking ahead for what would be needed for the features we wanted to implement, and collaborating on the various options for reaching our overal project goals."
 
