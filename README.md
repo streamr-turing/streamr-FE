@@ -16,12 +16,13 @@
 
 Example Logins:
 
-Username: martha_stewart
-Password: streamr
+Username: martha_stewart  
+Password: streamr  
 
 
-Username: snoop_dogg
-Password: streamr
+
+Username: snoop_dogg  
+Password: streamr  
 
 
 
